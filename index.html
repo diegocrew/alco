@@ -3,66 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Spirits Field Guide: 9 Decoded Spirit Categories</title>
-  <meta name="description" content="An interactive encyclopedia decoding 9 major alcohol categories: Rum, Vodka, Whisky, Wine, Gin, Cognac, Brandy, Tequila, and Champagne.">
+  <title>The Spirits Field Guide: 9 Decoded Spirit Categories & Cocktail Classics</title>
+  <meta name="description" content="An interactive encyclopedia decoding 9 major alcohol categories: Rum, Vodka, Whisky, Wine, Gin, Cognac, Brandy, Tequila, and Champagne with classic cocktail recipes.">
   
   <link rel="stylesheet" href="css/themes.css">
   <link rel="stylesheet" href="css/styles.css">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-
-  <!-- WIDESCREEN LEFT COCKTAIL SIDEBAR (3 RECIPES) -->
-  <aside class="widescreen-sidebar sidebar-left">
-    <div class="sidebar-header-label">🍸 CLASSIC COCKTAILS</div>
-    
-    <div class="sidebar-card">
-      <h4 class="sidebar-card-title">Old Fashioned</h4>
-      <span class="sidebar-card-glass">ROCKS GLASS • STIRRED</span>
-      <p class="sidebar-card-ingredients">2 oz Bourbon or Rye, 1 tsp Sugar Syrup, 2 dashes Angostura</p>
-      <div class="sidebar-card-measure">Garnish: Orange Peel Twist</div>
-    </div>
-
-    <div class="sidebar-card">
-      <h4 class="sidebar-card-title">Dry Martini</h4>
-      <span class="sidebar-card-glass">COUPE GLASS • STIRRED</span>
-      <p class="sidebar-card-ingredients">2.5 oz London Dry Gin, 0.5 oz Dry Vermouth, Orange Bitters</p>
-      <div class="sidebar-card-measure">Garnish: Lemon Twist or Olive</div>
-    </div>
-
-    <div class="sidebar-card">
-      <h4 class="sidebar-card-title">Classic Daiquiri</h4>
-      <span class="sidebar-card-glass">COUPE GLASS • SHAKEN</span>
-      <p class="sidebar-card-ingredients">2 oz White Rum, 0.75 oz Lime Juice, 0.75 oz Simple Syrup</p>
-      <div class="sidebar-card-measure">Garnish: Lime Wheel</div>
-    </div>
-  </aside>
-
-  <!-- WIDESCREEN RIGHT COCKTAIL SIDEBAR (3 RECIPES) -->
-  <aside class="widescreen-sidebar sidebar-right">
-    <div class="sidebar-header-label">🍹 MASTER RECIPES</div>
-
-    <div class="sidebar-card">
-      <h4 class="sidebar-card-title">Negroni</h4>
-      <span class="sidebar-card-glass">ROCKS GLASS • STIRRED</span>
-      <p class="sidebar-card-ingredients">1 oz London Dry Gin, 1 oz Campari, 1 oz Sweet Vermouth</p>
-      <div class="sidebar-card-measure">Garnish: Orange Slice</div>
-    </div>
-
-    <div class="sidebar-card">
-      <h4 class="sidebar-card-title">Sidecar</h4>
-      <span class="sidebar-card-glass">COUPE GLASS • SHAKEN</span>
-      <p class="sidebar-card-ingredients">2 oz Cognac, 0.75 oz Cointreau, 0.75 oz Fresh Lemon Juice</p>
-      <div class="sidebar-card-measure">Garnish: Sugared Rim</div>
-    </div>
-
-    <div class="sidebar-card">
-      <h4 class="sidebar-card-title">Tommy's Margarita</h4>
-      <span class="sidebar-card-glass">ROCKS GLASS • ON ICE</span>
-      <p class="sidebar-card-ingredients">2 oz Reposado Tequila, 1 oz Fresh Lime, 0.5 oz Agave Nectar</p>
-      <div class="sidebar-card-measure">Garnish: Salt Rim & Lime</div>
-    </div>
-  </aside>
 
   <!-- SITE HEADER & NAVIGATION -->
   <header class="site-header">
@@ -108,11 +56,26 @@
       </p>
     </section>
 
-    <!-- 3x3 SPIRIT HUBS GRID WITH DEDICATED LOGOS -->
-    <section class="section-container" style="padding-top: 2rem;">
-      <div class="spirit-hub-grid" style="grid-template-columns: repeat(3, 1fr);">
+    <!-- 5x3 BOARD GRID WITH IN-LINE COCKTAIL CARDS -->
+    <section class="section-container hub-container" style="padding-top: 2rem;">
+      <div class="spirit-hub-grid">
         
-        <!-- 1. RUM CARD & LOGO -->
+        <!-- ================= ROW 1 ================= -->
+
+        <!-- 1. LEFT COCKTAIL 1: OLD FASHIONED -->
+        <article class="cocktail-side-card">
+          <div class="cocktail-card-header" style="background-image: url('images/cocktail-old-fashioned.png');">
+            <span class="cocktail-card-badge">COCKTAIL CLASSIC</span>
+          </div>
+          <div class="cocktail-card-body">
+            <h3 class="cocktail-card-title">Old Fashioned</h3>
+            <span class="cocktail-card-glass">ROCKS GLASS • STIRRED</span>
+            <p class="cocktail-card-ingredients">2 oz Bourbon or Rye, 1 tsp Sugar Syrup, 2 dashes Angostura bitters</p>
+            <div class="cocktail-card-garnish">GARNISH: Expressed Orange Peel</div>
+          </div>
+        </article>
+
+        <!-- 2. SPIRIT 1: RUM -->
         <a href="rum.html" class="spirit-hub-card" style="border-color: #e69c37;">
           <div class="hub-card-header" style="background-image: url('images/rum.jpg');">
             <span class="hub-card-badge" style="background-color: #e69c37; color: #120e0b;">VOL. I • ACTIVE</span>
@@ -135,7 +98,7 @@
           </div>
         </a>
 
-        <!-- 2. VODKA CARD & LOGO -->
+        <!-- 3. SPIRIT 2: VODKA -->
         <a href="vodka.html" class="spirit-hub-card" style="border-color: #7bb4ec;">
           <div class="hub-card-header" style="background-image: url('images/vodka.jpg');">
             <span class="hub-card-badge" style="background-color: #7bb4ec; color: #0a1118;">VOL. II • ACTIVE</span>
@@ -158,7 +121,7 @@
           </div>
         </a>
 
-        <!-- 3. WHISKY CARD & LOGO -->
+        <!-- 4. SPIRIT 3: WHISKY -->
         <a href="whisky.html" class="spirit-hub-card" style="border-color: #dda94b;">
           <div class="hub-card-header" style="background-image: url('images/whisky.jpg');">
             <span class="hub-card-badge" style="background-color: #dda94b; color: #121417;">VOL. III • ACTIVE</span>
@@ -183,7 +146,35 @@
           </div>
         </a>
 
-        <!-- 4. WINE CARD & LOGO -->
+        <!-- 5. RIGHT COCKTAIL 1: NEGRONI -->
+        <article class="cocktail-side-card">
+          <div class="cocktail-card-header" style="background-image: url('images/cocktail-negroni.png');">
+            <span class="cocktail-card-badge">COCKTAIL CLASSIC</span>
+          </div>
+          <div class="cocktail-card-body">
+            <h3 class="cocktail-card-title">Negroni</h3>
+            <span class="cocktail-card-glass">ROCKS GLASS • STIRRED</span>
+            <p class="cocktail-card-ingredients">1 oz London Dry Gin, 1 oz Campari aperitivo, 1 oz Sweet Red Vermouth</p>
+            <div class="cocktail-card-garnish">GARNISH: Orange Slice</div>
+          </div>
+        </article>
+
+        <!-- ================= ROW 2 ================= -->
+
+        <!-- 6. LEFT COCKTAIL 2: DRY MARTINI -->
+        <article class="cocktail-side-card">
+          <div class="cocktail-card-header" style="background-image: url('images/cocktail-martini.png');">
+            <span class="cocktail-card-badge">COCKTAIL CLASSIC</span>
+          </div>
+          <div class="cocktail-card-body">
+            <h3 class="cocktail-card-title">Dry Martini</h3>
+            <span class="cocktail-card-glass">COUPE GLASS • STIRRED</span>
+            <p class="cocktail-card-ingredients">2.5 oz London Dry Gin, 0.5 oz French Dry Vermouth, Orange bitters</p>
+            <div class="cocktail-card-garnish">GARNISH: Green Olive or Lemon Twist</div>
+          </div>
+        </article>
+
+        <!-- 7. SPIRIT 4: WINE -->
         <a href="wine.html" class="spirit-hub-card" style="border-color: #d4af37;">
           <div class="hub-card-header" style="background-image: url('images/wine.jpg');">
             <span class="hub-card-badge" style="background-color: #d4af37; color: #190c12;">VOL. IV • ACTIVE</span>
@@ -208,7 +199,7 @@
           </div>
         </a>
 
-        <!-- 5. GIN CARD & LOGO -->
+        <!-- 8. SPIRIT 5: GIN -->
         <a href="gin.html" class="spirit-hub-card" style="border-color: #3ca59d;">
           <div class="hub-card-header" style="background-image: url('images/gin.jpg');">
             <span class="hub-card-badge" style="background-color: #3ca59d; color: #0d1717;">VOL. V • ACTIVE</span>
@@ -232,7 +223,7 @@
           </div>
         </a>
 
-        <!-- 6. COGNAC CARD & LOGO -->
+        <!-- 9. SPIRIT 6: COGNAC -->
         <a href="cognac.html" class="spirit-hub-card" style="border-color: #e5a038;">
           <div class="hub-card-header" style="background-image: url('images/cognac.jpg');">
             <span class="hub-card-badge" style="background-color: #e5a038; color: #1a0f0a;">VOL. VI • ACTIVE</span>
@@ -256,7 +247,35 @@
           </div>
         </a>
 
-        <!-- 7. BRANDY CARD & LOGO -->
+        <!-- 10. RIGHT COCKTAIL 2: SIDECAR -->
+        <article class="cocktail-side-card">
+          <div class="cocktail-card-header" style="background-image: url('images/cocktail-sidecar.png');">
+            <span class="cocktail-card-badge">COCKTAIL CLASSIC</span>
+          </div>
+          <div class="cocktail-card-body">
+            <h3 class="cocktail-card-title">Sidecar</h3>
+            <span class="cocktail-card-glass">COUPE GLASS • SHAKEN</span>
+            <p class="cocktail-card-ingredients">2 oz Cognac, 0.75 oz Cointreau, 0.75 oz Fresh Lemon Juice</p>
+            <div class="cocktail-card-garnish">GARNISH: Sugared Glass Rim</div>
+          </div>
+        </article>
+
+        <!-- ================= ROW 3 ================= -->
+
+        <!-- 11. LEFT COCKTAIL 3: CLASSIC DAIQUIRI -->
+        <article class="cocktail-side-card">
+          <div class="cocktail-card-header" style="background-image: url('images/cocktail-daiquiri.png');">
+            <span class="cocktail-card-badge">COCKTAIL CLASSIC</span>
+          </div>
+          <div class="cocktail-card-body">
+            <h3 class="cocktail-card-title">Classic Daiquiri</h3>
+            <span class="cocktail-card-glass">COUPE GLASS • SHAKEN</span>
+            <p class="cocktail-card-ingredients">2 oz White Rum, 0.75 oz Fresh Lime Juice, 0.75 oz Simple Syrup</p>
+            <div class="cocktail-card-garnish">GARNISH: Lime Wheel</div>
+          </div>
+        </article>
+
+        <!-- 12. SPIRIT 7: BRANDY -->
         <a href="brandy.html" class="spirit-hub-card" style="border-color: #d97736;">
           <div class="hub-card-header" style="background-image: url('images/brandy.jpg');">
             <span class="hub-card-badge" style="background-color: #d97736; color: #1b120c;">VOL. VII • ACTIVE</span>
@@ -280,7 +299,7 @@
           </div>
         </a>
 
-        <!-- 8. TEQUILA CARD & LOGO -->
+        <!-- 13. SPIRIT 8: TEQUILA -->
         <a href="tequila.html" class="spirit-hub-card" style="border-color: #489b74;">
           <div class="hub-card-header" style="background-image: url('images/tequila.jpg');">
             <span class="hub-card-badge" style="background-color: #489b74; color: #17150f;">VOL. VIII • ACTIVE</span>
@@ -303,7 +322,7 @@
           </div>
         </a>
 
-        <!-- 9. CHAMPAGNE CARD & LOGO -->
+        <!-- 14. SPIRIT 9: CHAMPAGNE -->
         <a href="champagne.html" class="spirit-hub-card" style="border-color: #f3cf7a;">
           <div class="hub-card-header" style="background-image: url('images/champagne.jpg');">
             <span class="hub-card-badge" style="background-color: #f3cf7a; color: #0f0f12;">VOL. IX • ACTIVE</span>
@@ -328,6 +347,19 @@
             </div>
           </div>
         </a>
+
+        <!-- 15. RIGHT COCKTAIL 3: MARGARITA -->
+        <article class="cocktail-side-card">
+          <div class="cocktail-card-header" style="background-image: url('images/cocktail-margarita.png');">
+            <span class="cocktail-card-badge">COCKTAIL CLASSIC</span>
+          </div>
+          <div class="cocktail-card-body">
+            <h3 class="cocktail-card-title">Tommy's Margarita</h3>
+            <span class="cocktail-card-glass">ROCKS GLASS • ON ICE</span>
+            <p class="cocktail-card-ingredients">2 oz Reposado Tequila, 1 oz Fresh Lime Juice, 0.5 oz Agave Nectar</p>
+            <div class="cocktail-card-garnish">GARNISH: Salted Rim & Lime Wheel</div>
+          </div>
+        </article>
 
       </div>
     </section>

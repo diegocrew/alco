@@ -1,4 +1,4 @@
-/* Main Master Stylesheet - Field Guide Aesthetics & Widescreen Sidebars */
+/* Main Master Stylesheet - Field Guide Aesthetics & 5x3 Board Grid */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400;1,600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 *, *::before, *::after {
@@ -35,7 +35,7 @@ body {
 }
 
 .header-container {
-  max-width: 1300px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 1rem 1.5rem;
   display: flex;
@@ -537,15 +537,39 @@ body {
 }
 
 /* --------------------------------------------------
-   SPIRIT ENCYCLOPEDIA HUB CARDS (3x3 GRID WITH LOGOS)
+   SPIRIT ENCYCLOPEDIA HUB CARDS (5x3 BOARD GRID WITH COCKTAILS)
    -------------------------------------------------- */
+.section-container.hub-container {
+  max-width: 1250px;
+  transition: max-width var(--transition-normal);
+}
+
 .spirit-hub-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  max-width: 1250px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
   margin: 0 auto;
-  padding: 2rem 1.5rem 4rem;
+  padding: 2rem 0 4rem;
+}
+
+@media (max-width: 1100px) {
+  .spirit-hub-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (min-width: 1550px) {
+  .section-container.hub-container {
+    max-width: 1850px;
+  }
+  
+  .spirit-hub-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .cocktail-side-card {
+    display: flex !important;
+  }
 }
 
 .spirit-hub-card {
@@ -641,90 +665,96 @@ body {
 }
 
 /* --------------------------------------------------
-   WIDE SCREEN SIDEBARS (MIN-WIDTH: 1550PX)
+   COCKTAIL BOARD CARDS (IN-LINE WITH 5x3 GRID)
    -------------------------------------------------- */
-.widescreen-sidebar {
-  display: none;
+.cocktail-side-card {
+  display: none; /* Shown on 1550px+ displays as part of 5x3 grid */
+  background-color: var(--bg-card, #241712);
+  border: 1px solid var(--border-card, #452c20);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+  flex-direction: column;
 }
 
-@media (min-width: 1550px) {
-  .widescreen-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    position: fixed;
-    top: 100px;
-    width: 230px;
-    z-index: 90;
-  }
+.cocktail-side-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-primary, #e69c37);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
 
-  .widescreen-sidebar.sidebar-left {
-    left: 25px;
-  }
+.cocktail-card-header {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 1rem;
+}
 
-  .widescreen-sidebar.sidebar-right {
-    right: 25px;
-  }
+.cocktail-card-header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(36, 23, 18, 1), rgba(36, 23, 18, 0.15));
+}
 
-  .sidebar-header-label {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent-primary, #e69c37);
-    margin-bottom: 0.25rem;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
+.cocktail-card-badge {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--accent-primary, #e69c37);
+}
 
-  .sidebar-card {
-    background-color: rgba(36, 23, 18, 0.88);
-    border: 1px solid var(--border-card, #452c20);
-    border-radius: var(--radius-sm);
-    padding: 1rem;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-    transition: transform var(--transition-fast), border-color var(--transition-fast);
-  }
+.cocktail-card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 
-  .sidebar-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--accent-primary, #e69c37);
-  }
+.cocktail-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-title);
+  margin-bottom: 0.25rem;
+}
 
-  .sidebar-card-title {
-    font-family: var(--font-serif);
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--text-title, #f8ede3);
-    margin-bottom: 0.25rem;
-  }
+.cocktail-card-glass {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--accent-primary, #e69c37);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: block;
+}
 
-  .sidebar-card-glass {
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    color: var(--accent-primary, #e69c37);
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-    display: block;
-  }
+.cocktail-card-ingredients {
+  font-size: 0.85rem;
+  color: var(--text-body);
+  line-height: 1.45;
+  margin-bottom: 1rem;
+}
 
-  .sidebar-card-ingredients {
-    font-size: 0.8rem;
-    color: var(--text-body, #d6c6b8);
-    line-height: 1.4;
-  }
-
-  .sidebar-card-measure {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    color: var(--text-muted, #958173);
-    margin-top: 0.5rem;
-    padding-top: 0.4rem;
-    border-top: 1px dashed var(--border-card, #452c20);
-  }
+.cocktail-card-garnish {
+  margin-top: auto;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--border-card);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
 }
 
 /* --------------------------------------------------
