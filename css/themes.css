@@ -1,0 +1,138 @@
+/* Global Theme Design System & Per-Alcohol Color Palette Tokens */
+
+:root {
+  /* Default / Global Theme (Field Guide Editorial) */
+  --font-serif: 'Playfair Display', 'Cinzel', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+
+  --bg-primary: #120e0b;
+  --bg-surface: #1e1713;
+  --bg-card: #271e18;
+  --bg-card-hover: #32271f;
+  
+  --text-primary: #f6efe6;
+  --text-secondary: #c9bcae;
+  --text-muted: #8e8072;
+  --text-accent: #e59d38;
+
+  --border-color: #3d2f25;
+  --border-subtle: #2d221a;
+
+  --accent-gold: #e59d38;
+  --accent-amber: #c86828;
+  --accent-cream: #f4ece1;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 9999px;
+
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 20px rgba(229, 157, 56, 0.2);
+
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+}
+
+/* --------------------------------------------------
+   RUM THEME (Warm Mahogany, Golden Amber, Dark Barrel)
+   -------------------------------------------------- */
+[data-theme="rum"] {
+  --bg-page: #19110d;
+  --bg-header: #140d0a;
+  --bg-surface: #241712;
+  --bg-card: #2d1d16;
+  --bg-card-hover: #38241c;
+  --bg-pill: #3a261c;
+  --bg-pill-active: #c86528;
+
+  --text-title: #f8ede3;
+  --text-body: #d6c6b8;
+  --text-muted: #958173;
+  --text-highlight: #f3a537;
+
+  --accent-primary: #e69c37;
+  --accent-secondary: #c86528;
+  --accent-ring: #e69c37;
+
+  --badge-neat: #b35322;
+  --badge-ice: #2c6e80;
+  --badge-cocktail: #933827;
+
+  --border-card: #452c20;
+  --border-active: #e69c37;
+  
+  --map-land: #2e1e17;
+  --map-water: #140d0a;
+  --map-marker: #e69c37;
+}
+
+/* --------------------------------------------------
+   WHISKY THEME (Charred Oak, Peat Smoke, Barley Gold)
+   -------------------------------------------------- */
+[data-theme="whisky"] {
+  --bg-page: #121417;
+  --bg-header: #0c0e10;
+  --bg-surface: #1a1e24;
+  --bg-card: #21262e;
+  --bg-card-hover: #29303a;
+  
+  --text-title: #f2f4f7;
+  --text-body: #cad1db;
+  --text-muted: #7b8696;
+  --text-highlight: #dda94b;
+
+  --accent-primary: #dda94b;
+  --accent-secondary: #a86c29;
+  --accent-ring: #dda94b;
+
+  --border-card: #333c4a;
+  --border-active: #dda94b;
+}
+
+/* --------------------------------------------------
+   WINE THEME (Burgundy Velvet, Ruby Red, Vintage Gold)
+   -------------------------------------------------- */
+[data-theme="wine"] {
+  --bg-page: #190c12;
+  --bg-header: #11070c;
+  --bg-surface: #24121b;
+  --bg-card: #2f1723;
+  --bg-card-hover: #3b1d2c;
+
+  --text-title: #faedf3;
+  --text-body: #dec8d3;
+  --text-muted: #967484;
+  --text-highlight: #d4af37;
+
+  --accent-primary: #8b263e;
+  --accent-secondary: #d4af37;
+  --accent-ring: #d4af37;
+
+  --border-card: #4a2337;
+  --border-active: #d4af37;
+}
+
+/* --------------------------------------------------
+   GIN THEME (Pine Slate, Botanical Emerald, Slate Copper)
+   -------------------------------------------------- */
+[data-theme="gin"] {
+  --bg-page: #0d1717;
+  --bg-header: #081010;
+  --bg-surface: #142424;
+  --bg-card: #1a2f2f;
+  --bg-card-hover: #223c3c;
+
+  --text-title: #edf6f6;
+  --text-body: #c4dcda;
+  --text-muted: #739895;
+  --text-highlight: #3ca59d;
+
+  --accent-primary: #3ca59d;
+  --accent-secondary: #206359;
+  --accent-ring: #3ca59d;
+
+  --border-card: #294747;
+  --border-active: #3ca59d;
+}
