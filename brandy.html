@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brandy Field Guide: Eau-de-Vie & 100 Decoded Brandies</title>
-  <meta name="description" content="Brandy guide decoding Armagnac continuous stills, Brandy de Jerez solera systems, and fruit eau-de-vie with 100 decoded brandies.">
+  <title>Brandy Field Guide: Armagnac, Solera & 100 Decoded Brandies</title>
+  <meta name="description" content="Brandy guide decoding Gascony Armagnac, Brandy de Jerez Solera, Normandy Calvados, Peruvian Pisco, and Italian Grappa with 100 decoded brandies.">
   
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <link rel="stylesheet" href="css/themes.css">
@@ -16,8 +16,11 @@
   <header class="site-header">
     <div class="header-container">
       <a href="index.html" class="brand-logo">
-        <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M8 22h8"/><path d="M7 10h10"/><path d="M12 15v7"/><path d="M12 2a5 5 0 0 0-5 5v3h10V7a5 5 0 0 0-5-5z"/>
+        <!-- DEDICATED BRANDY LOGO -->
+        <svg class="brand-icon" viewBox="0 0 32 32" fill="none" stroke="#d97736" stroke-width="2">
+          <path d="M9 8c0 6 3 12 7 12s7-6 7-12"/>
+          <line x1="16" y1="20" x2="16" y2="27"/>
+          <line x1="10" y1="27" x2="22" y2="27"/>
         </svg>
         <div>
           <span class="brand-title">The Field Guide</span>
@@ -47,7 +50,7 @@
       <p class="hero-subtitle">THE FIELD GUIDE VOL. VII</p>
       <h1 class="hero-title">100 Brandy Styles, Decoded</h1>
       <p class="hero-description">
-        Single distillation Armagnac, Spanish Oloroso Sherry soleras, and artisanal Calvados apple brandy.
+        Historic fruit eau-de-vie, Armagnac continuous stills, Jerez Spanish Solera brandies, and cellar master traditions.
       </p>
 
       <div class="filter-bar-container">
@@ -61,26 +64,26 @@
     <section class="section-container" style="padding-top: 0;">
       <div class="section-header">
         <p class="section-subtitle">ORIGIN STORY</p>
-        <h2 class="section-title">Eau-de-Vie & Solera Cask Cellars</h2>
+        <h2 class="section-title">The Oldest Distilled Spirit of Europe</h2>
       </div>
 
       <div class="timeline-grid">
         <div class="timeline-card">
-          <div class="timeline-year">1310 • Armagnac Charter</div>
-          <h3 class="timeline-title">Prior Vital du Four</h3>
-          <p class="timeline-desc">First written medical manuscript documenting 40 virtues of Gascony Armagnac eau-de-vie spirit.</p>
+          <div class="timeline-year">1310 • Vital Du Four</div>
+          <h3 class="timeline-title">Armagnac Medical Treatise</h3>
+          <p class="timeline-desc">Cardinal Vital Du Four wrote 40 virtues of Armagnac in Gascony, predating Cognac by over 150 years.</p>
         </div>
 
         <div class="timeline-card">
-          <div class="timeline-year">1700s • Spanish Solera</div>
+          <div class="timeline-year">1700s • Spanish Solera System</div>
           <h3 class="timeline-title">Brandy de Jerez</h3>
-          <p class="timeline-desc">Matured spirit through cascading tier casks previously holding fragrant Oloroso and Pedro Ximénez sherry.</p>
+          <p class="timeline-desc">Andalusia perfected aging wine spirits in seasoned Sherry oak casks utilizing dynamic Solera criaderas.</p>
         </div>
 
         <div class="timeline-card">
-          <div class="timeline-year">1553 • Normandy Cider</div>
-          <h3 class="timeline-title">Gilles de Gouberville</h3>
-          <p class="timeline-desc">First recorded distillation of cider into apple eau-de-vie in Normandy: the foundation of Calvados.</p>
+          <div class="timeline-year">1900s • Pisco & Calvados</div>
+          <h3 class="timeline-title">Fruit Eau-de-Vie Terroirs</h3>
+          <p class="timeline-desc">Regional designations for Normandy apple cider brandy (Calvados) and South American grape spirits (Pisco).</p>
         </div>
       </div>
     </section>
@@ -88,7 +91,7 @@
     <section class="section-container">
       <div class="section-header">
         <p class="section-subtitle">GLOBAL TERROIR</p>
-        <h2 class="section-title">World Map of Brandy Distillation</h2>
+        <h2 class="section-title">World Map of Fruit & Grape Brandy</h2>
         <p style="font-size: 0.95rem; color: var(--text-body); max-width: 650px; margin: 0.5rem auto 0;">
           Click any highlighted pin to explore fruit eau-de-vie traditions and filter brandies from that specific region.
         </p>
@@ -100,7 +103,7 @@
     </section>
 
     <section class="toolbar-section">
-      <input type="text" id="searchInput" class="input-control" placeholder="🔍 Search by name, house, notes or flavor tags...">
+      <input type="text" id="searchInput" class="input-control" placeholder="🔍 Search by name, fruit, notes or flavor tags...">
       <select id="styleSelect" class="select-control"><option value="all">All Styles</option></select>
       <select id="regionSelect" class="select-control"><option value="all">All Regions</option></select>
       <select id="sortSelect" class="select-control">

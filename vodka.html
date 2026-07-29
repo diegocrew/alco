@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vodka Field Guide: Glacial Purity & 100 Decoded Vodkas</title>
-  <meta name="description" content="Explore vodka origins, arctic pure filtration methods, single-estate winter wheat, rye, and potato spirits with 100 decoded vodkas.">
+  <title>Vodka Field Guide: Terroir, Glacial Purity & 100 Decoded Vodkas</title>
+  <meta name="description" content="Vodka guide decoding winter wheat, rye, potato, and glacial water purities with 100 decoded vodkas.">
   
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <link rel="stylesheet" href="css/themes.css">
@@ -16,8 +16,10 @@
   <header class="site-header">
     <div class="header-container">
       <a href="index.html" class="brand-logo">
-        <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M8 22h8"/><path d="M7 10h10"/><path d="M12 15v7"/><path d="M12 2a5 5 0 0 0-5 5v3h10V7a5 5 0 0 0-5-5z"/>
+        <!-- DEDICATED VODKA LOGO -->
+        <svg class="brand-icon" viewBox="0 0 32 32" fill="none" stroke="#7bb4ec" stroke-width="2">
+          <path d="M16 2v28M2 16h28M6 6l20 20M6 26L26 6"/>
+          <circle cx="16" cy="16" r="3" fill="#7bb4ec"/>
         </svg>
         <div>
           <span class="brand-title">The Field Guide</span>
@@ -47,7 +49,7 @@
       <p class="hero-subtitle">THE FIELD GUIDE VOL. II</p>
       <h1 class="hero-title">100 Vodka Styles, Decoded</h1>
       <p class="hero-description">
-        Decoded across eastern European rye traditions, Scandinavian winter wheat single estates, and arctic glacial water sources.
+        Glacial spring water, single-estate Dankowskie diamond rye, Swedish winter wheat, and Finnish heirloom barley.
       </p>
 
       <div class="filter-bar-container">
@@ -61,26 +63,26 @@
     <section class="section-container" style="padding-top: 0;">
       <div class="section-header">
         <p class="section-subtitle">ORIGIN STORY</p>
-        <h2 class="section-title">The Vodka Belt & Filtration Masters</h2>
+        <h2 class="section-title">The Quest for Absolute Purity</h2>
       </div>
 
       <div class="timeline-grid">
         <div class="timeline-card">
-          <div class="timeline-year">1400s • Monastic Stills</div>
-          <h3 class="timeline-title">Aqua Vitae of the North</h3>
-          <p class="timeline-desc">First documented in Polish court records and Moscow monasteries as medicinal spirits distilled from grain mash.</p>
+          <div class="timeline-year">1405 • Polish Gorzałka</div>
+          <h3 class="timeline-title">Medicinal Spirit Origins</h3>
+          <p class="timeline-desc">First written mention of vodka in Sandomierz court documents in Poland used for herbs and medicine.</p>
         </div>
 
         <div class="timeline-card">
-          <div class="timeline-year">1879 • Continuous Rectification</div>
-          <h3 class="timeline-title">Lars Olsson Smith</h3>
-          <p class="timeline-desc">Pioneered fractional column distillation in Sweden, removing fusel oils to create Absolut Rent Brännvin.</p>
+          <div class="timeline-year">1894 • Mendeleev Formula</div>
+          <h3 class="timeline-title">Standard 40% ABV Proof</h3>
+          <p class="timeline-desc">Russian imperial standard for vodka distillation established at 40% ABV by weight and volume.</p>
         </div>
 
         <div class="timeline-card">
-          <div class="timeline-year">Modern • Filtration Arts</div>
-          <h3 class="timeline-title">Birch Charcoal & Freeze Filtration</h3>
-          <p class="timeline-desc">Filtered through quartz sand, silver threads, and active birch charcoal to achieve crystal clarity.</p>
+          <div class="timeline-year">1970s • Modern Rectification</div>
+          <h3 class="timeline-title">Multi-Column Fractional Stills</h3>
+          <p class="timeline-desc">Introduction of multi-column distillation towers removing volatile aldehydes to reach 96% raw purity.</p>
         </div>
       </div>
     </section>
@@ -88,9 +90,9 @@
     <section class="section-container">
       <div class="section-header">
         <p class="section-subtitle">GLOBAL TERROIR</p>
-        <h2 class="section-title">World Map of Vodka Distillation</h2>
+        <h2 class="section-title">World Map of Vodka Terroir</h2>
         <p style="font-size: 0.95rem; color: var(--text-body); max-width: 650px; margin: 0.5rem auto 0;">
-          Click any highlighted pin to explore local filtration methods and filter vodkas from that specific region.
+          Click any highlighted pin to explore raw ingredients and filter vodkas from that specific region.
         </p>
       </div>
 
@@ -100,7 +102,7 @@
     </section>
 
     <section class="toolbar-section">
-      <input type="text" id="searchInput" class="input-control" placeholder="🔍 Search by name, distillery, notes or flavor tags...">
+      <input type="text" id="searchInput" class="input-control" placeholder="🔍 Search by name, raw material, notes or flavor tags...">
       <select id="styleSelect" class="select-control"><option value="all">All Styles</option></select>
       <select id="regionSelect" class="select-control"><option value="all">All Regions</option></select>
       <select id="sortSelect" class="select-control">

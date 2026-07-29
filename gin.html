@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gin Field Guide: Botanicals & 100 Decoded Gins</title>
-  <meta name="description" content="Botanical gin guide decoding London Dry, Old Tom, Plymouth, and contemporary craft steepings with 100 decoded gins.">
+  <title>Gin Field Guide: Botanicals, Juniper & 100 Decoded Gins</title>
+  <meta name="description" content="Gin guide decoding London Dry, Old Tom, Navy Strength, and Japanese botanicals with 100 decoded gins.">
   
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <link rel="stylesheet" href="css/themes.css">
@@ -16,8 +16,11 @@
   <header class="site-header">
     <div class="header-container">
       <a href="index.html" class="brand-logo">
-        <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M8 22h8"/><path d="M7 10h10"/><path d="M12 15v7"/><path d="M12 2a5 5 0 0 0-5 5v3h10V7a5 5 0 0 0-5-5z"/>
+        <!-- DEDICATED GIN LOGO -->
+        <svg class="brand-icon" viewBox="0 0 32 32" fill="none" stroke="#3ca59d" stroke-width="2">
+          <path d="M16 28V8M16 20l-6-6M16 14l6-6M16 10l-4-4"/>
+          <circle cx="10" cy="14" r="2.5" fill="#3ca59d"/>
+          <circle cx="22" cy="8" r="2.5" fill="#3ca59d"/>
         </svg>
         <div>
           <span class="brand-title">The Field Guide</span>
@@ -47,7 +50,7 @@
       <p class="hero-subtitle">THE FIELD GUIDE VOL. V</p>
       <h1 class="hero-title">100 Gin Styles, Decoded</h1>
       <p class="hero-description">
-        London Dry precision, vapour-infused basket botanicals, and wild forage gins.
+        Botanical steepings, wild juniper berries, citrus peel infusions, London Dry precision, and modern apothecary alchemy.
       </p>
 
       <div class="filter-bar-container">
@@ -61,26 +64,26 @@
     <section class="section-container" style="padding-top: 0;">
       <div class="section-header">
         <p class="section-subtitle">ORIGIN STORY</p>
-        <h2 class="section-title">Juniper & Botanical Alchemy</h2>
+        <h2 class="section-title">From Dutch Jenever to London Dry</h2>
       </div>
 
       <div class="timeline-grid">
         <div class="timeline-card">
-          <div class="timeline-year">1600s • Dutch Genever</div>
-          <h3 class="timeline-title">Dutch Courage</h3>
-          <p class="timeline-desc">First distilled in Holland as malted grain spirit infused with juniper berries for medicinal use.</p>
+          <div class="timeline-year">1500s • Dutch Jenever</div>
+          <h3 class="timeline-title">Medicinal Apothecary Spirit</h3>
+          <p class="timeline-desc">First distilled in Holland by Dr. Franciscus Sylvius using malt spirit infused with juniper berries for kidney ailments.</p>
         </div>
 
         <div class="timeline-card">
-          <div class="timeline-year">1700s • London Gin Craze</div>
-          <h3 class="timeline-title">Old Tom & Apothecary Stills</h3>
-          <p class="timeline-desc">Unregulated street distillation evolved into sweetened Old Tom and refined London Dry copper pot still recipes.</p>
+          <div class="timeline-year">1730s • London Gin Craze</div>
+          <h3 class="timeline-title">Drunk for a Penny</h3>
+          <p class="timeline-desc">Unregulated urban distillation swept 18th-century London leading to Parliament's strict Gin Acts of 1736 and 1751.</p>
         </div>
 
         <div class="timeline-card">
-          <div class="timeline-year">Modern • Craft Botanical Age</div>
-          <h3 class="timeline-title">Vapour Infusion Baskets</h3>
-          <p class="timeline-desc">Carter-Head stills suspend native herbs, flowers, and citrus peel above boiling spirits to extract subtle aromatics.</p>
+          <div class="timeline-year">1831 • Coffey Still Invention</div>
+          <h3 class="timeline-title">London Dry Precision</h3>
+          <p class="timeline-desc">Aeneas Coffey's continuous column still allowed distillers to produce pure neutral spirit redistilled with clean botanicals.</p>
         </div>
       </div>
     </section>
@@ -88,9 +91,9 @@
     <section class="section-container">
       <div class="section-header">
         <p class="section-subtitle">GLOBAL TERROIR</p>
-        <h2 class="section-title">World Map of Gin Distillation</h2>
+        <h2 class="section-title">World Map of Gin Botanicals</h2>
         <p style="font-size: 0.95rem; color: var(--text-body); max-width: 650px; margin: 0.5rem auto 0;">
-          Click any highlighted pin to explore botanical steepings and filter gins from that specific region.
+          Click any highlighted pin to explore local botanical recipes and filter gins from that specific region.
         </p>
       </div>
 
@@ -100,7 +103,7 @@
     </section>
 
     <section class="toolbar-section">
-      <input type="text" id="searchInput" class="input-control" placeholder="🔍 Search by name, distillery, notes or flavor tags...">
+      <input type="text" id="searchInput" class="input-control" placeholder="🔍 Search by name, botanical notes or flavor tags...">
       <select id="styleSelect" class="select-control"><option value="all">All Styles</option></select>
       <select id="regionSelect" class="select-control"><option value="all">All Regions</option></select>
       <select id="sortSelect" class="select-control">

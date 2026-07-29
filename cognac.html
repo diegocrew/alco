@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cognac Field Guide: Grande Champagne & 100 Decoded Cognacs</title>
-  <meta name="description" content="Cognac encyclopedia decoding VSOP, XO, Extra, Grande Champagne terroir, and French oak aging with 100 decoded cognacs.">
+  <title>Cognac Field Guide: Grande Champagne, Alembics & 100 Decoded Cognacs</title>
+  <meta name="description" content="Cognac guide decoding Grande Champagne, Petite Champagne, Borderies, VSOP, XO, and Limousin oak barrels with 100 decoded cognacs.">
   
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <link rel="stylesheet" href="css/themes.css">
@@ -16,8 +16,11 @@
   <header class="site-header">
     <div class="header-container">
       <a href="index.html" class="brand-logo">
-        <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M8 22h8"/><path d="M7 10h10"/><path d="M12 15v7"/><path d="M12 2a5 5 0 0 0-5 5v3h10V7a5 5 0 0 0-5-5z"/>
+        <!-- DEDICATED COGNAC LOGO -->
+        <svg class="brand-icon" viewBox="0 0 32 32" fill="none" stroke="#e5a038" stroke-width="2">
+          <path d="M8 26h16M12 26V18l-4-6V8h16v4l-4 6v8"/>
+          <path d="M16 4v4M12 4h8"/>
+          <circle cx="16" cy="14" r="2" fill="#e5a038"/>
         </svg>
         <div>
           <span class="brand-title">The Field Guide</span>
@@ -47,11 +50,11 @@
       <p class="hero-subtitle">THE FIELD GUIDE VOL. VI</p>
       <h1 class="hero-title">100 Cognac Styles, Decoded</h1>
       <p class="hero-description">
-        Double distillation in copper alembic pot stills aged in French Limousin and Tronçais oak.
+        Charente Ugni Blanc grape distillation, Charentais alembic copper stills, XO aging, and Limousin oak barrels.
       </p>
 
       <div class="filter-bar-container">
-        <button class="filter-btn active" data-serve="all">ALL CLASSIFICATIONS</button>
+        <button class="filter-btn active" data-serve="all">ALL STYLES</button>
         <button class="filter-btn" data-serve="neat">BEST NEAT</button>
         <button class="filter-btn" data-serve="ice">BEST ON ICE</button>
         <button class="filter-btn" data-serve="cocktail">BEST IN COCKTAILS</button>
@@ -61,26 +64,26 @@
     <section class="section-container" style="padding-top: 0;">
       <div class="section-header">
         <p class="section-subtitle">ORIGIN STORY</p>
-        <h2 class="section-title">Grande Champagne & Charentais Stills</h2>
+        <h2 class="section-title">Charentais Double Distillation</h2>
       </div>
 
       <div class="timeline-grid">
         <div class="timeline-card">
-          <div class="timeline-year">1600s • Dutch Trade</div>
-          <h3 class="timeline-title">Brandewijn Transport</h3>
-          <p class="timeline-desc">Dutch merchants distilled Charente wine to preserve it during sea transport, creating 'brandewijn' (burnt wine).</p>
+          <div class="timeline-year">1630s • Dutch Merchants</div>
+          <h3 class="timeline-title">Burnt Wine (Brandwijn)</h3>
+          <p class="timeline-desc">Dutch traders distilled low-alcohol Charente wine to preserve it for sea transport back to Northern Europe.</p>
         </div>
 
         <div class="timeline-card">
-          <div class="timeline-year">1700s • Charentais Alembics</div>
-          <h3 class="timeline-title">Double Pot Still Distillation</h3>
-          <p class="timeline-desc">Perfected copper pot still double distillation (brouillis and bonne chauffe) preserving grape aromas.</p>
+          <div class="timeline-year">1700s • Charentais Pot Still</div>
+          <h3 class="timeline-title">Double Distillation Art</h3>
+          <p class="timeline-desc">Perfected the two-stage copper alembic distillation (Repasse) capturing delicate grape esters and rancio aromas.</p>
         </div>
 
         <div class="timeline-card">
-          <div class="timeline-year">1909 • AOC Cru Boundaries</div>
-          <h3 class="timeline-title">Grande Champagne & Borderies</h3>
-          <p class="timeline-desc">Established legal AOC crus protecting Grande Champagne, Petite Champagne, and Borderies chalk soils.</p>
+          <div class="timeline-year">1909 • Six Cru Regions</div>
+          <h3 class="timeline-title">Cru Terroir Boundaries</h3>
+          <p class="timeline-desc">French decree defined the 6 Cognac crus: Grande Champagne, Petite Champagne, Borderies, Fins Bois, Bons Bois, and Bois Ordinaires.</p>
         </div>
       </div>
     </section>
@@ -90,7 +93,7 @@
         <p class="section-subtitle">GLOBAL TERROIR</p>
         <h2 class="section-title">World Map of Cognac Crus</h2>
         <p style="font-size: 0.95rem; color: var(--text-body); max-width: 650px; margin: 0.5rem auto 0;">
-          Click any highlighted pin to explore Charente terroir and filter cognacs from that specific cru.
+          Click any highlighted pin to explore Charente cru terroir and filter cognacs from that specific region.
         </p>
       </div>
 
