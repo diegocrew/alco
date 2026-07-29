@@ -1,5 +1,6 @@
 /* Rum Field Encyclopedia - 100 Curated Rum Dataset */
 
+window.SPIRIT_TYPE = 'rum';
 window.RUM_DATA = [
   {
     id: "rum-001",
@@ -13,7 +14,7 @@ window.RUM_DATA = [
     distilledFrom: "FRESH CANE JUICE",
     flavorTags: ["Grassy", "Vegetal", "Floral", "Mineral"],
     serveModes: { neat: true, ice: false, cocktail: false },
-    signaturePour: "Ti' Punch — rhum, lime, cane syrup, no ice",
+    signaturePour: "Ti' Punch: rhum, lime, cane syrup, no ice",
     description: "The only rum style with legal AOC protection, guarding its cane-juice method the way Cognac guards grapes."
   },
   {
@@ -28,8 +29,8 @@ window.RUM_DATA = [
     distilledFrom: "CHARCOAL FILTERED",
     flavorTags: ["Clean", "Light Citrus", "Subtle Sweet"],
     serveModes: { neat: false, ice: false, cocktail: true },
-    signaturePour: "Daiquiri & Mojito — built to stay out of the way of the other ingredients",
-    description: "Filtering strips colour and roughness on purpose — this is a mixer's rum, not a sipper's."
+    signaturePour: "Daiquiri & Mojito: built to stay out of the way of the other ingredients",
+    description: "Filtering strips colour and roughness on purpose: this is a mixer's rum, not a sipper's."
   },
   {
     id: "rum-003",
@@ -58,7 +59,7 @@ window.RUM_DATA = [
     distilledFrom: "HIGH-ESTER MOLASSES",
     flavorTags: ["Overripe Banana", "Funk", "Pineapple", "Spice"],
     serveModes: { neat: true, ice: true, cocktail: true },
-    signaturePour: "Mai Tai — bold ester kick anchoring classic Tiki recipes",
+    signaturePour: "Mai Tai: bold ester kick anchoring classic Tiki recipes",
     description: "Extended wild fermentation yields intense fruity esters known locally as 'hogo'."
   },
   {
@@ -103,7 +104,7 @@ window.RUM_DATA = [
     distilledFrom: "BLACKSTRAP MOLASSES",
     flavorTags: ["Treacle", "Licorice", "Coffee", "Charred Oak"],
     serveModes: { neat: false, ice: true, cocktail: true },
-    signaturePour: "Painkiller — navy rum, pineapple, orange juice, cream of coconut",
+    signaturePour: "Painkiller: navy rum, pineapple, orange juice, cream of coconut",
     description: "Crafted according to the Admiralty's centuries-old official blend specification."
   },
   {
@@ -118,7 +119,7 @@ window.RUM_DATA = [
     distilledFrom: "RAW SUGARCANE JUICE",
     flavorTags: ["Fresh Grass", "Green Apple", "Earthy", "Peppery"],
     serveModes: { neat: false, ice: false, cocktail: true },
-    signaturePour: "Caipirinha — muddled lime, sugar, unaged Cachaça, crushed ice",
+    signaturePour: "Caipirinha: muddled lime, sugar, unaged Cachaça, crushed ice",
     description: "Brazil's national spirit distilled from fresh juice and limited to single-column distillation."
   },
   {
@@ -148,7 +149,7 @@ window.RUM_DATA = [
     distilledFrom: "UNAGED HIGH ESTER",
     flavorTags: ["Banana Bread", "Funky Fruit", "Fire", "Citrus Zest"],
     serveModes: { neat: false, ice: true, cocktail: true },
-    signaturePour: "Wray & Ting — overproof rum with grapefruit soda",
+    signaturePour: "Wray & Ting: overproof rum with grapefruit soda",
     description: "Unfiltered 126-proof icon that commands reverence across Caribbean culture."
   },
   {
@@ -194,7 +195,7 @@ window.RUM_DATA = [
     flavorTags: ["Toasted Coconut", "Bourbon Spice", "Plum", "Oak"],
     serveModes: { neat: true, ice: true, cocktail: false },
     signaturePour: "Sipped neat with a drop of spring water",
-    description: "Pinnacle of pure rum making — zero added sugar, additives, or chill filtration."
+    description: "Pinnacle of pure rum making: zero added sugar, additives, or chill filtration."
   },
   {
     id: "rum-014",
@@ -328,7 +329,7 @@ window.RUM_DATA = [
     distilledFrom: "HIGH-ESTER POT STILL",
     flavorTags: ["Overripe Banana", "Funky Ester", "Plrum", "Cedar"],
     serveModes: { neat: false, ice: true, cocktail: true },
-    signaturePour: "Kingston Negroni — equal parts Smith & Cross, Campari, Sweet Vermouth",
+    signaturePour: "Kingston Negroni: equal parts Smith & Cross, Campari, Sweet Vermouth",
     description: "Traditional Wedderburn and Plummer style pot still rum bottled at British Navy proof."
   },
   {
@@ -418,7 +419,7 @@ window.RUM_DATA = [
     distilledFrom: "WOODEN POT STILLS",
     flavorTags: ["Molasses", "Toffee", "Espresso", "Oak Spice"],
     serveModes: { neat: true, ice: true, cocktail: true },
-    signaturePour: "Classic Grog — rum, lime, sugar, dash of water",
+    signaturePour: "Classic Grog: rum, lime, sugar, dash of water",
     description: "Original Royal Navy specification proof where spirits were tested with gunpowder."
   },
   {
@@ -453,7 +454,7 @@ window.RUM_DATA = [
   }
 ];
 
-// Dynamically generate remaining rums up to 100 entries with authentic craft styles
+// Dynamically populate remaining rums to reach 100 entries without emdashes
 (function generateFullRumCatalog() {
   const regions = [
     { name: "FRENCH CARIBBEAN", countries: ["Martinique", "Guadeloupe", "Marie-Galante"], style: "Agricole", abv: 45, distilledFrom: "CANE JUICE" },
@@ -504,7 +505,6 @@ window.RUM_DATA = [
     const pour = signaturePours[(i - 31) % signaturePours.length];
     const desc = descriptors[(i - 31) % descriptors.length];
     
-    // Vary serve modes dynamically
     const neatVal = (i % 2 === 0);
     const iceVal = (i % 3 === 0 || i % 2 === 0);
     const cocktailVal = (i % 3 !== 0);
@@ -528,4 +528,7 @@ window.RUM_DATA = [
       description: desc
     });
   }
+
+  // Expose as global SPIRIT_DATA
+  window.SPIRIT_DATA = window.RUM_DATA;
 })();

@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wine Field Guide — Terroir, Appellations & Cellars</title>
-  <meta name="description" content="Decoded wine guide exploring Bordeaux, Tuscany, Burgundy, Napa Valley, and natural orange winemaking.">
+  <title>Wine Field Guide: Terroir, Appellations & 100 Decoded Wines</title>
+  <meta name="description" content="Decoded wine guide exploring Bordeaux, Tuscany, Burgundy, Napa Valley, and natural orange winemaking with 100 decoded wines.">
+  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <link rel="stylesheet" href="css/themes.css">
   <link rel="stylesheet" href="css/styles.css">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+
   <header class="site-header">
     <div class="header-container">
       <a href="index.html" class="brand-logo">
@@ -21,6 +24,7 @@
           <span class="brand-subtitle">WINE ENCYCLOPEDIA</span>
         </div>
       </a>
+
       <nav>
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link">Home</a></li>
@@ -37,39 +41,103 @@
       </nav>
     </div>
   </header>
+
   <main>
     <section class="hero-section">
-      <p class="hero-subtitle">THE FIELD GUIDE • VOL. IV</p>
-      <h1 class="hero-title">Terroir, Grapes & Cellar Arts</h1>
-      <p class="hero-description">Old World appellation rules and New World varietal expressions decoded.</p>
+      <p class="hero-subtitle">THE FIELD GUIDE VOL. IV</p>
+      <h1 class="hero-title">100 Wine Styles, Decoded</h1>
+      <p class="hero-description">
+        Old World appellation rules and New World varietal expressions decoded.
+      </p>
+
       <div class="filter-bar-container">
-        <button class="filter-btn active">ALL WINES</button>
-        <button class="filter-btn">BORDEAUX REDS</button>
-        <button class="filter-btn">BURGUNDY PINOT</button>
-        <button class="filter-btn">TUSCAN CHIANTI</button>
+        <button class="filter-btn active" data-serve="all">ALL WINES</button>
+        <button class="filter-btn" data-serve="neat">BEST NEAT</button>
+        <button class="filter-btn" data-serve="ice">BEST ON ICE</button>
+        <button class="filter-btn" data-serve="cocktail">BEST IN PAIRINGS</button>
       </div>
     </section>
 
-    <section class="cards-grid">
-      <article class="rum-card">
-        <div class="card-header-meta"><span class="card-region">BORDEAUX FRANCE</span><span class="card-index">01</span></div>
-        <h3 class="card-title">Château Margaux Premier Grand Cru</h3>
-        <p class="card-subtitle">Médoc AOC (Cabernet Sauvignon & Merlot)</p>
-        <div class="card-abv-section">
-          <div class="abv-ring-wrapper">
-            <svg class="abv-ring-svg" viewBox="0 0 60 60"><circle class="abv-ring-bg" cx="30" cy="30" r="26"></circle><circle class="abv-ring-fill" cx="30" cy="30" r="26" stroke-dasharray="163" stroke-dashoffset="60"></circle></svg>
-            <span class="abv-text">13.5%</span>
-          </div>
-          <div class="abv-details"><span class="abv-details-label">HARVEST & SOIL</span><span class="abv-details-val">GRAVEL & CLAY</span></div>
+    <section class="section-container" style="padding-top: 0;">
+      <div class="section-header">
+        <p class="section-subtitle">ORIGIN STORY</p>
+        <h2 class="section-title">Terroir, Grapes & Cellar Arts</h2>
+      </div>
+
+      <div class="timeline-grid">
+        <div class="timeline-card">
+          <div class="timeline-year">6000 BCE • Cradle of Wine</div>
+          <h3 class="timeline-title">Ancient Qvevri Fermentation</h3>
+          <p class="timeline-desc">Earliest evidence of wild grape vinification discovered in subterranean clay amphorae in Georgia.</p>
         </div>
-        <div class="flavor-tags"><span class="tag-pill">Blackcurrant</span><span class="tag-pill">Cedarwood</span><span class="tag-pill">Violet</span><span class="tag-pill">Graphite</span></div>
-        <div class="serve-buttons"><div class="serve-btn active">CELLAR TEMP</div><div class="serve-btn active">DECANTER</div><div class="serve-btn">PAIRING</div></div>
-        <div class="signature-pour"><span class="pour-label">SIGNATURE POUR</span><span class="pour-text">Decanted 90 minutes before serving with roasted rack of lamb</span></div>
-        <p class="field-notes">"Silky tannins and perfumed floral complexity defining Left Bank Bordeaux elegance."</p>
-      </article>
+
+        <div class="timeline-card">
+          <div class="timeline-year">1855 • Bordeaux Classification</div>
+          <h3 class="timeline-title">Napoleon III Ranking</h3>
+          <p class="timeline-desc">Established the historic 1855 classification ranking Left Bank Bordeaux châteaux into five Grand Cru classes.</p>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-year">1976 • Judgment of Paris</div>
+          <h3 class="timeline-title">Blind Tasting Revolution</h3>
+          <p class="timeline-desc">California Cabernet Sauvignon and Chardonnay defeated top French Grand Crus in blind Paris tasting.</p>
+        </div>
+      </div>
     </section>
+
+    <section class="section-container">
+      <div class="section-header">
+        <p class="section-subtitle">GLOBAL TERROIR</p>
+        <h2 class="section-title">World Map of Wine Appellations</h2>
+        <p style="font-size: 0.95rem; color: var(--text-body); max-width: 650px; margin: 0.5rem auto 0;">
+          Click any highlighted pin to explore appellation traditions and filter wines from that specific region.
+        </p>
+      </div>
+
+      <div class="map-wrapper">
+        <div id="map"></div>
+      </div>
+    </section>
+
+    <section class="toolbar-section">
+      <input type="text" id="searchInput" class="input-control" placeholder="🔍 Search by name, vineyard, notes or flavor tags...">
+      <select id="styleSelect" class="select-control"><option value="all">All Styles</option></select>
+      <select id="regionSelect" class="select-control"><option value="all">All Regions</option></select>
+      <select id="sortSelect" class="select-control">
+        <option value="default">Sort by Index</option>
+        <option value="abv-high">Highest ABV</option>
+        <option value="abv-low">Lowest ABV</option>
+        <option value="name">Name (A-Z)</option>
+      </select>
+    </section>
+
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <span id="countBadge" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-primary); letter-spacing: 0.1em; text-transform: uppercase;">
+        Loading catalog...
+      </span>
+    </div>
+
+    <section id="cardsContainer" class="cards-grid"></section>
   </main>
-  <footer class="site-footer"><div class="footer-content"><h3 class="footer-title">The Wine Field Guide</h3></div></footer>
+
+  <div id="detailModal" class="modal-backdrop">
+    <div class="modal-content">
+      <button id="modalCloseBtn" class="modal-close-btn">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <h3 class="footer-title">The Wine Field Guide</h3>
+      <p class="footer-text">Part of The Grand Spirits Encyclopedia for GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="data/wines.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/map.js"></script>
   <script>lucide.createIcons();</script>
 </body>
 </html>

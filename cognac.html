@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cognac Field Guide — Charente Ugni Blanc & Charentais Stills</title>
-  <meta name="description" content="Cognac encyclopedia decoding VSOP, XO, Extra, Grande Champagne terroir, and French oak aging.">
+  <title>Cognac Field Guide: Grande Champagne & 100 Decoded Cognacs</title>
+  <meta name="description" content="Cognac encyclopedia decoding VSOP, XO, Extra, Grande Champagne terroir, and French oak aging with 100 decoded cognacs.">
+  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <link rel="stylesheet" href="css/themes.css">
   <link rel="stylesheet" href="css/styles.css">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+
   <header class="site-header">
     <div class="header-container">
       <a href="index.html" class="brand-logo">
@@ -21,6 +24,7 @@
           <span class="brand-subtitle">COGNAC ENCYCLOPEDIA</span>
         </div>
       </a>
+
       <nav>
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link">Home</a></li>
@@ -37,39 +41,103 @@
       </nav>
     </div>
   </header>
+
   <main>
     <section class="hero-section">
-      <p class="hero-subtitle">THE FIELD GUIDE • VOL. VI</p>
-      <h1 class="hero-title">Grande Champagne & Charentais Stills</h1>
-      <p class="hero-description">Double distillation in copper alembic pot stills aged in French Limousin and Troncais oak.</p>
+      <p class="hero-subtitle">THE FIELD GUIDE VOL. VI</p>
+      <h1 class="hero-title">100 Cognac Styles, Decoded</h1>
+      <p class="hero-description">
+        Double distillation in copper alembic pot stills aged in French Limousin and Tronçais oak.
+      </p>
+
       <div class="filter-bar-container">
-        <button class="filter-btn active">ALL COGNAC CLASSIFICATIONS</button>
-        <button class="filter-btn">VSOP</button>
-        <button class="filter-btn">XO EXTRA</button>
-        <button class="filter-btn">GRANDE CHAMPAGNE</button>
+        <button class="filter-btn active" data-serve="all">ALL CLASSIFICATIONS</button>
+        <button class="filter-btn" data-serve="neat">BEST NEAT</button>
+        <button class="filter-btn" data-serve="ice">BEST ON ICE</button>
+        <button class="filter-btn" data-serve="cocktail">BEST IN COCKTAILS</button>
       </div>
     </section>
 
-    <section class="cards-grid">
-      <article class="rum-card">
-        <div class="card-header-meta"><span class="card-region">COGNAC FRANCE</span><span class="card-index">01</span></div>
-        <h3 class="card-title">Rémy Martin XO</h3>
-        <p class="card-subtitle">Fine Champagne Cognac (85% Grande Champagne)</p>
-        <div class="card-abv-section">
-          <div class="abv-ring-wrapper">
-            <svg class="abv-ring-svg" viewBox="0 0 60 60"><circle class="abv-ring-bg" cx="30" cy="30" r="26"></circle><circle class="abv-ring-fill" cx="30" cy="30" r="26" stroke-dasharray="163" stroke-dashoffset="35"></circle></svg>
-            <span class="abv-text">40%</span>
-          </div>
-          <div class="abv-details"><span class="abv-details-label">DISTILLATION</span><span class="abv-details-val">ON THE LEES</span></div>
+    <section class="section-container" style="padding-top: 0;">
+      <div class="section-header">
+        <p class="section-subtitle">ORIGIN STORY</p>
+        <h2 class="section-title">Grande Champagne & Charentais Stills</h2>
+      </div>
+
+      <div class="timeline-grid">
+        <div class="timeline-card">
+          <div class="timeline-year">1600s • Dutch Trade</div>
+          <h3 class="timeline-title">Brandewijn Transport</h3>
+          <p class="timeline-desc">Dutch merchants distilled Charente wine to preserve it during sea transport, creating 'brandewijn' (burnt wine).</p>
         </div>
-        <div class="flavor-tags"><span class="tag-pill">Candied Orange</span><span class="tag-pill">Jasmine</span><span class="tag-pill">Rancio</span><span class="tag-pill">Cinnamon</span></div>
-        <div class="serve-buttons"><div class="serve-btn active">NEAT</div><div class="serve-btn">SINGLE CUBE</div><div class="serve-btn">SIDE CAR</div></div>
-        <div class="signature-pour"><span class="pour-label">SIGNATURE POUR</span><span class="pour-text">Neat in a crystal tulip glass warmed gently by palm heat</span></div>
-        <p class="field-notes">"Blend of up to 400 eaux-de-vie aged up to 37 years with exquisite velvet structure."</p>
-      </article>
+
+        <div class="timeline-card">
+          <div class="timeline-year">1700s • Charentais Alembics</div>
+          <h3 class="timeline-title">Double Pot Still Distillation</h3>
+          <p class="timeline-desc">Perfected copper pot still double distillation (brouillis and bonne chauffe) preserving grape aromas.</p>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-year">1909 • AOC Cru Boundaries</div>
+          <h3 class="timeline-title">Grande Champagne & Borderies</h3>
+          <p class="timeline-desc">Established legal AOC crus protecting Grande Champagne, Petite Champagne, and Borderies chalk soils.</p>
+        </div>
+      </div>
     </section>
+
+    <section class="section-container">
+      <div class="section-header">
+        <p class="section-subtitle">GLOBAL TERROIR</p>
+        <h2 class="section-title">World Map of Cognac Crus</h2>
+        <p style="font-size: 0.95rem; color: var(--text-body); max-width: 650px; margin: 0.5rem auto 0;">
+          Click any highlighted pin to explore Charente terroir and filter cognacs from that specific cru.
+        </p>
+      </div>
+
+      <div class="map-wrapper">
+        <div id="map"></div>
+      </div>
+    </section>
+
+    <section class="toolbar-section">
+      <input type="text" id="searchInput" class="input-control" placeholder="🔍 Search by name, house, notes or flavor tags...">
+      <select id="styleSelect" class="select-control"><option value="all">All Styles</option></select>
+      <select id="regionSelect" class="select-control"><option value="all">All Regions</option></select>
+      <select id="sortSelect" class="select-control">
+        <option value="default">Sort by Index</option>
+        <option value="abv-high">Highest ABV</option>
+        <option value="abv-low">Lowest ABV</option>
+        <option value="name">Name (A-Z)</option>
+      </select>
+    </section>
+
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <span id="countBadge" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-primary); letter-spacing: 0.1em; text-transform: uppercase;">
+        Loading catalog...
+      </span>
+    </div>
+
+    <section id="cardsContainer" class="cards-grid"></section>
   </main>
-  <footer class="site-footer"><div class="footer-content"><h3 class="footer-title">The Cognac Field Guide</h3></div></footer>
+
+  <div id="detailModal" class="modal-backdrop">
+    <div class="modal-content">
+      <button id="modalCloseBtn" class="modal-close-btn">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <h3 class="footer-title">The Cognac Field Guide</h3>
+      <p class="footer-text">Part of The Grand Spirits Encyclopedia for GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="data/cognacs.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/map.js"></script>
   <script>lucide.createIcons();</script>
 </body>
 </html>

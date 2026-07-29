@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Whisky Field Guide — Peat, Malt & Charred Oak</title>
-  <meta name="description" content="Explore single malt Scotch, Kentucky bourbon, Irish pot still, and Japanese whisky precision.">
+  <title>Whisky Field Guide: Peat, Malt & 100 Decoded Whiskies</title>
+  <meta name="description" content="Explore single malt Scotch, Kentucky bourbon, Irish pot still, and Japanese whisky precision with 100 decoded whiskies.">
+  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <link rel="stylesheet" href="css/themes.css">
   <link rel="stylesheet" href="css/styles.css">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+
   <header class="site-header">
     <div class="header-container">
       <a href="index.html" class="brand-logo">
@@ -21,6 +24,7 @@
           <span class="brand-subtitle">WHISKY ENCYCLOPEDIA</span>
         </div>
       </a>
+
       <nav>
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link">Home</a></li>
@@ -37,39 +41,103 @@
       </nav>
     </div>
   </header>
+
   <main>
     <section class="hero-section">
-      <p class="hero-subtitle">THE FIELD GUIDE • VOL. III</p>
-      <h1 class="hero-title">Oak, Peat & Malt Science</h1>
-      <p class="hero-description">Decoded across Scottish Glen valleys, Kentucky rickhouses, and Japanese alpine distilleries.</p>
+      <p class="hero-subtitle">THE FIELD GUIDE VOL. III</p>
+      <h1 class="hero-title">100 Whisky Styles, Decoded</h1>
+      <p class="hero-description">
+        Decoded across Scottish Glen valleys, Kentucky rickhouses, and Japanese alpine distilleries.
+      </p>
+
       <div class="filter-bar-container">
-        <button class="filter-btn active">ALL WHISKIES</button>
-        <button class="filter-btn">ISLAY PEATED</button>
-        <button class="filter-btn">KENTUCKY BOURBON</button>
-        <button class="filter-btn">JAPANESE SINGLE MALT</button>
+        <button class="filter-btn active" data-serve="all">ALL STYLES</button>
+        <button class="filter-btn" data-serve="neat">BEST NEAT</button>
+        <button class="filter-btn" data-serve="ice">BEST ON ICE</button>
+        <button class="filter-btn" data-serve="cocktail">BEST IN COCKTAILS</button>
       </div>
     </section>
 
-    <section class="cards-grid">
-      <article class="rum-card">
-        <div class="card-header-meta"><span class="card-region">ISLAY SCOTLAND</span><span class="card-index">01</span></div>
-        <h3 class="card-title">Lagavulin 16 Year</h3>
-        <p class="card-subtitle">Islay Malt Distillery</p>
-        <div class="card-abv-section">
-          <div class="abv-ring-wrapper">
-            <svg class="abv-ring-svg" viewBox="0 0 60 60"><circle class="abv-ring-bg" cx="30" cy="30" r="26"></circle><circle class="abv-ring-fill" cx="30" cy="30" r="26" stroke-dasharray="163" stroke-dashoffset="30"></circle></svg>
-            <span class="abv-text">43%</span>
-          </div>
-          <div class="abv-details"><span class="abv-details-label">MALT & SMOKE</span><span class="abv-details-val">HEAVY PEAT FIRE</span></div>
+    <section class="section-container" style="padding-top: 0;">
+      <div class="section-header">
+        <p class="section-subtitle">ORIGIN STORY</p>
+        <h2 class="section-title">Oak, Peat & Malt Traditions</h2>
+      </div>
+
+      <div class="timeline-grid">
+        <div class="timeline-card">
+          <div class="timeline-year">1494 • Aqua Vitae</div>
+          <h3 class="timeline-title">Exchequer Rolls</h3>
+          <p class="timeline-desc">First Scottish record granting Friar John Cor 8 bolls of malt to make aqua vitae by order of the King.</p>
         </div>
-        <div class="flavor-tags"><span class="tag-pill">Peat Smoke</span><span class="tag-pill">Iodine</span><span class="tag-pill">Dried Fig</span><span class="tag-pill">Charred Oak</span></div>
-        <div class="serve-buttons"><div class="serve-btn active">NEAT</div><div class="serve-btn">SINGLE CUBE</div><div class="serve-btn">WATER DROP</div></div>
-        <div class="signature-pour"><span class="pour-label">SIGNATURE POUR</span><span class="pour-text">Neat in a Glencairn glass with 3 drops of pure spring water</span></div>
-        <p class="field-notes">"Massive peat-smoke typical of southern Islay, balanced by rich sherry cask sweetness."</p>
-      </article>
+
+        <div class="timeline-card">
+          <div class="timeline-year">1823 • Excise Act</div>
+          <h3 class="timeline-title">Legal Commercial Distilling</h3>
+          <p class="timeline-desc">Paved the way for licensed Highland and Speyside distilleries to construct iconic swan neck copper pot stills.</p>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-year">1923 • Japanese Pioneer</div>
+          <h3 class="timeline-title">Shinjiro Torii & Masataka Taketsuru</h3>
+          <p class="timeline-desc">Established Yamazaki outside Kyoto, fusing Scottish pot still distilling with Japanese climate and Mizunara oak.</p>
+        </div>
+      </div>
     </section>
+
+    <section class="section-container">
+      <div class="section-header">
+        <p class="section-subtitle">GLOBAL TERROIR</p>
+        <h2 class="section-title">World Map of Whisky Distillation</h2>
+        <p style="font-size: 0.95rem; color: var(--text-body); max-width: 650px; margin: 0.5rem auto 0;">
+          Click any highlighted pin to explore malt traditions and filter whiskies from that specific region.
+        </p>
+      </div>
+
+      <div class="map-wrapper">
+        <div id="map"></div>
+      </div>
+    </section>
+
+    <section class="toolbar-section">
+      <input type="text" id="searchInput" class="input-control" placeholder="🔍 Search by name, distillery, notes or flavor tags...">
+      <select id="styleSelect" class="select-control"><option value="all">All Styles</option></select>
+      <select id="regionSelect" class="select-control"><option value="all">All Regions</option></select>
+      <select id="sortSelect" class="select-control">
+        <option value="default">Sort by Index</option>
+        <option value="abv-high">Highest ABV</option>
+        <option value="abv-low">Lowest ABV</option>
+        <option value="name">Name (A-Z)</option>
+      </select>
+    </section>
+
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <span id="countBadge" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-primary); letter-spacing: 0.1em; text-transform: uppercase;">
+        Loading catalog...
+      </span>
+    </div>
+
+    <section id="cardsContainer" class="cards-grid"></section>
   </main>
-  <footer class="site-footer"><div class="footer-content"><h3 class="footer-title">The Whisky Field Guide</h3></div></footer>
+
+  <div id="detailModal" class="modal-backdrop">
+    <div class="modal-content">
+      <button id="modalCloseBtn" class="modal-close-btn">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <h3 class="footer-title">The Whisky Field Guide</h3>
+      <p class="footer-text">Part of The Grand Spirits Encyclopedia for GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="data/whiskies.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/map.js"></script>
   <script>lucide.createIcons();</script>
 </body>
 </html>

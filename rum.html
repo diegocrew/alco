@@ -3,30 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rum Field Guide — Origins, Map & 100 Rum Styles Decoded</title>
+  <title>Rum Field Guide: Origins, Map & 100 Rum Styles Decoded</title>
   <meta name="description" content="Explore rum origin history, interactive distillation map, and 100 decoded rum styles filtered by neat, on ice, or cocktail serving preferences.">
   
-  <!-- Leaflet Map CSS CDN -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/themes.css">
   <link rel="stylesheet" href="css/styles.css">
-
-  <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-  <!-- SITE HEADER & NAVIGATION -->
   <header class="site-header">
     <div class="header-container">
       <a href="index.html" class="brand-logo">
         <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M8 22h8"/>
-          <path d="M7 10h10"/>
-          <path d="M12 15v7"/>
-          <path d="M12 2a5 5 0 0 0-5 5v3h10V7a5 5 0 0 0-5-5z"/>
+          <path d="M8 22h8"/><path d="M7 10h10"/><path d="M12 15v7"/><path d="M12 2a5 5 0 0 0-5 5v3h10V7a5 5 0 0 0-5-5z"/>
         </svg>
         <div>
           <span class="brand-title">The Field Guide</span>
@@ -38,24 +29,27 @@
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="rum.html" class="nav-link active">Rum</a></li>
-          <li><a href="#" class="nav-link">Whisky <span class="badge-tag">Soon</span></a></li>
-          <li><a href="#" class="nav-link">Wine <span class="badge-tag">Soon</span></a></li>
-          <li><a href="#" class="nav-link">Gin <span class="badge-tag">Soon</span></a></li>
+          <li><a href="vodka.html" class="nav-link">Vodka</a></li>
+          <li><a href="whisky.html" class="nav-link">Whisky</a></li>
+          <li><a href="wine.html" class="nav-link">Wine</a></li>
+          <li><a href="gin.html" class="nav-link">Gin</a></li>
+          <li><a href="cognac.html" class="nav-link">Cognac</a></li>
+          <li><a href="brandy.html" class="nav-link">Brandy</a></li>
+          <li><a href="tequila.html" class="nav-link">Tequila</a></li>
+          <li><a href="champagne.html" class="nav-link">Champagne</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- HERO SECTION (MATCHING IMAGE DESIGN) -->
     <section class="hero-section">
-      <p class="hero-subtitle">THE FIELD GUIDE</p>
-      <h1 class="hero-title">Rum Styles, Decoded</h1>
+      <p class="hero-subtitle">THE FIELD GUIDE VOL. I</p>
+      <h1 class="hero-title">100 Rum Styles, Decoded</h1>
       <p class="hero-description">
-        Filter by how you'd actually drink each one — some are built for a glass with a single cube, some only work with three other ingredients.
+        Filter by how you would actually drink each one: built for a glass with a single cube, or built for classic cocktails.
       </p>
 
-      <!-- SERVE PREFERENCE FILTER BAR (MATCHING USER REFERENCE IMAGE) -->
       <div class="filter-bar-container">
         <button class="filter-btn active" data-serve="all">ALL STYLES</button>
         <button class="filter-btn" data-serve="neat">BEST NEAT</button>
@@ -64,7 +58,6 @@
       </div>
     </section>
 
-    <!-- ORIGIN STORY & HISTORICAL TIMELINE -->
     <section class="section-container" style="padding-top: 0;">
       <div class="section-header">
         <p class="section-subtitle">ORIGIN STORY</p>
@@ -75,30 +68,29 @@
         <div class="timeline-card">
           <div class="timeline-year">1640s • Caribbean Origins</div>
           <h3 class="timeline-title">Plantation Distillation</h3>
-          <p class="timeline-desc">First distilled on Caribbean sugarcane plantations when enslaved workers discovered molasses—a byproduct of sugar refining—could be fermented into alcohol.</p>
+          <p class="timeline-desc">First distilled on Caribbean sugarcane plantations when molasses was discovered to be fermentable into high spirit.</p>
         </div>
 
         <div class="timeline-card">
           <div class="timeline-year">1655 • Royal Navy Tot</div>
           <h3 class="timeline-title">The Navy Ration</h3>
-          <p class="timeline-desc">When Britain captured Jamaica, the Royal Navy replaced daily French brandy rations with rum. The daily 'tot' at 54.5% ABV continued until Black Tot Day in 1970.</p>
+          <p class="timeline-desc">When Britain captured Jamaica, daily French brandy rations were replaced with rum at 54.5% ABV proof.</p>
         </div>
 
         <div class="timeline-card">
           <div class="timeline-year">1800s • Wooden Stills</div>
           <h3 class="timeline-title">Demerara & Pot Stills</h3>
-          <p class="timeline-desc">British Guiana developed unique greenheart wooden pot and Coffey stills along the Demerara river, creating unmatched heavy, dark, aromatic spirit profiles.</p>
+          <p class="timeline-desc">British Guiana developed unique greenheart wooden pot stills creating heavy aromatic spirit profiles.</p>
         </div>
 
         <div class="timeline-card">
           <div class="timeline-year">1996 • AOC Protection</div>
           <h3 class="timeline-title">French Agricole AOC</h3>
-          <p class="timeline-desc">Martinique earned the prestigious Appellation d'Origine Contrôlée (AOC) for Rhum Agricole, regulating fresh sugarcane juice distillation like Fine Cognac.</p>
+          <p class="timeline-desc">Martinique earned Appellation d'Origine Contrôlée (AOC) protection for fresh sugarcane juice Rhum Agricole.</p>
         </div>
       </div>
     </section>
 
-    <!-- INTERACTIVE WORLD MAP SECTION -->
     <section class="section-container">
       <div class="section-header">
         <p class="section-subtitle">GLOBAL TERROIR</p>
@@ -113,36 +105,10 @@
       </div>
     </section>
 
-    <!-- TOOLBAR & SECONDARY CONTROLS -->
     <section class="toolbar-section">
       <input type="text" id="searchInput" class="input-control" placeholder="🔍 Search by name, distillery, notes or flavor tags...">
-      
-      <select id="styleSelect" class="select-control">
-        <option value="all">All Styles</option>
-        <option value="Agricole">Rhum Agricole</option>
-        <option value="Pot Still">Jamaican Pot Still</option>
-        <option value="White">White / Light</option>
-        <option value="Gold">Gold / Amber</option>
-        <option value="Demerara">Demerara Dark</option>
-        <option value="Solera">Solera Aged</option>
-        <option value="Navy">Navy Strength</option>
-        <option value="Cachaça">Cachaça</option>
-        <option value="Spiced">Spiced</option>
-      </select>
-
-      <select id="regionSelect" class="select-control">
-        <option value="all">All Regions</option>
-        <option value="Martinique">Martinique & Guadeloupe</option>
-        <option value="Jamaica">Jamaica</option>
-        <option value="Barbados">Barbados</option>
-        <option value="Guyana">Guyana / Demerara</option>
-        <option value="Puerto Rico">Puerto Rico & Cuba</option>
-        <option value="Venezuela">Venezuela & Colombia</option>
-        <option value="Guatemala">Guatemala & Central America</option>
-        <option value="Brazil">Brazil (Cachaça)</option>
-        <option value="Mauritius">Indian Ocean</option>
-      </select>
-
+      <select id="styleSelect" class="select-control"><option value="all">All Styles</option></select>
+      <select id="regionSelect" class="select-control"><option value="all">All Regions</option></select>
       <select id="sortSelect" class="select-control">
         <option value="default">Sort by Index</option>
         <option value="abv-high">Highest ABV</option>
@@ -157,13 +123,9 @@
       </span>
     </div>
 
-    <!-- CARDS GRID (DYNAMICALLY POPULATED WITH 100 RUM ENTRIES) -->
-    <section id="cardsContainer" class="cards-grid">
-      <!-- Populated via js/app.js -->
-    </section>
+    <section id="cardsContainer" class="cards-grid"></section>
   </main>
 
-  <!-- DETAIL MODAL -->
   <div id="detailModal" class="modal-backdrop">
     <div class="modal-content">
       <button id="modalCloseBtn" class="modal-close-btn">&times;</button>
@@ -171,24 +133,17 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-content">
       <h3 class="footer-title">The Rum Field Guide</h3>
-      <p class="footer-text">
-        Part of The Grand Spirits Encyclopedia. Designed for simple static hosting on GitHub Pages.
-      </p>
-      <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">&copy; 2026 The Field Guide • All Rights Reserved</p>
+      <p class="footer-text">Part of The Grand Spirits Encyclopedia for GitHub Pages.</p>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="data/rums.js"></script>
   <script src="js/app.js"></script>
   <script src="js/map.js"></script>
-  <script>
-    lucide.createIcons();
-  </script>
+  <script>lucide.createIcons();</script>
 </body>
 </html>
