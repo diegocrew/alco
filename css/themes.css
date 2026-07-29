@@ -1,7 +1,6 @@
-/* Global Theme Design System & Per-Alcohol Color Palette Tokens */
+/* Global Theme Design System & All 9 Alcohol Color Palette Tokens */
 
 :root {
-  /* Default / Global Theme (Field Guide Editorial) */
   --font-serif: 'Playfair Display', 'Cinzel', Georgia, serif;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'Space Grotesk', monospace;
@@ -36,7 +35,7 @@
 }
 
 /* --------------------------------------------------
-   RUM THEME (Warm Mahogany, Golden Amber, Dark Barrel)
+   1. RUM THEME (Warm Mahogany, Golden Amber, Galleon)
    -------------------------------------------------- */
 [data-theme="rum"] {
   --bg-page: #19110d;
@@ -45,31 +44,44 @@
   --bg-card: #2d1d16;
   --bg-card-hover: #38241c;
   --bg-pill: #3a261c;
-  --bg-pill-active: #c86528;
 
   --text-title: #f8ede3;
   --text-body: #d6c6b8;
   --text-muted: #958173;
-  --text-highlight: #f3a537;
 
   --accent-primary: #e69c37;
   --accent-secondary: #c86528;
   --accent-ring: #e69c37;
 
-  --badge-neat: #b35322;
-  --badge-ice: #2c6e80;
-  --badge-cocktail: #933827;
-
   --border-card: #452c20;
   --border-active: #e69c37;
-  
-  --map-land: #2e1e17;
-  --map-water: #140d0a;
-  --map-marker: #e69c37;
 }
 
 /* --------------------------------------------------
-   WHISKY THEME (Charred Oak, Peat Smoke, Barley Gold)
+   2. VODKA THEME (Glacial Ice, Frost Blue, Arctic Steel)
+   -------------------------------------------------- */
+[data-theme="vodka"] {
+  --bg-page: #0a1118;
+  --bg-header: #060a0f;
+  --bg-surface: #121e2b;
+  --bg-card: #182839;
+  --bg-card-hover: #20344a;
+  --bg-pill: #22384f;
+
+  --text-title: #f0f7ff;
+  --text-body: #c5d8ed;
+  --text-muted: #6b8cae;
+
+  --accent-primary: #7bb4ec;
+  --accent-secondary: #3b82f6;
+  --accent-ring: #7bb4ec;
+
+  --border-card: #253e59;
+  --border-active: #7bb4ec;
+}
+
+/* --------------------------------------------------
+   3. WHISKY THEME (Peat Smoke, Charred Oak, Barley Gold)
    -------------------------------------------------- */
 [data-theme="whisky"] {
   --bg-page: #121417;
@@ -77,14 +89,14 @@
   --bg-surface: #1a1e24;
   --bg-card: #21262e;
   --bg-card-hover: #29303a;
-  
+  --bg-pill: #2d3542;
+
   --text-title: #f2f4f7;
   --text-body: #cad1db;
   --text-muted: #7b8696;
-  --text-highlight: #dda94b;
 
   --accent-primary: #dda94b;
-  --accent-secondary: #a86c29;
+  --accent-secondary: #c46d28;
   --accent-ring: #dda94b;
 
   --border-card: #333c4a;
@@ -92,7 +104,7 @@
 }
 
 /* --------------------------------------------------
-   WINE THEME (Burgundy Velvet, Ruby Red, Vintage Gold)
+   4. WINE THEME (Tuscan Vineyard, Burgundy Velvet, Ruby)
    -------------------------------------------------- */
 [data-theme="wine"] {
   --bg-page: #190c12;
@@ -100,14 +112,14 @@
   --bg-surface: #24121b;
   --bg-card: #2f1723;
   --bg-card-hover: #3b1d2c;
+  --bg-pill: #422031;
 
   --text-title: #faedf3;
   --text-body: #dec8d3;
   --text-muted: #967484;
-  --text-highlight: #d4af37;
 
-  --accent-primary: #8b263e;
-  --accent-secondary: #d4af37;
+  --accent-primary: #d4af37;
+  --accent-secondary: #8b263e;
   --accent-ring: #d4af37;
 
   --border-card: #4a2337;
@@ -115,7 +127,7 @@
 }
 
 /* --------------------------------------------------
-   GIN THEME (Pine Slate, Botanical Emerald, Slate Copper)
+   5. GIN THEME (Botanical Press, Juniper Teal, Sage)
    -------------------------------------------------- */
 [data-theme="gin"] {
   --bg-page: #0d1717;
@@ -123,16 +135,108 @@
   --bg-surface: #142424;
   --bg-card: #1a2f2f;
   --bg-card-hover: #223c3c;
+  --bg-pill: #274545;
 
   --text-title: #edf6f6;
   --text-body: #c4dcda;
   --text-muted: #739895;
-  --text-highlight: #3ca59d;
 
   --accent-primary: #3ca59d;
-  --accent-secondary: #206359;
+  --accent-secondary: #5a9e6f;
   --accent-ring: #3ca59d;
 
   --border-card: #294747;
   --border-active: #3ca59d;
+}
+
+/* --------------------------------------------------
+   6. COGNAC THEME (Crystal Decanter, Light Swirls, Copper)
+   -------------------------------------------------- */
+[data-theme="cognac"] {
+  --bg-page: #1a0f0a;
+  --bg-header: #110906;
+  --bg-surface: #25160e;
+  --bg-card: #301c12;
+  --bg-card-hover: #3d2417;
+  --bg-pill: #45291b;
+
+  --text-title: #fcf1e8;
+  --text-body: #e3cdbe;
+  --text-muted: #9c7b67;
+
+  --accent-primary: #e5a038;
+  --accent-secondary: #9c4b18;
+  --accent-ring: #e5a038;
+
+  --border-card: #4d2e1c;
+  --border-active: #e5a038;
+}
+
+/* --------------------------------------------------
+   7. BRANDY THEME (Warm Tavern Cellar, Terracotta, Oak)
+   -------------------------------------------------- */
+[data-theme="brandy"] {
+  --bg-page: #1b120c;
+  --bg-header: #120b07;
+  --bg-surface: #261a12;
+  --bg-card: #312117;
+  --bg-card-hover: #3d2a1d;
+  --bg-pill: #453021;
+
+  --text-title: #faeee6;
+  --text-body: #dfc8b8;
+  --text-muted: #997b69;
+
+  --accent-primary: #d97736;
+  --accent-secondary: #a64b24;
+  --accent-ring: #d97736;
+
+  --border-card: #4d3324;
+  --border-active: #d97736;
+}
+
+/* --------------------------------------------------
+   8. TEQUILA THEME (Blue Agave, Sunbaked Earth, Sand)
+   -------------------------------------------------- */
+[data-theme="tequila"] {
+  --bg-page: #17150f;
+  --bg-header: #0e0d09;
+  --bg-surface: #221f17;
+  --bg-card: #2b271d;
+  --bg-card-hover: #363124;
+  --bg-pill: #3e3829;
+
+  --text-title: #f7f4ea;
+  --text-body: #d8d1bf;
+  --text-muted: #918972;
+
+  --accent-primary: #489b74;
+  --accent-secondary: #c87d46;
+  --accent-ring: #489b74;
+
+  --border-card: #423d2e;
+  --border-active: #489b74;
+}
+
+/* --------------------------------------------------
+   9. CHAMPAGNE THEME (Sparkling Gold, Effervescent Black)
+   -------------------------------------------------- */
+[data-theme="champagne"] {
+  --bg-page: #0f0f12;
+  --bg-header: #09090b;
+  --bg-surface: #17171d;
+  --bg-card: #1f1f27;
+  --bg-card-hover: #292934;
+  --bg-pill: #2e2e3b;
+
+  --text-title: #fbf7ed;
+  --text-body: #dcd6c5;
+  --text-muted: #8d8776;
+
+  --accent-primary: #f3cf7a;
+  --accent-secondary: #c59b27;
+  --accent-ring: #f3cf7a;
+
+  --border-card: #363645;
+  --border-active: #f3cf7a;
 }

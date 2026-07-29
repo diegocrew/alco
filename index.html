@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Spirits Field Guide — Curated Spirits Encyclopedia</title>
-  <meta name="description" content="Explore origin stories, world distillation maps, flavor profiles, and detailed field guide catalog for fine spirits.">
+  <title>The Spirits Field Guide — 9 Decoded Spirit Categories</title>
+  <meta name="description" content="An interactive encyclopedia decoding 9 major alcohol categories: Rum, Vodka, Whisky, Wine, Gin, Cognac, Brandy, Tequila, and Champagne.">
   
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="css/themes.css">
@@ -20,7 +20,7 @@
     <div class="header-container">
       <a href="index.html" class="brand-logo">
         <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M8 22h8f"/>
+          <path d="M8 22h8"/>
           <path d="M7 10h10"/>
           <path d="M12 15v7"/>
           <path d="M12 2a5 5 0 0 0-5 5v3h10V7a5 5 0 0 0-5-5z"/>
@@ -35,9 +35,14 @@
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link active">Home</a></li>
           <li><a href="rum.html" class="nav-link">Rum</a></li>
-          <li><a href="#" class="nav-link">Whisky <span class="badge-tag">Soon</span></a></li>
-          <li><a href="#" class="nav-link">Wine <span class="badge-tag">Soon</span></a></li>
-          <li><a href="#" class="nav-link">Gin <span class="badge-tag">Soon</span></a></li>
+          <li><a href="vodka.html" class="nav-link">Vodka</a></li>
+          <li><a href="whisky.html" class="nav-link">Whisky</a></li>
+          <li><a href="wine.html" class="nav-link">Wine</a></li>
+          <li><a href="gin.html" class="nav-link">Gin</a></li>
+          <li><a href="cognac.html" class="nav-link">Cognac</a></li>
+          <li><a href="brandy.html" class="nav-link">Brandy</a></li>
+          <li><a href="tequila.html" class="nav-link">Tequila</a></li>
+          <li><a href="champagne.html" class="nav-link">Champagne</a></li>
         </ul>
       </nav>
     </div>
@@ -46,84 +51,175 @@
   <!-- HERO SECTION -->
   <main>
     <section class="hero-section">
-      <p class="hero-subtitle">THE FIELD GUIDE VOL. I</p>
-      <h1 class="hero-title">Decodes, Origins & World Distillates</h1>
+      <p class="hero-subtitle">THE FIELD GUIDE VOLUMES I — IX</p>
+      <h1 class="hero-title">Nine Spirits, Decoded & Explored</h1>
       <p class="hero-description">
-        An interactive compendium of global spirits, origin stories, tasting dynamics, and curated field catalogs for spirit enthusiasts and bartenders alike.
+        Select any spirit category below to explore origin narratives, historical fermentation techniques, global distillation maps, and curated field catalogs.
       </p>
     </section>
 
-    <!-- SPIRIT HUBS GRID -->
+    <!-- 3x3 SPIRIT HUBS GRID -->
     <section class="section-container" style="padding-top: 0;">
-      <div class="spirit-hub-grid">
+      <div class="spirit-hub-grid" style="grid-template-columns: repeat(3, 1fr);">
         
-        <!-- RUM CARD -->
-        <a href="rum.html" class="spirit-hub-card" style="border-color: var(--accent-gold);">
-          <div class="hub-card-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80');">
-            <span class="hub-card-badge">VOL. I • ACTIVE</span>
+        <!-- ROW 1: RUM, VODKA, WHISKY -->
+        
+        <!-- 1. RUM CARD -->
+        <a href="rum.html" class="spirit-hub-card" style="border-color: #e69c37;">
+          <div class="hub-card-header" style="background-image: url('images/rum.jpg');">
+            <span class="hub-card-badge" style="background-color: #e69c37; color: #120e0b;">VOL. I • ACTIVE</span>
           </div>
-          <div class="hub-card-body">
-            <h2 class="hub-card-title">Rum</h2>
-            <p class="hub-card-desc">
-              From fresh sugarcane juice in Martinique to high-ester pot stills in Jamaica and wooden Demerara stills. Includes origin map & 100 rums catalog.
+          <div class="hub-card-body" style="background-color: #2d1d16;">
+            <h2 class="hub-card-title" style="color: #f8ede3;">Rum</h2>
+            <p class="hub-card-desc" style="color: #d6c6b8;">
+              From fresh sugarcane juice in Martinique to high-ester pot stills in Jamaica and wooden Demerara stills. Includes world map & 100 decoded rums.
             </p>
-            <div class="hub-card-footer">
+            <div class="hub-card-footer" style="color: #e69c37;">
               <span>EXPLORE RUM FIELD GUIDE →</span>
               <span>100 ENTRIES</span>
             </div>
           </div>
         </a>
 
-        <!-- WHISKY CARD (TEASER) -->
-        <div class="spirit-hub-card" style="opacity: 0.85;">
-          <div class="hub-card-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=600&q=80');">
-            <span class="hub-card-badge" style="background-color: var(--text-muted); color: #fff;">VOL. II • COMING SOON</span>
+        <!-- 2. VODKA CARD -->
+        <a href="vodka.html" class="spirit-hub-card" style="border-color: #7bb4ec;">
+          <div class="hub-card-header" style="background-image: url('images/vodka.jpg');">
+            <span class="hub-card-badge" style="background-color: #7bb4ec; color: #0a1118;">VOL. II • ACTIVE</span>
           </div>
-          <div class="hub-card-body">
-            <h2 class="hub-card-title">Whisky</h2>
-            <p class="hub-card-desc">
-              Single malts, peated Islay classics, Kentucky bourbon mash bills, and Japanese whisky terroir decoded.
+          <div class="hub-card-body" style="background-color: #182839;">
+            <h2 class="hub-card-title" style="color: #f0f7ff;">Vodka</h2>
+            <p class="hub-card-desc" style="color: #c5d8ed;">
+              Glacial purities, single-estate winter wheat, rye sharpness, and multi-rectified column distillation across Poland, Russia, and Scandinavia.
             </p>
-            <div class="hub-card-footer" style="color: var(--text-muted);">
-              <span>IN PREPARATION</span>
-              <span>VOL. II</span>
+            <div class="hub-card-footer" style="color: #7bb4ec;">
+              <span>EXPLORE VODKA GUIDE →</span>
+              <span>ARCTIC PURE</span>
             </div>
           </div>
-        </div>
+        </a>
 
-        <!-- WINE CARD (TEASER) -->
-        <div class="spirit-hub-card" style="opacity: 0.85;">
-          <div class="hub-card-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80');">
-            <span class="hub-card-badge" style="background-color: var(--text-muted); color: #fff;">VOL. III • COMING SOON</span>
+        <!-- 3. WHISKY CARD -->
+        <a href="whisky.html" class="spirit-hub-card" style="border-color: #dda94b;">
+          <div class="hub-card-header" style="background-image: url('images/whisky.jpg');">
+            <span class="hub-card-badge" style="background-color: #dda94b; color: #121417;">VOL. III • ACTIVE</span>
           </div>
-          <div class="hub-card-body">
-            <h2 class="hub-card-title">Wine</h2>
-            <p class="hub-card-desc">
-              Old World appellations vs New World terroir, grape varietals, fermentation science, and sommelier pairing notes.
+          <div class="hub-card-body" style="background-color: #21262e;">
+            <h2 class="hub-card-title" style="color: #f2f4f7;">Whisky</h2>
+            <p class="hub-card-desc" style="color: #cad1db;">
+              Peated Islay malts, charred Kentucky bourbon barrels, Highland copper stills, and Japanese precision wood finishing.
             </p>
-            <div class="hub-card-footer" style="color: var(--text-muted);">
-              <span>IN PREPARATION</span>
-              <span>VOL. III</span>
+            <div class="hub-card-footer" style="color: #dda94b;">
+              <span>EXPLORE WHISKY GUIDE →</span>
+              <span>OAK & PEAT</span>
             </div>
           </div>
-        </div>
+        </a>
 
-        <!-- GIN CARD (TEASER) -->
-        <div class="spirit-hub-card" style="opacity: 0.85;">
-          <div class="hub-card-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1608885898957-a559228e8749?auto=format&fit=crop&w=600&q=80');">
-            <span class="hub-card-badge" style="background-color: var(--text-muted); color: #fff;">VOL. IV • COMING SOON</span>
+        <!-- ROW 2: WINE, GIN, COGNAC -->
+
+        <!-- 4. WINE CARD -->
+        <a href="wine.html" class="spirit-hub-card" style="border-color: #d4af37;">
+          <div class="hub-card-header" style="background-image: url('images/wine.jpg');">
+            <span class="hub-card-badge" style="background-color: #d4af37; color: #190c12;">VOL. IV • ACTIVE</span>
           </div>
-          <div class="hub-card-body">
-            <h2 class="hub-card-title">Gin</h2>
-            <p class="hub-card-desc">
-              London Dry precision, botanical steepings, Old Tom historic styles, and contemporary craft distillations.
+          <div class="hub-card-body" style="background-color: #2f1723;">
+            <h2 class="hub-card-title" style="color: #faedf3;">Wine</h2>
+            <p class="hub-card-desc" style="color: #dec8d3;">
+              Old World appellations vs New World terroir. Bordeaux blends, Tuscan Sangiovese, and artisanal natural ferments.
             </p>
-            <div class="hub-card-footer" style="color: var(--text-muted);">
-              <span>IN PREPARATION</span>
-              <span>VOL. IV</span>
+            <div class="hub-card-footer" style="color: #d4af37;">
+              <span>EXPLORE WINE GUIDE →</span>
+              <span>TERROIR</span>
             </div>
           </div>
-        </div>
+        </a>
+
+        <!-- 5. GIN CARD -->
+        <a href="gin.html" class="spirit-hub-card" style="border-color: #3ca59d;">
+          <div class="hub-card-header" style="background-image: url('images/gin.jpg');">
+            <span class="hub-card-badge" style="background-color: #3ca59d; color: #0d1717;">VOL. V • ACTIVE</span>
+          </div>
+          <div class="hub-card-body" style="background-color: #1a2f2f;">
+            <h2 class="hub-card-title" style="color: #edf6f6;">Gin</h2>
+            <p class="hub-card-desc" style="color: #c4dcda;">
+              Botanical steepings, wild juniper berries, citrus peel infusions, London Dry precision, and modern apothecary alchemy.
+            </p>
+            <div class="hub-card-footer" style="color: #3ca59d;">
+              <span>EXPLORE GIN GUIDE →</span>
+              <span>BOTANICALS</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- 6. COGNAC CARD -->
+        <a href="cognac.html" class="spirit-hub-card" style="border-color: #e5a038;">
+          <div class="hub-card-header" style="background-image: url('images/cognac.jpg');">
+            <span class="hub-card-badge" style="background-color: #e5a038; color: #1a0f0a;">VOL. VI • ACTIVE</span>
+          </div>
+          <div class="hub-card-body" style="background-color: #301c12;">
+            <h2 class="hub-card-title" style="color: #fcf1e8;">Cognac</h2>
+            <p class="hub-card-desc" style="color: #e3cdbe;">
+              Charente Ugni Blanc grape distillation, Charentais alembic copper stills, XO aging, and Limousin oak barrels.
+            </p>
+            <div class="hub-card-footer" style="color: #e5a038;">
+              <span>EXPLORE COGNAC GUIDE →</span>
+              <span>GRANDE CHAMPAGNE</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- ROW 3: BRANDY, TEQUILA, CHAMPAGNE -->
+
+        <!-- 7. BRANDY CARD -->
+        <a href="brandy.html" class="spirit-hub-card" style="border-color: #d97736;">
+          <div class="hub-card-header" style="background-image: url('images/brandy.jpg');">
+            <span class="hub-card-badge" style="background-color: #d97736; color: #1b120c;">VOL. VII • ACTIVE</span>
+          </div>
+          <div class="hub-card-body" style="background-color: #312117;">
+            <h2 class="hub-card-title" style="color: #faeee6;">Brandy</h2>
+            <p class="hub-card-desc" style="color: #dfc8b8;">
+              Historic fruit eau-de-vie, Armagnac continuous stills, Jerez Spanish Solera brandies, and cellar master traditions.
+            </p>
+            <div class="hub-card-footer" style="color: #d97736;">
+              <span>EXPLORE BRANDY GUIDE →</span>
+              <span>EAU-DE-VIE</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- 8. TEQUILA CARD -->
+        <a href="tequila.html" class="spirit-hub-card" style="border-color: #489b74;">
+          <div class="hub-card-header" style="background-image: url('images/tequila.jpg');">
+            <span class="hub-card-badge" style="background-color: #489b74; color: #17150f;">VOL. VIII • ACTIVE</span>
+          </div>
+          <div class="hub-card-body" style="background-color: #2b271d;">
+            <h2 class="hub-card-title" style="color: #f7f4ea;">Tequila</h2>
+            <p class="hub-card-desc" style="color: #d8d1bf;">
+              Blue Weber agave harvesting, masonry brick ovens, Tahona stone pressing, Blanco purity, and Añejo oak aging in Jalisco.
+            </p>
+            <div class="hub-card-footer" style="color: #489b74;">
+              <span>EXPLORE TEQUILA GUIDE →</span>
+              <span>100% BLUE AGAVE</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- 9. CHAMPAGNE CARD -->
+        <a href="champagne.html" class="spirit-hub-card" style="border-color: #f3cf7a;">
+          <div class="hub-card-header" style="background-image: url('images/champagne.jpg');">
+            <span class="hub-card-badge" style="background-color: #f3cf7a; color: #0f0f12;">VOL. IX • ACTIVE</span>
+          </div>
+          <div class="hub-card-body" style="background-color: #1f1f27;">
+            <h2 class="hub-card-title" style="color: #fbf7ed;">Champagne</h2>
+            <p class="hub-card-desc" style="color: #dcd6c5;">
+              Méthode Champenoise, Pinot Noir, Chardonnay & Pinot Meunier blends, secondary bottle fermentation, and chalk cellars of Reims.
+            </p>
+            <div class="hub-card-footer" style="color: #f3cf7a;">
+              <span>EXPLORE CHAMPAGNE GUIDE →</span>
+              <span>EFFERVESCENT</span>
+            </div>
+          </div>
+        </a>
 
       </div>
     </section>
@@ -132,26 +228,26 @@
     <section class="section-container" style="border-top: 1px solid var(--border-card);">
       <div class="section-header">
         <p class="section-subtitle">FOUNDATIONS</p>
-        <h2 class="section-title">The Anatomy of Barrel Aging & Distillation</h2>
+        <h2 class="section-title">The Master Principles of Distillation</h2>
       </div>
 
       <div class="timeline-grid">
         <div class="timeline-card">
           <div class="timeline-year">01. Fermentation</div>
           <h3 class="timeline-title">Yeast & Sugars</h3>
-          <p class="timeline-desc">Whether starting from sugarcane juice, molasses, malted barley, or crushed grapes, fermentation converts raw fermentable sugars into ethanol and aromatic congeners.</p>
+          <p class="timeline-desc">Whether starting from sugarcane juice, agave hearts, malted barley, winter wheat, or pressed grapes, yeast turns natural sugars into ethanol and signature congeners.</p>
         </div>
 
         <div class="timeline-card">
           <div class="timeline-year">02. Distillation</div>
           <h3 class="timeline-title">Pot vs. Column</h3>
-          <p class="timeline-desc">Pot stills capture rich, heavy essential oils and esters in small batches, while continuous multi-column stills yield crisp, highly rectified clean spirits.</p>
+          <p class="timeline-desc">Copper alembic pot stills preserve rich essential oils and complex body, while continuous multi-column stills yield crisp, highly rectified pure spirits.</p>
         </div>
 
         <div class="timeline-card">
           <div class="timeline-year">03. Maturation</div>
           <h3 class="timeline-title">Wood & Climate</h3>
-          <p class="timeline-desc">Barrels breathe with temperature fluctuations. Tropical maturation accelerates flavor extraction up to three times faster than temperate European cellars.</p>
+          <p class="timeline-desc">Oak barrels breathe with seasonal temperature changes. Tropical and desert maturation accelerate flavor extraction compared to cool chalk cellars or mist-shrouded lochs.</p>
         </div>
       </div>
     </section>
@@ -160,8 +256,8 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-content">
-      <h3 class="footer-title">The Spirits Field Guide</h3>
-      <p class="footer-text">An open-access educational encyclopedia designed for GitHub Pages. Built for spirits appreciation and historical exploration.</p>
+      <h3 class="footer-title">The Grand Spirits Field Guide</h3>
+      <p class="footer-text">An open-access educational encyclopedia decoding 9 major spirit categories. Built for simple deployment on GitHub Pages.</p>
       <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">&copy; 2026 The Field Guide • All Rights Reserved</p>
     </div>
   </footer>
