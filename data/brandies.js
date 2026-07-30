@@ -1,124 +1,125 @@
-/* Brandy Field Encyclopedia - 100 Authentic Real World Brandies */
+/* Brandy Field Encyclopedia - real world brandies.
+   Row: [name, producer, country, region, style, abv, base, tags, pour, notes, modes]
+   modes bitmask: 1 = neat, 2 = on ice, 4 = cocktail */
 
-window.SPIRIT_TYPE = 'brandy';
-window.BRANDY_DATA = [
-  {
-    id: "brandy-001",
-    index: "01",
-    name: "Château de Laubade Bas-Armagnac",
-    distillery: "Château de Laubade",
-    country: "France",
-    region: "GASCONY FRANCE",
-    style: "Armagnac",
-    abv: 40,
-    distilledFrom: "SINGLE CONTINUOUS STILL",
-    flavorTags: ["Prune", "Toasted Oak", "Vanilla", "Hazelnut"],
-    serveModes: { neat: true, ice: true, cocktail: false },
-    signaturePour: "Neat after dinner paired with dark artisanal chocolate",
-    description: "Distilled once to retain maximum rustic ester weight and black oak barrel tannins."
-  },
-  {
-    id: "brandy-002",
-    index: "02",
-    name: "Torres 20 Hors d'Âge Solera",
-    distillery: "Familia Torres",
-    country: "Spain",
-    region: "JEREZ SPAIN",
-    style: "Brandy de Jerez",
-    abv: 40,
-    distilledFrom: "PARELLADA & UGNI BLANC",
-    flavorTags: ["Dried Fig", "Walnut", "Toffee", "Cinnamon"],
-    serveModes: { neat: true, ice: true, cocktail: true },
-    signaturePour: "On ice in a brandy balloon glass",
-    description: "Matured in Spanish oak solera casks previously used for rich Oloroso sherry."
-  },
-  {
-    id: "brandy-003",
-    index: "03",
-    name: "Château du Breuil Calvados Pays d'Auge",
-    distillery: "Château du Breuil",
-    country: "France",
-    region: "NORMANDY FRANCE",
-    style: "Calvados",
-    abv: 40,
-    distilledFrom: "NORMANDY CIDER APPLES",
-    flavorTags: ["Baked Apple", "Tarte Tatin", "Woodsmoke", "Vanilla"],
-    serveModes: { neat: true, ice: true, cocktail: true },
-    signaturePour: "Norman Hole: traditional neat pour between dinner courses",
-    description: "Double distilled from fermented Normandy cider apples and aged in oak barrels."
-  },
-  {
-    id: "brandy-004",
-    index: "04",
-    name: "Barsol Pisco Primero Quebranta",
-    distillery: "Bodega San Isidro",
-    country: "Peru",
-    region: "ICA VALLEY PERU",
-    style: "Pisco",
-    abv: 41.3,
-    distilledFrom: "QUEBRANTA GRAPE MUST",
-    flavorTags: ["Ripe Banana", "Pecan", "Red Apple", "Citrus Blossom"],
-    serveModes: { neat: false, ice: false, cocktail: true },
-    signaturePour: "Pisco Sour: 3 parts Pisco, 1 part lime, 1 part simple syrup, egg white",
-    description: "Distilled to proof without added water or wood aging according to strict Peruvian laws."
-  },
-  {
-    id: "brandy-005",
-    index: "05",
-    name: "Nardini Grappa Riserva 7 Anni",
-    distillery: "Distilleria Nardini",
-    country: "Italy",
-    region: "VENETO ITALY",
-    style: "Grappa",
-    abv: 45,
-    distilledFrom: "PRESS POMACE GRAPES",
-    flavorTags: ["Marzipan", "Dark Cherry", "Tobacco", "Oak Spice"],
-    serveModes: { neat: true, ice: false, cocktail: false },
-    signaturePour: "Digestif neat after espresso (Caffè Corretto)",
-    description: "Distilled from grape pomace in Bassano del Grappa and aged 7 years in Slavonian oak."
-  }
-];
+window.defineCatalog('brandy', 'brandy', [
 
-// Populate 95 additional REAL-WORLD authentic brandies
-(function generateRealBrandyCatalog() {
-  const realBrandies = [
-    { name: "Darroze 20 Year Les Grands Assemblages", distillery: "Francis Darroze", country: "France", region: "GASCONY FRANCE", style: "Armagnac", abv: 43, varietal: "BAS-ARMAGNAC STILL", tags: ["Dried Fig", "Leather", "Cocoa", "Vanilla"], pour: "Sipped neat in a snifter" },
-    { name: "Lepanto Solera Gran Reserva PX Finish", distillery: "González Byass", country: "Spain", region: "JEREZ SPAIN", style: "Brandy de Jerez", abv: 36, varietal: "PALOMINO GRAPES", tags: ["Raisin", "Toffee", "PX Sherry", "Toasted Oak"], pour: "Neat or over ice" },
-    { name: "Christian Drouin Calvados Selection", distillery: "Maison Christian Drouin", country: "France", region: "NORMANDY FRANCE", style: "Calvados", abv: 40, varietal: "NORMANDY CIDER APPLES", tags: ["Green Apple", "Fresh Cider", "Vanilla", "Wood"], pour: "Calvados Tonic or neat" },
-    { name: "Nonino Grappa Monovitigno Merlot", distillery: "Distillerie Nonino", country: "Italy", region: "FRIULI ITALY", style: "Grappa", abv: 41, varietal: "SINGLE MERLOT POMACE", tags: ["Rose Petal", "Ripe Cherry", "Almond", "Spice"], pour: "Sipped cool in a grappa glass" },
-    { name: "Ararat 20 Year Nairi Armenian Brandy", distillery: "Yerevan Brandy Company", country: "Armenia", region: "ARMENIA", style: "Armenian Brandy", abv: 40, varietal: "ARMENIAN OAK CASKS", tags: ["Dried Apricot", "Clove", "Dark Chocolate", "Walnut"], pour: "Neat after dinner" },
-    { name: "Cardenal Mendoza Solera Gran Reserva", distillery: "Sánchez Romate", country: "Spain", region: "JEREZ SPAIN", style: "Brandy de Jerez", abv: 40, varietal: "PEDRO XIMÉNEZ CASKS", tags: ["Plum", "Espresso", "Pedro Ximénez", "Oak"], pour: "Neat in a snifter" },
-    { name: "Gran Duque de Alba XO Solera", distillery: "Williams & Humbert", country: "Spain", region: "JEREZ SPAIN", style: "Brandy de Jerez", abv: 40, varietal: "DON GUIDO PX CASKS", tags: ["Dried Fig", "Vanilla", "Toasted Wood", "Cocoa"], pour: "On ice in a crystal snifter" },
-    { name: "Adrien Camut 18 Year Calvados", distillery: "Domaine Camut", country: "France", region: "NORMANDY FRANCE", style: "Calvados", abv: 40, varietal: "HEIRLOOM CIDER APPLES", tags: ["Baked Tarte Tatin", "Cinnamon", "Woodsmoke", "Vanilla"], pour: "Sipped neat" },
-    { name: "Père Magloire XO Calvados", distillery: "Père Magloire", country: "France", region: "NORMANDY FRANCE", style: "Calvados", abv: 40, varietal: "DOUBLE COPPER STILL", tags: ["RIPE APPLE", "Hazelnut", "Oak Spice", "Vanilla"], pour: "Neat after dinner" },
-    { name: "Berta Tre Soli Tre Grappa di Nebbiolo", distillery: "Distillerie Berta", country: "Italy", region: "PIEDMONT ITALY", style: "Grappa", abv: 43, varietal: "NEBBIOLO DA BAROLO", tags: ["Ripe Blackcurrant", "Cacao", "Vanilla", "Tobaco"], pour: "Neat in a grappa glass" },
-    { name: "Metaxa Private Reserve 12 Star", distillery: "House of Metaxa", country: "Greece", region: "GREECE", style: "Greek Spirit", abv: 40, varietal: "MUSCAT WINE & BOTANICALS", tags: ["Dried Orange", "Rose Petal", "Honey", "Oak"], pour: "Sipped neat or on ice" },
-    { name: "St-Rémy XO French Brandy", distillery: "St-Rémy Distillery", country: "France", region: "FRANCE", style: "French Brandy", abv: 40, varietal: "FRENCH OAK CASKS", tags: ["Vanilla", "Wood Spice", "Honey", "Dried Fruit"], pour: "French Brandy Manhattan" },
-    { name: "Osborne Carlos I Imperial Solera Gran Reserva", distillery: "Bodegas Osborne", country: "Spain", region: "JEREZ SPAIN", style: "Brandy de Jerez", abv: 40, varietal: "AMONTILLADO CASKS", tags: ["Almond", "Toffee", "Sherry Spice", "Oak"], pour: "Sipped neat" },
-    { name: "Copper & Kings American Craft Brandy", distillery: "Copper & Kings", country: "USA", region: "KENTUCKY USA", style: "American Brandy", abv: 45, distilledFrom: "BOURBON CASK FINISH", tags: ["Baked Apple", "Bourbon Spice", "Vanilla", "Oak"], pour: "Brandy Old Fashioned" },
-    { name: "Laird's Applejack 86 Proof", distillery: "Laird & Company", country: "USA", region: "NEW JERSEY USA", style: "Apple Brandy", abv: 43, distilledFrom: "100% APPLE BRANDY", tags: ["Fresh Apple", "Cinnamon", "Wood Spice", "Vanilla"], pour: "Jack Rose Cocktail with grenadine and lime" }
-  ];
+  /* ---------------- ARMAGNAC ---------------- */
+  ["Château de Laubade XO", "Château de Laubade", "France", "GASCONY FRANCE", "Bas-Armagnac", 40, "UGNI BLANC, BACO, FOLLE BLANCHE", ["Prune", "Toffee", "Vanilla", "Rancio"], "Neat in a tulip at room temperature", "The largest single Bas-Armagnac estate, holding one of the deepest vintage libraries in Gascony.", 1],
+  ["Darroze Les Grands Assemblages 20 Ans", "Francis Darroze", "France", "GASCONY FRANCE", "Bas-Armagnac", 43, "UGNI BLANC & BACO", ["Dried Fig", "Walnut", "Leather", "Long"], "Neat in a copita", "Francis Darroze built his reputation buying and ageing single-farm Armagnacs rather than distilling.", 1],
+  ["Delord Bas-Armagnac 25 Ans", "Delord Frères", "France", "GASCONY FRANCE", "Bas-Armagnac", 40, "FOUR ARMAGNAC GRAPES", ["Candied Orange", "Caramel", "Oak Spice", "Warm"], "Neat after dinner", "A family house in Lannepax distilling on a travelling alembic since 1893.", 1],
+  ["Baron de Sigognac 20 Year", "Baron de Sigognac", "France", "GASCONY FRANCE", "Bas-Armagnac", 40, "UGNI BLANC, BACO, COLOMBARD", ["Plum", "Hazelnut", "Vanilla", "Round"], "Neat in a tulip", "An estate at Château de Sigognac working single-vintage releases back to the 1920s.", 1],
+  ["Castarède Armagnac 1980s Vintage", "Maison Castarède", "France", "GASCONY FRANCE", "Bas-Armagnac", 40, "UGNI BLANC & BACO", ["Dried Apricot", "Tobacco", "Rancio", "Silky"], "Neat in a copita", "The oldest surviving Armagnac trading house, founded in 1832 and still family owned.", 1],
+  ["Domaine Boingnères Folle Blanche", "Domaine Boingnères", "France", "GASCONY FRANCE", "Bas-Armagnac", 48, "100% FOLLE BLANCHE", ["White Flower", "Citrus Peel", "Pepper", "Vivid"], "Neat in a tulip, no ice", "One of the last estates working entirely with the delicate, low-yielding Folle Blanche grape.", 1],
+  ["Château du Tariquet VSOP", "Château du Tariquet", "France", "GASCONY FRANCE", "Bas-Armagnac", 40, "UGNI BLANC & BACO", ["Pear", "Vanilla", "Toffee", "Approachable"], "Neat or over a single cube", "Better known abroad for its white wines, but distilling Armagnac since 1912.", 3],
+  ["Samalens Vieille Relique VSOP", "Samalens", "France", "GASCONY FRANCE", "Bas-Armagnac", 40, "UGNI BLANC & BACO", ["Prune", "Cocoa", "Spice", "Rich"], "Neat in a snifter", "A Laujuzan house holding stocks that run back to the 19th century.", 1],
+  ["Larressingle XO", "Larressingle", "France", "GASCONY FRANCE", "Armagnac", 40, "ARMAGNAC GRAPE BLEND", ["Dried Fruit", "Oak", "Caramel", "Smooth"], "Neat or in a Sidecar variation", "Named after the fortified medieval village in the Ténarèze sub-region.", 5],
+  ["Janneau Grand Armagnac XO", "Janneau", "France", "GASCONY FRANCE", "Armagnac", 40, "UGNI BLANC & BACO", ["Fig", "Vanilla", "Nutmeg", "Mellow"], "Neat after dinner", "Founded in Condom in 1851, and the first house to use double distillation in Armagnac.", 1],
+  ["Château de Pellehaut Âge 10 Ans", "Château de Pellehaut", "France", "GASCONY FRANCE", "Ténarèze Armagnac", 42, "UGNI BLANC & FOLLE BLANCHE", ["Quince", "Almond", "Vanilla", "Fresh"], "Neat in a tulip", "A Ténarèze estate whose brandies are noted for florality rather than heavy oak.", 1],
+  ["Dartigalongue Bas-Armagnac 15 Ans", "Dartigalongue", "France", "GASCONY FRANCE", "Bas-Armagnac", 40, "ARMAGNAC GRAPE BLEND", ["Raisin", "Walnut", "Caramel", "Layered"], "Neat in a copita", "Founded 1838 in Nogaro, the oldest continuously family-run Armagnac house.", 1],
+  ["Laballe Armagnac 1976", "Domaine de Laballe", "France", "GASCONY FRANCE", "Bas-Armagnac", 43, "BACO DOMINANT", ["Prune", "Coffee", "Leather", "Rancio"], "Neat in a tulip, undiluted", "Seven generations on sandy Landes soil, specialising in the hybrid Baco grape.", 1],
+  ["Marie Duffau Napoléon", "Marie Duffau", "France", "GASCONY FRANCE", "Bas-Armagnac", 40, "UGNI BLANC & BACO", ["Dried Fruit", "Toffee", "Vanilla", "Soft"], "Neat or over ice", "A Grand Bas-Armagnac house from Castelnau-d'Auzan with a lighter, fruit-led style.", 3],
+  ["Château Garreau Vieille Réserve", "Château Garreau", "France", "GASCONY FRANCE", "Bas-Armagnac", 40, "FOLLE BLANCHE & BACO", ["Pear", "Honey", "Oak", "Elegant"], "Neat in a tulip", "A Labastide-d'Armagnac estate that also runs the region's Armagnac ecomuseum.", 1],
+  ["Baron Gaston Legrand 1990", "Bas-Armagnac Baron Gaston Legrand", "France", "GASCONY FRANCE", "Bas-Armagnac", 40, "ARMAGNAC GRAPE BLEND", ["Stewed Plum", "Cinnamon", "Oak", "Warm"], "Neat after dinner", "A vintage-focused label from the Bas-Armagnac heartland, bottled by single year.", 1],
+  ["Château de Ravignan 1985", "Château de Ravignan", "France", "GASCONY FRANCE", "Bas-Armagnac", 43, "FOLLE BLANCHE, BACO, UGNI BLANC", ["Dried Orange", "Cocoa", "Spice", "Deep"], "Neat in a copita", "The same family has held this Perquie estate since 1732.", 1],
 
-  for (let i = 6; i <= 100; i++) {
-    const b = realBrandies[(i - 6) % realBrandies.length];
-    const padIndex = String(i).padStart(2, '0');
+  /* ---------------- CALVADOS & APPLE BRANDY ---------------- */
+  ["Christian Drouin Calvados Pays d'Auge 1988", "Christian Drouin", "France", "NORMANDY FRANCE", "Calvados", 42, "CIDER APPLES, DOUBLE DISTILLED", ["Baked Apple", "Cinnamon", "Toffee", "Complex"], "Neat in a tulip, or in a Calvados sour", "Uses around thirty apple varieties and ages in former sherry and port casks.", 5],
+  ["Roger Groult 8 Ans", "Roger Groult", "France", "NORMANDY FRANCE", "Calvados", 41, "PAYS D'AUGE CIDER APPLES", ["Apple Skin", "Nutmeg", "Oak", "Rustic"], "Neat at room temperature", "Five generations working a single orchard estate, still distilling in a wood-fired alembic.", 1],
+  ["Adrien Camut 6 Ans", "Adrien Camut", "France", "NORMANDY FRANCE", "Calvados", 40, "TRADITIONAL CIDER APPLES", ["Fresh Apple", "Pear", "Floral", "Pure"], "Neat in a tulip", "Famously reclusive producers whose calvados is bottled without any caramel or filtration.", 1],
+  ["Boulard XO", "Calvados Boulard", "France", "NORMANDY FRANCE", "Calvados", 40, "PAYS D'AUGE APPLES", ["Cooked Apple", "Vanilla", "Spice", "Smooth"], "Neat or in a Corpse Reviver", "Founded 1825, and the most widely exported Pays d'Auge calvados.", 5],
+  ["Père Magloire VSOP", "Père Magloire", "France", "NORMANDY FRANCE", "Calvados", 40, "CIDER APPLES", ["Apple", "Caramel", "Light Oak", "Easy"], "Over ice or in a Highball", "A Pont-l'Évêque house dating to 1821, and a Normandy café standard.", 6],
+  ["Château du Breuil 15 Ans", "Château du Breuil", "France", "NORMANDY FRANCE", "Calvados", 41, "PAYS D'AUGE APPLES", ["Dried Apple", "Honey", "Oak Spice", "Rich"], "Neat in a snifter", "Distilled and aged in the cellars of a 16th-century Norman château.", 1],
+  ["Lecompte 12 Ans", "Calvados Lecompte", "France", "NORMANDY FRANCE", "Calvados", 40, "PAYS D'AUGE APPLES", ["Apple Compote", "Vanilla", "Cocoa", "Silky"], "Neat after dinner", "One of the oldest Pays d'Auge houses, founded in 1923 at Notre-Dame-de-Courson.", 1],
+  ["Domfrontais Pear Calvados", "Christian Drouin", "France", "NORMANDY FRANCE", "Calvados Domfrontais", 42, "MINIMUM 30% PERRY PEARS", ["Ripe Pear", "White Flower", "Honey", "Delicate"], "Neat, lightly chilled", "The Domfrontais appellation requires a high proportion of pears and single column distillation.", 1],
+  ["Laird's Straight Apple Brandy Bottled-in-Bond", "Laird & Company", "USA", "USA", "American Apple Brandy", 50, "VIRGINIA APPLES", ["Baked Apple", "Caramel", "Oak", "Robust"], "Neat, or in a Jack Rose", "America's oldest licensed distillery, holding federal licence number one from 1780.", 5],
+  ["Clear Creek Apple Brandy 8 Year", "Clear Creek Distillery", "USA", "OREGON USA", "American Apple Brandy", 40, "OREGON APPLES", ["Apple", "Vanilla", "Spice", "Clean"], "Neat in a tulip", "Steve McCarthy modelled his brandy directly on Normandy calvados using Oregon orchard fruit.", 1],
 
-    window.BRANDY_DATA.push({
-      id: `brandy-${padIndex}`,
-      index: padIndex,
-      name: `${b.name} N°${i}`,
-      distillery: b.distillery,
-      country: b.country,
-      region: b.region,
-      style: b.style,
-      abv: b.abv,
-      distilledFrom: b.varietal,
-      flavorTags: b.tags,
-      serveModes: { neat: true, ice: (i % 2 === 0), cocktail: (i % 3 === 0) },
-      signaturePour: b.pour,
-      description: `Authentic ${b.country} ${b.style} crafted through century old cellar techniques preserving intense fruit esters and oak tannins.`
-    });
-  }
+  /* ---------------- BRANDY DE JEREZ & IBERIAN ---------------- */
+  ["Lepanto Solera Gran Reserva", "González Byass", "Spain", "JEREZ SPAIN", "Brandy de Jerez", 36, "AIRÉN, SHERRY CASK SOLERA", ["Dried Fig", "Walnut", "Oloroso", "Velvety"], "Neat in a copita", "Aged in Tío Pepe fino casks, then finished in oloroso butts in the Jerez solera.", 1],
+  ["Cardenal Mendoza", "Sánchez Romate", "Spain", "JEREZ SPAIN", "Brandy de Jerez", 40, "OLOROSO & PX CASK SOLERA", ["Raisin", "Toffee", "Orange Peel", "Sweet Spice"], "Neat in a brandy balloon", "Aged an average of fifteen years in old oloroso and Pedro Ximénez casks.", 1],
+  ["Gran Duque de Alba", "Williams & Humbert", "Spain", "JEREZ SPAIN", "Brandy de Jerez", 40, "SHERRY CASK SOLERA", ["Dried Fruit", "Cocoa", "Vanilla", "Full"], "Neat after dinner", "A Solera Gran Reserva aged in the enormous Williams & Humbert bodega in Jerez.", 1],
+  ["Carlos I Solera Gran Reserva", "Osborne", "Spain", "JEREZ SPAIN", "Brandy de Jerez", 40, "AIRÉN & PALOMINO", ["Caramel", "Nut", "Dried Apricot", "Smooth"], "Neat in a copita", "Named for Emperor Charles V, and aged in the Osborne soleras at El Puerto de Santa María.", 1],
+  ["Fundador Solera Reserva", "Fundador", "Spain", "JEREZ SPAIN", "Brandy de Jerez", 36, "SHERRY CASK SOLERA", ["Raisin", "Light Oak", "Caramel", "Soft"], "Over ice or with cola", "Created in 1874, and the first Spanish brandy ever sold commercially as a branded product.", 6],
+  ["Torres 20 Hors d'Age", "Familia Torres", "Spain", "CATALONIA SPAIN", "Spanish Brandy", 40, "PARELLADA, SOLERA AGED", ["Dried Fig", "Vanilla", "Spice", "Elegant"], "Neat in a snifter", "Made in Penedès rather than Jerez, from the same grapes the family uses for Cava.", 1],
+  ["Torres 10 Gran Reserva", "Familia Torres", "Spain", "CATALONIA SPAIN", "Spanish Brandy", 38, "PARELLADA & UGNI BLANC", ["Vanilla", "Toffee", "Orange", "Mellow"], "Over ice or in a Highball", "Aged in the solera for a decade, and one of Spain's most exported spirits.", 6],
+  ["Conde de Osborne", "Osborne", "Spain", "JEREZ SPAIN", "Brandy de Jerez", 40, "SHERRY CASK SOLERA", ["Toffee", "Walnut", "Dried Fruit", "Rounded"], "Neat in a balloon", "Bottled in a decanter designed by Salvador Dalí in 1964.", 1],
+  ["Alvear Brandy Solera", "Bodegas Alvear", "Spain", "MONTILLA SPAIN", "Spanish Brandy", 38, "PEDRO XIMÉNEZ CASKS", ["Raisin", "Molasses", "Fig", "Sweet"], "Neat with dessert", "From Montilla-Moriles, aged in casks that previously held sweet Pedro Ximénez.", 1],
+  ["Aguardente Velhissima", "Adega Velha", "Portugal", "MINHO PORTUGAL", "Portuguese Brandy", 40, "VINHO VERDE GRAPES", ["Pear", "Oak", "Vanilla", "Delicate"], "Neat in a tulip", "Distilled from Vinho Verde grapes and aged in Portuguese oak at the Aveleda estate.", 1],
 
-  window.SPIRIT_DATA = window.BRANDY_DATA;
-})();
+  /* ---------------- PISCO ---------------- */
+  ["Pisco Portón Mosto Verde Acholado", "Hacienda La Caravedo", "Peru", "ICA VALLEY PERU", "Pisco", 43, "QUEBRANTA, ALBILLA, TORONTEL", ["White Flower", "Citrus", "Grape Must", "Silky"], "Neat, lightly chilled, or in a Pisco Sour", "Distilled at Hacienda La Caravedo, in continuous operation since 1684.", 5],
+  ["Barsol Primero Quebranta", "Bodega San Isidro", "Peru", "ICA VALLEY PERU", "Pisco", 41.3, "100% QUEBRANTA", ["Green Apple", "Banana", "Earth", "Dry"], "In a Pisco Sour or Chilcano", "Unaged and undiluted, as Peruvian law forbids adding water after distillation.", 5],
+  ["Macchu Pisco", "Macchu Pisco", "Peru", "ICA VALLEY PERU", "Pisco", 40, "100% QUEBRANTA", ["Citrus", "Grape", "Herb", "Clean"], "In a Pisco Sour", "Founded by two Peruvian sisters, and one of the first piscos widely exported to the US.", 4],
+  ["Campo de Encanto Grand & Noble", "Campo de Encanto", "Peru", "ICA VALLEY PERU", "Pisco", 41, "QUEBRANTA, TORONTEL, ITALIA", ["Melon", "Floral", "Pepper", "Balanced"], "In a Chilcano with ginger ale", "Created with American bartender Duggan McDonnell to suit classic cocktail work.", 4],
+  ["La Caravedo Torontel", "Hacienda La Caravedo", "Peru", "ICA VALLEY PERU", "Pisco", 40, "100% TORONTEL", ["Orange Blossom", "Lychee", "Rose", "Aromatic"], "Neat, chilled", "An aromatic single-variety pisco from one of the oldest distilleries in the Americas.", 1],
+  ["Waqar Pisco", "Waqar", "Chile", "ELQUI VALLEY CHILE", "Chilean Pisco", 40, "MUSCAT GRAPES", ["Muscat", "Honeysuckle", "Citrus", "Soft"], "In a Pisco Sour", "From the high-altitude Elqui Valley, where Chile's pisco denomination is centred.", 4],
+  ["Alto del Carmen Reservado", "Alto del Carmen", "Chile", "ELQUI VALLEY CHILE", "Chilean Pisco", 40, "MUSCAT GRAPES", ["Grape", "Vanilla", "Light Oak", "Smooth"], "Over ice with cola as a Piscola", "Chilean pisco may be aged and diluted, unlike Peruvian, giving a softer style.", 6],
+  ["Capel Especial", "Capel", "Chile", "ELQUI VALLEY CHILE", "Chilean Pisco", 35, "MUSCAT GRAPES", ["Muscat", "Sweet Citrus", "Light", "Mixable"], "In a Piscola or Pisco Sour", "A growers' cooperative producing the majority of all Chilean pisco.", 4],
+  ["Mistral Nobel", "Pisco Mistral", "Chile", "ELQUI VALLEY CHILE", "Chilean Pisco", 40, "MUSCAT, OAK AGED", ["Vanilla", "Caramel", "Grape", "Warm"], "Neat or over ice", "Named for the Nobel-winning poet Gabriela Mistral, born in the Elqui Valley.", 3],
+
+  /* ---------------- GRAPPA & MARC ---------------- */
+  ["Nonino Monovitigno Il Merlot", "Nonino Distillatori", "Italy", "FRIULI ITALY", "Grappa", 41, "MERLOT POMACE", ["Red Fruit", "Violet", "Clean", "Elegant"], "Chilled neat in a tulip", "The Nonino family invented single-variety grappa in 1973, transforming the category's reputation.", 1],
+  ["Nardini Riserva", "Bortolo Nardini", "Italy", "VENETO ITALY", "Grappa", 50, "GRAPE POMACE, OAK AGED", ["Oak", "Dried Fruit", "Spice", "Warming"], "Neat at room temperature", "Italy's oldest distillery, founded at the Bassano bridge in 1779.", 1],
+  ["Poli Sarpa di Poli", "Jacopo Poli", "Italy", "VENETO ITALY", "Grappa", 40, "CABERNET & MERLOT POMACE", ["Fresh Grape", "Herb", "Pepper", "Aromatic"], "Chilled neat", "Distilled in copper bain-marie stills that the family has used since 1898.", 1],
+  ["Berta Tre Soli Tre", "Distillerie Berta", "Italy", "PIEDMONT ITALY", "Grappa", 43, "BAROLO POMACE, OAK AGED", ["Vanilla", "Dried Fig", "Tobacco", "Rich"], "Neat in a tulip", "Aged for years in French oak, in a Piedmont distillery designed like a wine cellar.", 1],
+  ["Marolo Grappa di Barolo", "Distilleria Santa Teresa", "Italy", "PIEDMONT ITALY", "Grappa", 50, "BAROLO NEBBIOLO POMACE", ["Rose", "Tar", "Cherry", "Powerful"], "Neat at room temperature", "Distilled from the pomace of Barolo, capturing Nebbiolo's signature rose and tar.", 1],
+  ["Bepi Tosolini Most", "Bepi Tosolini", "Italy", "FRIULI ITALY", "Grappa", 40, "FRIULI POMACE", ["Pear", "White Flower", "Almond", "Soft"], "Chilled neat", "A Friulian house distilling in wood-fired copper alembics since 1943.", 1],
+  ["Sibona Grappa Barbaresco", "Distilleria Sibona", "Italy", "PIEDMONT ITALY", "Grappa", 40, "BARBARESCO POMACE", ["Dried Cherry", "Spice", "Oak", "Refined"], "Neat after dinner", "Founded 1902 in Piobesi d'Alba, working only with local Piedmont pomace.", 1],
+  ["Marc de Champagne", "Moët & Chandon", "France", "CHAMPAGNE FRANCE", "Marc", 40, "CHAMPAGNE GRAPE POMACE", ["Toasted Grape", "Nut", "Oak", "Dry"], "Neat in a tulip", "Distilled from the pressed skins left after the champagne harvest.", 1],
+  ["Marc de Bourgogne Hors d'Age", "Domaine Jean-Louis Trapet", "France", "BURGUNDY FRANCE", "Marc", 45, "PINOT NOIR POMACE", ["Dried Cherry", "Earth", "Oak", "Robust"], "Neat at room temperature", "A Gevrey-Chambertin domaine distilling the pomace from its own grand cru fruit.", 1],
+
+  /* ---------------- FRUIT EAUX-DE-VIE ---------------- */
+  ["Poire William", "Trimbach", "France", "ALSACE FRANCE", "Fruit Eau-de-Vie", 45, "WILLIAMS PEAR", ["Ripe Pear", "Floral", "Clean", "Dry"], "Ice cold in a chilled tulip", "Alsace's benchmark pear spirit, sometimes bottled with a whole pear grown inside the bottle.", 1],
+  ["Framboise Sauvage", "G.E. Massenez", "France", "ALSACE FRANCE", "Fruit Eau-de-Vie", 43, "WILD RASPBERRIES", ["Wild Raspberry", "Bramble", "Intense", "Dry"], "Ice cold, neat", "It takes roughly twenty kilos of wild raspberries to yield a single bottle.", 1],
+  ["Kirschwasser", "Schladerer", "Germany", "BLACK FOREST GERMANY", "Fruit Eau-de-Vie", 42, "BLACK FOREST CHERRIES", ["Cherry", "Almond Pit", "Marzipan", "Dry"], "Chilled neat, or in a Black Forest gateau", "Distilled with the stones in, which is where the almond note comes from.", 1],
+  ["Zuger Kirsch", "Etter Söhne", "Switzerland", "SWITZERLAND", "Fruit Eau-de-Vie", 41, "ZUG CHERRIES", ["Sour Cherry", "Stone", "Pure", "Crisp"], "Ice cold in a small glass", "A Zug family distillery working only with locally grown Swiss orchard fruit.", 1],
+  ["Blume Marillen Apricot", "Purkhart Destillerie", "Austria", "WACHAU AUSTRIA", "Fruit Eau-de-Vie", 40, "WACHAU APRICOTS", ["Apricot", "Blossom", "Stone Fruit", "Aromatic"], "Chilled neat, or in a cocktail", "Made from Klosterneuburger apricots grown on the Danube terraces of the Wachau.", 5],
+  ["Clear Creek Pear Brandy", "Clear Creek Distillery", "USA", "OREGON USA", "Fruit Eau-de-Vie", 40, "OREGON BARTLETT PEARS", ["Fresh Pear", "Floral", "Clean", "Vibrant"], "Chilled neat", "Around thirty pounds of Oregon pears go into every bottle.", 1],
+  ["Mirabelle de Lorraine", "Distillerie Massenez", "France", "LORRAINE FRANCE", "Fruit Eau-de-Vie", 45, "MIRABELLE PLUMS", ["Yellow Plum", "Honey", "Almond", "Delicate"], "Ice cold in a small tulip", "Made from the small golden plums that carry their own protected Lorraine appellation.", 1],
+  ["Slivovitz Old Plum Brandy", "Jelínek", "Czechia", "MORAVIA CZECHIA", "Plum Brandy", 50, "MORAVIAN PLUMS", ["Plum", "Earth", "Oak", "Rustic"], "Neat at room temperature", "Vizovice has distilled plum brandy since 1894, and Slivovitz remains the Czech national spirit.", 1],
+  ["Williamine", "Morand", "Switzerland", "VALAIS SWITZERLAND", "Fruit Eau-de-Vie", 43, "VALAIS WILLIAMS PEARS", ["Pear", "White Flower", "Sweet Fruit", "Fine"], "Chilled neat", "A Valais institution since 1953, made only from Swiss-grown Williams pears.", 1],
+
+  /* ---------------- REST OF WORLD ---------------- */
+  ["Metaxa 12 Stars", "Metaxa", "Greece", "GREECE", "Greek Brandy", 40, "BRANDY, MUSCAT WINE, BOTANICALS", ["Honey", "Rose Petal", "Dried Fruit", "Sweet"], "Neat, over ice, or in a Metaxa Sour", "Not strictly a brandy: Spyros Metaxas blended aged distillate with Muscat wine and botanicals in 1888.", 7],
+  ["Metaxa Private Reserve", "Metaxa", "Greece", "GREECE", "Greek Brandy", 40, "AGED BRANDY & MUSCAT", ["Dried Fig", "Orange Peel", "Oak", "Layered"], "Neat in a tulip", "Aged in Limnio casks, and the house's oldest regularly released expression.", 1],
+  ["Ararat Akhtamar 10 Year", "Yerevan Brandy Company", "Armenia", "ARMENIA", "Armenian Brandy", 40, "ARMENIAN WHITE GRAPES", ["Dried Apricot", "Walnut", "Vanilla", "Warm"], "Neat in a snifter", "Armenian brandy Churchill reportedly requested after tasting it at the Yalta conference.", 1],
+  ["Ararat Nairi 20 Year", "Yerevan Brandy Company", "Armenia", "ARMENIA", "Armenian Brandy", 40, "ARARAT VALLEY GRAPES", ["Dried Fruit", "Chocolate", "Oak Spice", "Deep"], "Neat after dinner", "Aged two decades in Caucasian oak in cellars beneath Yerevan.", 1],
+  ["Asbach Uralt", "Asbach", "Germany", "RHINE GERMANY", "German Brandy", 38, "FRENCH WINE DISTILLATE", ["Vanilla", "Raisin", "Light Oak", "Mellow"], "Neat or in coffee", "Hugo Asbach coined the German word Weinbrand in 1907, and this is its defining brand.", 3],
+  ["Van Ryn's 15 Year Distillers Reserve", "Van Ryn's", "South Africa", "STELLENBOSCH SA", "Potstill Brandy", 38, "CHENIN & COLOMBARD", ["Dried Peach", "Toffee", "Nut", "Refined"], "Neat in a tulip", "A Stellenbosch distillery from 1845, repeatedly named the world's best potstill brandy.", 1],
+  ["KWV 20 Year", "KWV", "South Africa", "WESTERN CAPE SA", "Potstill Brandy", 43, "CHENIN BLANC & COLOMBARD", ["Caramel", "Dried Fruit", "Spice", "Full"], "Neat in a snifter", "South African law requires potstill brandy to be aged at least three years in oak.", 1],
+  ["Boplaas Potstill Reserve 8 Year", "Boplaas Family Vineyards", "South Africa", "KLEIN KAROO SA", "Potstill Brandy", 38, "COLOMBARD", ["Apricot", "Vanilla", "Oak", "Smooth"], "Neat or over a single cube", "A Calitzdorp family estate better known for port-style wines, distilling since 1880.", 3],
+  ["Germain-Robin Select Barrel XO", "Germain-Robin", "USA", "CALIFORNIA USA", "American Brandy", 40, "PINOT NOIR & OTHER VARIETALS", ["Stone Fruit", "Honey", "Oak", "Complex"], "Neat in a tulip", "Hubert Germain-Robin brought Cognac technique to Mendocino using wine-grape varieties.", 1],
+  ["Osocalis Rare Alambic XO", "Osocalis Distillery", "USA", "CALIFORNIA USA", "American Brandy", 40, "COLOMBARD & PINOT NOIR", ["Dried Apricot", "Walnut", "Spice", "Elegant"], "Neat after dinner", "A Santa Cruz mountain distillery working in the alambic charentais tradition.", 1],
+  ["Copper & Kings American Craft Brandy", "Copper & Kings", "USA", "KENTUCKY USA", "American Brandy", 62, "AMERICAN WINE DISTILLATE", ["Dark Fruit", "Bourbon Oak", "Spice", "Bold"], "Neat or in an Old Fashioned", "Aged in used bourbon barrels while low-frequency bass is played into the rickhouse.", 5],
+  ["Vecchia Romagna Riserva 10", "Vecchia Romagna", "Italy", "EMILIA ITALY", "Italian Brandy", 40, "TREBBIANO", ["Vanilla", "Dried Fruit", "Toffee", "Mellow"], "Neat in a snifter", "Distilled in Bologna since 1820, in its distinctive triangular bottle.", 1],
+  ["Presidente Brandy", "Casa Pedro Domecq", "Mexico", "MEXICO", "Mexican Brandy", 38, "MEXICAN GRAPES", ["Caramel", "Vanilla", "Raisin", "Sweet"], "With cola over ice", "For decades the best-selling brandy in the world by volume, driven by Mexican domestic sales.", 6],
+  ["Suntory Brandy X.O", "Suntory", "Japan", "JAPAN", "Japanese Brandy", 40, "JAPANESE & FRENCH DISTILLATE", ["Dried Apricot", "Oak", "Honey", "Delicate"], "Neat in a tulip", "Built with the same precision blending philosophy Suntory applies to its whisky.", 1],
+  ["Bertoux Brandy", "Bertoux", "USA", "CALIFORNIA USA", "American Brandy", 40, "CALIFORNIA GRAPES", ["Apricot", "Vanilla", "Almond", "Bright"], "In a Sidecar or Brandy Crusta", "Designed with bartenders specifically for cocktail use rather than sipping.", 4],
+  ["Singani 63", "Singani 63", "Bolivia", "BOLIVIA", "Singani", 40, "HIGH-ALTITUDE MUSCAT", ["White Flower", "Citrus", "Herb", "Aromatic"], "In a Chuflay with ginger ale", "Distilled above 1,600 metres in the Andes, and imported to the US by director Steven Soderbergh.", 5],
+  ["Rakia Sljivovica", "Zaric", "Serbia", "SERBIA", "Plum Brandy", 42, "POŽEGAČA PLUMS", ["Plum", "Earth", "Oak", "Robust"], "Neat, room temperature", "Serbia's national spirit, traditionally offered to guests before any meal.", 1],
+  ["Tsipouro Tirnavou", "Katsaros", "Greece", "THESSALY GREECE", "Pomace Brandy", 40, "GRAPE POMACE", ["Grape", "Anise Hint", "Clean", "Warming"], "Chilled neat with meze", "A Greek pomace spirit, closely related to Italian grappa and Turkish rakı.", 1],
+  ["Palinka Aged Apricot", "Zsindelyes", "Hungary", "HUNGARY", "Fruit Brandy", 43, "KECSKEMÉT APRICOTS", ["Apricot", "Honey", "Oak", "Concentrated"], "Chilled neat in a tulip glass", "Protected as Hungarian by EU law: only fruit grown in Hungary may be called pálinka.", 1],
+  ["Pisco Italia Mosto Verde", "Bodega La Blanco", "Peru", "ICA VALLEY PERU", "Pisco", 42, "100% ITALIA GRAPES", ["Jasmine", "Orange Blossom", "Grape", "Perfumed"], "Chilled neat", "Mosto verde halts fermentation early, so unfermented sugar is distilled and yield drops sharply.", 1],
+  ["Sempé Armagnac VSOP", "Armagnac Sempé", "France", "GASCONY FRANCE", "Armagnac", 40, "UGNI BLANC & BACO", ["Prune", "Vanilla", "Oak", "Rounded"], "Neat or over a single cube", "A Ténarèze house founded in 1934 at Aignan, holding large stocks of old vintages.", 3],
+  ["Ryst-Dupeyron Armagnac 1975", "Ryst-Dupeyron", "France", "GASCONY FRANCE", "Armagnac", 40, "ARMAGNAC GRAPE BLEND", ["Dried Fig", "Leather", "Rancio", "Long"], "Neat in a copita", "A Condom merchant house specialising in single-vintage bottlings back to the 1800s.", 1],
+  ["Gélas Armagnac 8 Ans", "Maison Gélas", "France", "GASCONY FRANCE", "Bas-Armagnac", 40, "UGNI BLANC, BACO, COLOMBARD", ["Plum", "Toffee", "Spice", "Warm"], "Neat after dinner", "Distilling at Vic-Fezensac since 1865, using its own travelling alembic each autumn.", 1],
+  ["Château Arton La Réserve", "Château Arton", "France", "GASCONY FRANCE", "Ténarèze Armagnac", 45, "UGNI BLANC & FOLLE BLANCHE", ["Citrus", "White Pepper", "Oak", "Bright"], "Neat in a tulip", "A Ténarèze estate bottling at higher strength without reduction or caramel.", 1],
+  ["Michel Huard Calvados 10 Ans", "Michel Huard", "France", "NORMANDY FRANCE", "Calvados", 42, "PAYS D'AUGE APPLES", ["Apple Tart", "Cinnamon", "Oak", "Rustic"], "Neat at room temperature", "A small Norman farm distillery pressing and fermenting its own orchard fruit.", 1],
+  ["Dupont Calvados Réserve", "Famille Dupont", "France", "NORMANDY FRANCE", "Calvados", 42, "PAYS D'AUGE CIDER APPLES", ["Baked Apple", "Hay", "Vanilla", "Textured"], "Neat in a tulip", "A Victot-Pontfol estate working thirteen thousand apple trees across its own orchards.", 1],
+  ["Coquerel Fine Calvados", "Coquerel", "France", "NORMANDY FRANCE", "Calvados", 40, "CIDER APPLES", ["Fresh Apple", "Caramel", "Light Oak", "Easy"], "Over ice or in a Highball", "A Cotentin house whose calvados is widely used behind French bars.", 6],
+  ["Pierre Huet Calvados VSOP", "Pierre Huet", "France", "NORMANDY FRANCE", "Calvados", 40, "PAYS D'AUGE APPLES", ["Apple", "Spice", "Toffee", "Balanced"], "Neat after dinner", "Based in Cambremer, distilling from its own half-timbered Norman manor since 1865.", 1],
+  ["Soberano Solera", "González Byass", "Spain", "JEREZ SPAIN", "Brandy de Jerez", 36, "SHERRY CASK SOLERA", ["Caramel", "Raisin", "Light Nut", "Soft"], "With cola or over ice", "A Jerez everyday brandy launched in 1918, and a Spanish bar staple.", 6],
+  ["Magno Solera Reserva", "Osborne", "Spain", "JEREZ SPAIN", "Brandy de Jerez", 36, "SHERRY CASK SOLERA", ["Toffee", "Dried Fruit", "Vanilla", "Mellow"], "Over ice or with cola", "Named for its magnum-style bottle, and one of Spain's most recognised brandy labels.", 6],
+  ["Terry Centenario", "Fernando A. de Terry", "Spain", "JEREZ SPAIN", "Brandy de Jerez", 36, "AIRÉN, SHERRY CASKS", ["Vanilla", "Raisin", "Caramel", "Light"], "Over ice or mixed", "Recognisable by the yellow mesh netting on its bottle, from El Puerto de Santa María.", 6],
+  ["Capovilla Grappa di Amarone", "Distilleria Capovilla", "Italy", "VENETO ITALY", "Grappa", 41, "AMARONE POMACE", ["Dried Cherry", "Fig", "Spice", "Concentrated"], "Neat in a tulip", "Vittorio Capovilla distils in tiny wood-fired copper stills to an obsessive standard.", 1],
+  ["Bocchino Cavour Riserva", "Distilleria Bocchino", "Italy", "PIEDMONT ITALY", "Grappa", 40, "PIEDMONT POMACE, OAK AGED", ["Vanilla", "Dried Fruit", "Oak", "Smooth"], "Neat after dinner", "Founded in Canelli in 1898, and among the first to age grappa seriously in wood.", 1],
+  ["Domenis Storica Nera", "Domenis 1898", "Italy", "FRIULI ITALY", "Grappa", 50, "FRIULI POMACE, TOASTED OAK", ["Smoke", "Cocoa", "Dried Fruit", "Bold"], "Neat at room temperature", "Aged in heavily toasted barrels, giving an unusually dark and smoky grappa.", 1],
+  ["Rochelt Williamsbirne", "Rochelt", "Austria", "TYROL AUSTRIA", "Fruit Eau-de-Vie", 50, "WILLIAMS PEARS", ["Pure Pear", "Blossom", "Honey", "Powerful"], "At room temperature in a small tulip", "Fermented whole for months and aged for years in glass demijohns in the Tyrolean air.", 1],
+  ["St. George Pear Brandy", "St. George Spirits", "USA", "CALIFORNIA USA", "Fruit Eau-de-Vie", 40, "CALIFORNIA BARTLETT PEARS", ["Fresh Pear", "Floral", "Clean", "Bright"], "Chilled neat", "Around thirty pounds of pears per bottle, from a distillery founded by a German eau-de-vie maker.", 1],
+  ["St Agnes XO 15 Year", "Angove Family Winemakers", "Australia", "SOUTH AUSTRALIA", "Australian Brandy", 40, "AUSTRALIAN GRAPES", ["Dried Apricot", "Toffee", "Oak", "Smooth"], "Neat in a snifter", "Distilled at Renmark since 1925, and Australia's most awarded brandy.", 1],
+  ["Oude Molen VOV 100 Reserve", "Oude Molen", "South Africa", "WESTERN CAPE SA", "Potstill Brandy", 50, "CHENIN BLANC", ["Dried Peach", "Oak", "Spice", "Intense"], "Neat, or with a drop of water", "Bottled at cask strength from a Stellenbosch distillery founded in 1940.", 1],
+  ["Tabernero Pisco Puro Quebranta", "Bodega Tabernero", "Peru", "CHINCHA PERU", "Pisco", 42, "100% QUEBRANTA", ["Banana", "Grape Skin", "Earth", "Dry"], "In a Pisco Sour or Chilcano", "A Chincha Valley bodega distilling since 1897, south of the more famous Ica valley.", 4],
+  ["Don Pedro Reserva Especial", "Casa Pedro Domecq", "Mexico", "MEXICO", "Mexican Brandy", 38, "MEXICAN GRAPES", ["Vanilla", "Caramel", "Raisin", "Sweet"], "Over ice or with cola", "A Mexican domestic giant, often outselling far better-known European brandies by volume.", 6]
+
+]);

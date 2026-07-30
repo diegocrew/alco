@@ -46,13 +46,21 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     wine: {
-      center: [44.0, 5.0],
-      zoom: 4,
+      center: [30.0, 5.0],
+      zoom: 2,
       locations: [
-        { name: "France", region: "BORDEAUX FRANCE", coords: [44.8378, -0.5792], description: "Bordeaux Left and Right Bank premier crus, Burgundy Pinot Noir terroir." },
-        { name: "Italy", region: "TUSCANY ITALY", coords: [43.7710, 11.2486], description: "Sangiovese Chianti Classico, Brunello di Montalcino, and Super Tuscans." },
-        { name: "Spain", region: "RIBERA DEL DUERO", coords: [41.6523, -4.7245], description: "Rioja and Ribera del Duero Tempranillo aged in oak cellars." },
-        { name: "USA", region: "NAPA VALLEY USA", coords: [38.2975, -122.2868], description: "Napa Valley Cabernet Sauvignon and Sonoma Chardonnay benchlands." }
+        { name: "France", region: "BORDEAUX FRANCE", coords: [44.8378, -0.5792], description: "Bordeaux Left and Right Bank crus, Burgundy Pinot Noir, Rhône Syrah and Loire Chenin." },
+        { name: "Italy", region: "TUSCANY ITALY", coords: [43.7710, 11.2486], description: "Piedmont Nebbiolo, Sangiovese Chianti Classico, Brunello, and Super Tuscans." },
+        { name: "Spain", region: "RIOJA SPAIN", coords: [42.4650, -2.4456], description: "Rioja and Ribera del Duero Tempranillo, and Priorat llicorella slate." },
+        { name: "Portugal", region: "DOURO PORTUGAL", coords: [41.1621, -7.7891], description: "Terraced Douro schist for port and increasingly serious dry reds." },
+        { name: "Germany", region: "MOSEL GERMANY", coords: [49.9787, 7.1180], description: "Steep blue slate Mosel Riesling and Rheingau estates on the river bends." },
+        { name: "Austria", region: "WACHAU AUSTRIA", coords: [48.3667, 15.4167], description: "Wachau terraces of Grüner Veltliner and Riesling above the Danube." },
+        { name: "USA", region: "NAPA VALLEY USA", coords: [38.2975, -122.2868], description: "Napa Cabernet, Sonoma Chardonnay benchlands and Willamette Pinot Noir." },
+        { name: "Argentina", region: "MENDOZA ARGENTINA", coords: [-33.0, -68.85], description: "High-altitude Uco Valley Malbec on alluvial Andean soils." },
+        { name: "Chile", region: "CHILE", coords: [-34.5, -71.0], description: "Maipo Cabernet and rediscovered pre-phylloxera Carménère." },
+        { name: "Australia", region: "BAROSSA AUSTRALIA", coords: [-34.53, 138.95], description: "Ancient-vine Barossa Shiraz and cool-climate Clare Valley Riesling." },
+        { name: "New Zealand", region: "MARLBOROUGH NZ", coords: [-41.52, 173.86], description: "Marlborough Sauvignon Blanc and Central Otago Pinot Noir." },
+        { name: "South Africa", region: "STELLENBOSCH SA", coords: [-33.93, 18.86], description: "Stellenbosch Cabernet and Swartland old-bush-vine Chenin Blanc." }
       ]
     },
     gin: {
@@ -91,11 +99,47 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     champagne: {
-      center: [49.1, 4.0],
-      zoom: 7,
+      center: [47.5, 2.0],
+      zoom: 5,
       locations: [
         { name: "France", region: "REIMS FRANCE", coords: [49.258, 4.031], description: "Underground limestone Crayères cellars and Méthode Champenoise." },
-        { name: "Italy", region: "VALDOBBIADENE ITALY", coords: [45.9, 11.99], description: "Glera grape Prosecco Superiore hill vineyards." }
+        { name: "Italy", region: "VALDOBBIADENE ITALY", coords: [45.9, 11.99], description: "Glera grape Prosecco Superiore hill vineyards and Franciacorta metodo classico." },
+        { name: "Spain", region: "PENEDÈS SPAIN", coords: [41.35, 1.70], description: "Penedès Cava from Macabeo, Xarel·lo and Parellada aged in stone cellars." },
+        { name: "England", region: "SOUTH ENGLAND", coords: [50.94, 0.48], description: "South Downs chalk, the same Kimmeridgian seam that runs under Champagne." },
+        { name: "USA", region: "CALIFORNIA USA", coords: [38.50, -122.85], description: "Anderson Valley and Napa traditional-method sparkling from Champenois houses." }
+      ]
+    },
+    beer: {
+      center: [48.0, 2.0],
+      zoom: 4,
+      locations: [
+        { name: "Germany", region: "BAVARIA GERMANY", coords: [48.7904, 11.4979], description: "Reinheitsgebot purity law, decoction mashing, and Munich lager cellars." },
+        { name: "Belgium", region: "BELGIUM", coords: [50.5039, 4.4699], description: "Trappist abbey ales, wild-fermented lambic, and Flemish red sours." },
+        { name: "Czechia", region: "BOHEMIA CZECHIA", coords: [49.7475, 13.3776], description: "Plzeň: birthplace of pale lager, Saaz hops and soft Bohemian water." },
+        { name: "UK", region: "ENGLAND UK", coords: [52.4862, -1.8904], description: "Cask-conditioned bitter, Burton gypsum water, and Yorkshire square ales." },
+        { name: "Ireland", region: "IRELAND", coords: [53.3498, -6.2603], description: "Roasted barley dry stout poured on nitrogen at St. James's Gate." },
+        { name: "USA", region: "WEST COAST USA", coords: [45.5152, -122.6784], description: "American craft hop revolution: Cascade, Citra, and hazy IPA." }
+      ]
+    },
+    absinthe: {
+      center: [46.8, 6.4],
+      zoom: 7,
+      locations: [
+        { name: "Switzerland", region: "VAL-DE-TRAVERS", coords: [46.9226, 6.6280], description: "Birthplace of absinthe: wormwood, green anise and fennel macerations." },
+        { name: "France", region: "PONTARLIER FRANCE", coords: [46.9036, 6.3547], description: "Pontarlier: historic French absinthe capital and Belle Époque distilleries." },
+        { name: "Czechia", region: "BOHEMIA CZECHIA", coords: [50.0755, 14.4378], description: "Bohemian-style absinth: bitter wormwood, minimal anise, fire ritual." },
+        { name: "USA", region: "USA", coords: [29.9511, -90.0715], description: "New Orleans revival distillers after the 2007 lifting of the US ban." }
+      ]
+    },
+    liqueur: {
+      center: [46.0, 6.0],
+      zoom: 4,
+      locations: [
+        { name: "France", region: "FRANCE", coords: [45.3667, 5.8500], description: "Chartreuse herbal elixirs, Dijon crème de cassis, and Cognac-based orange liqueurs." },
+        { name: "Italy", region: "ITALY", coords: [42.5, 12.5], description: "Amalfi limoncello, Saronno amaretto, Bologna amaro, and Padua aperitivo bitters." },
+        { name: "Ireland", region: "IRELAND", coords: [53.3498, -6.2603], description: "Irish cream liqueurs blending dairy cream with triple-distilled whiskey." },
+        { name: "Mexico", region: "MEXICO", coords: [19.4326, -99.1332], description: "Veracruz arabica coffee liqueurs and Yucatán agave-honey Xtabentún." },
+        { name: "Netherlands", region: "NETHERLANDS", coords: [52.3676, 4.9041], description: "Curaçao orange peel liqueurs and Amsterdam genever-based cordials." }
       ]
     }
   };
@@ -108,8 +152,19 @@ document.addEventListener('DOMContentLoaded', () => {
     minZoom: 2,
     maxZoom: 9,
     zoomControl: true,
-    attributionControl: false
+    attributionControl: false,
+    // Page scrolling must not be hijacked; the wheel only zooms after a deliberate click.
+    scrollWheelZoom: false
   });
+
+  map.on('click', () => map.scrollWheelZoom.enable());
+  mapElement.addEventListener('mouseleave', () => map.scrollWheelZoom.disable());
+
+  // The map sits in a grid column, so its box can settle after Leaflet has measured it.
+  window.addEventListener('load', () => map.invalidateSize());
+  if (window.ResizeObserver) {
+    new ResizeObserver(() => map.invalidateSize()).observe(mapElement);
+  }
 
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
     subdomains: 'abcd',
@@ -135,37 +190,44 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  const esc = (value) => String(value == null ? '' : value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+
   config.locations.forEach(loc => {
-    const marker = L.marker(loc.coords, { icon: createCustomIcon() }).addTo(map);
+    const marker = L.marker(loc.coords, {
+      icon: createCustomIcon(),
+      title: loc.name,
+      alt: `${loc.name} — ${loc.region}`,
+      keyboard: true
+    }).addTo(map);
 
     const popupContent = `
-      <div style="
-        font-family: 'Space Grotesk', sans-serif;
-        color: #f8ede3;
-        background-color: #241712;
-        padding: 0.5rem;
-        border-radius: 4px;
-        min-width: 180px;
-      ">
-        <span style="font-size: 0.65rem; color: #e69c37; letter-spacing: 0.1em; font-weight: 700; text-transform: uppercase;">${loc.region}</span>
-        <h4 style="font-family: 'Playfair Display', serif; font-size: 1.1rem; margin: 0.2rem 0; color: #ffffff;">${loc.name}</h4>
-        <p style="font-size: 0.8rem; color: #d6c6b8; margin-bottom: 0.75rem; line-height: 1.4;">${loc.description}</p>
-        <button onclick="window.setMapRegionFilter('${loc.name}')" style="
-          width: 100%;
-          background-color: #933827;
-          color: #ffffff;
-          border: none;
-          padding: 0.4rem 0.6rem;
-          border-radius: 3px;
-          font-family: 'Space Grotesk', sans-serif;
-          font-size: 0.75rem;
-          font-weight: 600;
-          cursor: pointer;
-          text-transform: uppercase;
-        ">Filter ${spiritType.toUpperCase()} from ${loc.name}</button>
+      <div class="map-popup">
+        <span class="map-popup-region">${esc(loc.region)}</span>
+        <h4 class="map-popup-title">${esc(loc.name)}</h4>
+        <p class="map-popup-desc">${esc(loc.description)}</p>
+        <button type="button" class="map-popup-btn" data-region="${esc(loc.name)}">
+          Filter ${esc(spiritType.toUpperCase())} from ${esc(loc.name)}
+        </button>
       </div>
     `;
 
     marker.bindPopup(popupContent);
+  });
+
+  // Delegated so popup markup never needs an inline event handler.
+  map.on('popupopen', (e) => {
+    const btn = e.popup.getElement().querySelector('.map-popup-btn');
+    if (btn) {
+      btn.addEventListener('click', () => {
+        if (typeof window.setMapRegionFilter === 'function') {
+          window.setMapRegionFilter(btn.dataset.region);
+        }
+      }, { once: true });
+    }
   });
 });

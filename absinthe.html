@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="absinthe">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Absinthe Field Guide: La Fée Verte, the Louche Ritual &amp; 100 Absinthes Decoded</title>
+  <meta name="description" content="Explore absinthe history, the wormwood ban, the louche ritual, an interactive distilling map, and 100 decoded real absinthes.">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400;1,600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo">
+        <svg class="brand-icon" viewBox="0 0 32 32" fill="none" stroke="#9ccb45" stroke-width="2" aria-hidden="true" focusable="false">
+          <path d="M11 9h10l-1.5 11a3.5 3.5 0 0 1-7 0L11 9z"/>
+          <line x1="16" y1="20" x2="16" y2="27"/>
+          <line x1="11" y1="27" x2="21" y2="27"/>
+          <line x1="7" y1="7" x2="25" y2="7"/>
+        </svg>
+        <div>
+          <span class="brand-title">The Field Guide</span>
+          <span class="brand-subtitle">ABSINTHE ENCYCLOPEDIA</span>
+        </div>
+      </a>
+
+      <nav aria-label="Drink categories">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="rum.html" class="nav-link">Rum</a></li>
+          <li><a href="vodka.html" class="nav-link">Vodka</a></li>
+          <li><a href="whisky.html" class="nav-link">Whisky</a></li>
+          <li><a href="wine.html" class="nav-link">Wine</a></li>
+          <li><a href="gin.html" class="nav-link">Gin</a></li>
+          <li><a href="cognac.html" class="nav-link">Cognac</a></li>
+          <li><a href="brandy.html" class="nav-link">Brandy</a></li>
+          <li><a href="tequila.html" class="nav-link">Tequila</a></li>
+          <li><a href="champagne.html" class="nav-link">Champagne</a></li>
+          <li><a href="beer.html" class="nav-link">Beer</a></li>
+          <li><a href="absinthe.html" class="nav-link active" aria-current="page">Absinthe</a></li>
+          <li><a href="liqueur.html" class="nav-link">Liqueurs</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero-section">
+      <p class="hero-subtitle">THE FIELD GUIDE VOL. XI</p>
+      <h1 class="hero-title">100 Absinthes, Decoded</h1>
+      <p class="hero-description">
+        Grande wormwood, green anise and fennel. Filter by how each bottle is actually drunk: louched neat over the drip, frappé over ice, or built into a classic.
+      </p>
+
+      <div class="filter-bar-container" role="group" aria-label="Filter by serving style">
+        <button type="button" class="filter-btn active" data-serve="all" aria-pressed="true">ALL STYLES</button>
+        <button type="button" class="filter-btn" data-serve="neat" aria-pressed="false">BEST LOUCHED</button>
+        <button type="button" class="filter-btn" data-serve="ice" aria-pressed="false">BEST FRAPPÉ</button>
+        <button type="button" class="filter-btn" data-serve="cocktail" aria-pressed="false">BEST IN COCKTAILS</button>
+      </div>
+    </section>
+
+    <section class="section-container">
+      <div class="section-header">
+        <p class="section-subtitle">THE FIELD BOARD</p>
+        <h2 class="section-title">The Green Fairy, Banned and Reborn</h2>
+      </div>
+
+      <div class="board-grid">
+        <div class="board-column">
+          <p class="board-label">Origin Story</p>
+          <div class="timeline-stack">
+        <div class="timeline-card">
+          <div class="timeline-year">1792 • Val-de-Travers</div>
+          <h3 class="timeline-title">A Swiss Herbal Tonic</h3>
+          <p class="timeline-desc">Absinthe begins as a medicinal elixir in the Val-de-Travers, commercialised by Major Dubied and his son-in-law Henri-Louis Pernod.</p>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-year">1860s • L'Heure Verte</div>
+          <h3 class="timeline-title">The Green Hour</h3>
+          <p class="timeline-desc">Phylloxera devastated the vineyards and made wine expensive. Absinthe filled Parisian cafés, and five o'clock became the green hour.</p>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-year">1915 → 2007 • Ban &amp; Revival</div>
+          <h3 class="timeline-title">Thujone on Trial</h3>
+          <p class="timeline-desc">Blamed for madness after the Lanfray murders, absinthe was banned across Europe and the US. Modern analysis exonerated thujone, and legal sales resumed.</p>
+        </div>
+          </div>
+        </div>
+
+        <div class="board-column">
+          <p class="board-label">Signature Cocktail</p>
+          <article class="signature-card">
+            <h3 class="signature-name">Sazerac</h3>
+            <p class="signature-method">Rocks Glass • Stirred • Absinthe Rinse</p>
+            <ul class="signature-recipe">
+              <li><span class="signature-measure">rinse</span><span>Absinthe, discard the excess</span></li>
+              <li><span class="signature-measure">60 ml</span><span>Rye whiskey or cognac</span></li>
+              <li><span class="signature-measure">1 cube</span><span>Sugar</span></li>
+              <li><span class="signature-measure">3 dash</span><span>Peychaud's bitters</span></li>
+            </ul>
+            <p class="signature-garnish">Garnish: Expressed lemon peel, not dropped in</p>
+            <p class="signature-note">The official cocktail of New Orleans. Absinthe never makes up the body of the drink here, only the perfume left clinging to the glass.</p>
+          </article>
+        </div>
+
+        <div class="board-column">
+          <p class="board-label">Global Terroir</p>
+          <div class="map-wrapper">
+            <div id="map" role="application" aria-label="Interactive world map of absinthe distilling regions"></div>
+          </div>
+          <p class="map-hint">Click the map to enable zoom • Click a pin to filter</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="toolbar-section">
+      <div>
+        <label for="searchInput" class="visually-hidden">Search absinthes</label>
+        <input type="search" id="searchInput" class="input-control" placeholder="🔍 Search by name, distillery, botanicals or flavor tags...">
+      </div>
+      <div>
+        <label for="styleSelect" class="visually-hidden">Filter by style</label>
+        <select id="styleSelect" class="select-control"><option value="all">All Styles</option></select>
+      </div>
+      <div>
+        <label for="regionSelect" class="visually-hidden">Filter by region</label>
+        <select id="regionSelect" class="select-control"><option value="all">All Regions</option></select>
+      </div>
+      <div>
+        <label for="sortSelect" class="visually-hidden">Sort results</label>
+        <select id="sortSelect" class="select-control">
+          <option value="default">Sort by Index</option>
+          <option value="abv-high">Highest ABV</option>
+          <option value="abv-low">Lowest ABV</option>
+          <option value="name">Name (A-Z)</option>
+        </select>
+      </div>
+    </section>
+
+    <p id="countBadge" class="count-badge" role="status" aria-live="polite"></p>
+
+    <div id="cardsContainer" class="cards-grid"></div>
+  </main>
+
+  <div class="modal-backdrop" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailModalTitle" aria-hidden="true">
+    <div class="modal-content">
+      <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Close details">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <h3 class="footer-title">The Absinthe Field Guide</h3>
+      <p class="footer-text">Please drink responsibly.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="js/catalog.js"></script>
+  <script src="data/absinthes.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/map.js"></script>
+</body>
+</html>

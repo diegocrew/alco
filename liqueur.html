@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="liqueur">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liqueur Field Guide: Amaro, Crème, Cordials &amp; 100 Liqueurs Decoded</title>
+  <meta name="description" content="Explore liqueur history, monastic herbal elixirs, amaro bitters, an interactive production map, and 100 decoded real liqueurs.">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400;1,600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo">
+        <svg class="brand-icon" viewBox="0 0 32 32" fill="none" stroke="#d8a24a" stroke-width="2" aria-hidden="true" focusable="false">
+          <path d="M13 4h6v5l4 6v13H9V15l4-6V4z"/>
+          <line x1="11" y1="4" x2="21" y2="4"/>
+        </svg>
+        <div>
+          <span class="brand-title">The Field Guide</span>
+          <span class="brand-subtitle">LIQUEUR ENCYCLOPEDIA</span>
+        </div>
+      </a>
+
+      <nav aria-label="Drink categories">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="rum.html" class="nav-link">Rum</a></li>
+          <li><a href="vodka.html" class="nav-link">Vodka</a></li>
+          <li><a href="whisky.html" class="nav-link">Whisky</a></li>
+          <li><a href="wine.html" class="nav-link">Wine</a></li>
+          <li><a href="gin.html" class="nav-link">Gin</a></li>
+          <li><a href="cognac.html" class="nav-link">Cognac</a></li>
+          <li><a href="brandy.html" class="nav-link">Brandy</a></li>
+          <li><a href="tequila.html" class="nav-link">Tequila</a></li>
+          <li><a href="champagne.html" class="nav-link">Champagne</a></li>
+          <li><a href="beer.html" class="nav-link">Beer</a></li>
+          <li><a href="absinthe.html" class="nav-link">Absinthe</a></li>
+          <li><a href="liqueur.html" class="nav-link active" aria-current="page">Liqueurs</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero-section">
+      <p class="hero-subtitle">THE FIELD GUIDE VOL. XII</p>
+      <h1 class="hero-title">100 Liqueurs, Decoded</h1>
+      <p class="hero-description">
+        Sweetened, infused and macerated. Filter by how each bottle earns its place: sipped as a digestivo, poured over ice, or built into the classics.
+      </p>
+
+      <div class="filter-bar-container" role="group" aria-label="Filter by serving style">
+        <button type="button" class="filter-btn active" data-serve="all" aria-pressed="true">ALL STYLES</button>
+        <button type="button" class="filter-btn" data-serve="neat" aria-pressed="false">BEST NEAT</button>
+        <button type="button" class="filter-btn" data-serve="ice" aria-pressed="false">BEST ON ICE</button>
+        <button type="button" class="filter-btn" data-serve="cocktail" aria-pressed="false">BEST IN COCKTAILS</button>
+      </div>
+    </section>
+
+    <section class="section-container">
+      <div class="section-header">
+        <p class="section-subtitle">THE FIELD BOARD</p>
+        <h2 class="section-title">From Monastery Medicine to the Back Bar</h2>
+      </div>
+
+      <div class="board-grid">
+        <div class="board-column">
+          <p class="board-label">Origin Story</p>
+          <div class="timeline-stack">
+        <div class="timeline-card">
+          <div class="timeline-year">1300s • Monastic Elixirs</div>
+          <h3 class="timeline-title">Herbs as Medicine</h3>
+          <p class="timeline-desc">European monasteries macerated herbs, roots and barks in spirit as remedies. Bénédictine and Chartreuse both descend directly from these apothecary recipes.</p>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-year">1860s • Amaro Italiano</div>
+          <h3 class="timeline-title">The Bitter Boom</h3>
+          <p class="timeline-desc">Italian pharmacists commercialised bitter digestive tonics. Campari, Fernet-Branca and Aperol turned medicinal bitterness into a national drinking culture.</p>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-year">Modern • The Sugar Line</div>
+          <h3 class="timeline-title">What Makes a Liqueur</h3>
+          <p class="timeline-desc">EU law draws the line at sugar: a liqueur must carry at least 100 g of sugar per litre. Below that threshold you have a flavoured spirit, not a liqueur.</p>
+        </div>
+          </div>
+        </div>
+
+        <div class="board-column">
+          <p class="board-label">Signature Cocktail</p>
+          <article class="signature-card">
+            <h3 class="signature-name">Espresso Martini</h3>
+            <p class="signature-method">Coupe Glass • Shaken Hard • Double Strained</p>
+            <ul class="signature-recipe">
+              <li><span class="signature-measure">45 ml</span><span>Vodka</span></li>
+              <li><span class="signature-measure">30 ml</span><span>Coffee liqueur</span></li>
+              <li><span class="signature-measure">30 ml</span><span>Fresh espresso</span></li>
+              <li><span class="signature-measure">10 ml</span><span>Simple syrup</span></li>
+            </ul>
+            <p class="signature-garnish">Garnish: Three coffee beans</p>
+            <p class="signature-note">Dick Bradsell built it in 1980s Soho for a model who wanted waking up and knocking out in one glass. The foam only holds if the espresso is fresh.</p>
+          </article>
+        </div>
+
+        <div class="board-column">
+          <p class="board-label">Global Terroir</p>
+          <div class="map-wrapper">
+            <div id="map" role="application" aria-label="Interactive world map of liqueur producing regions"></div>
+          </div>
+          <p class="map-hint">Click the map to enable zoom • Click a pin to filter</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="toolbar-section">
+      <div>
+        <label for="searchInput" class="visually-hidden">Search liqueurs</label>
+        <input type="search" id="searchInput" class="input-control" placeholder="🔍 Search by name, producer, botanicals or flavor tags...">
+      </div>
+      <div>
+        <label for="styleSelect" class="visually-hidden">Filter by style</label>
+        <select id="styleSelect" class="select-control"><option value="all">All Styles</option></select>
+      </div>
+      <div>
+        <label for="regionSelect" class="visually-hidden">Filter by region</label>
+        <select id="regionSelect" class="select-control"><option value="all">All Regions</option></select>
+      </div>
+      <div>
+        <label for="sortSelect" class="visually-hidden">Sort results</label>
+        <select id="sortSelect" class="select-control">
+          <option value="default">Sort by Index</option>
+          <option value="abv-high">Highest ABV</option>
+          <option value="abv-low">Lowest ABV</option>
+          <option value="name">Name (A-Z)</option>
+        </select>
+      </div>
+    </section>
+
+    <p id="countBadge" class="count-badge" role="status" aria-live="polite"></p>
+
+    <div id="cardsContainer" class="cards-grid"></div>
+  </main>
+
+  <div class="modal-backdrop" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailModalTitle" aria-hidden="true">
+    <div class="modal-content">
+      <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Close details">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <h3 class="footer-title">The Liqueur Field Guide</h3>
+      <p class="footer-text">Please drink responsibly.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="js/catalog.js"></script>
+  <script src="data/liqueurs.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/map.js"></script>
+</body>
+</html>

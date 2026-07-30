@@ -7,9 +7,12 @@
   <meta name="description" content="Brandy guide decoding Gascony Armagnac, Brandy de Jerez Solera, Normandy Calvados, Peruvian Pisco, and Italian Grappa with 100 decoded brandies.">
   
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400;1,600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap">
   <link rel="stylesheet" href="css/themes.css">
   <link rel="stylesheet" href="css/styles.css">
-  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
@@ -40,6 +43,9 @@
           <li><a href="brandy.html" class="nav-link active">Brandy</a></li>
           <li><a href="tequila.html" class="nav-link">Tequila</a></li>
           <li><a href="champagne.html" class="nav-link">Champagne</a></li>
+          <li><a href="beer.html" class="nav-link">Beer</a></li>
+          <li><a href="absinthe.html" class="nav-link">Absinthe</a></li>
+          <li><a href="liqueur.html" class="nav-link">Liqueurs</a></li>
         </ul>
       </nav>
     </div>
@@ -48,7 +54,7 @@
   <main>
     <section class="hero-section">
       <p class="hero-subtitle">THE FIELD GUIDE VOL. VII</p>
-      <h1 class="hero-title">100 Brandy Styles, Decoded</h1>
+      <h1 class="hero-title">104 Brandies, Decoded</h1>
       <p class="hero-description">
         Historic fruit eau-de-vie, Armagnac continuous stills, Jerez Spanish Solera brandies, and cellar master traditions.
       </p>
@@ -61,13 +67,16 @@
       </div>
     </section>
 
-    <section class="section-container" style="padding-top: 0;">
+    <section class="section-container">
       <div class="section-header">
-        <p class="section-subtitle">ORIGIN STORY</p>
+        <p class="section-subtitle">THE FIELD BOARD</p>
         <h2 class="section-title">The Oldest Distilled Spirit of Europe</h2>
       </div>
 
-      <div class="timeline-grid">
+      <div class="board-grid">
+        <div class="board-column">
+          <p class="board-label">Origin Story</p>
+          <div class="timeline-stack">
         <div class="timeline-card">
           <div class="timeline-year">1310 • Vital Du Four</div>
           <h3 class="timeline-title">Armagnac Medical Treatise</h3>
@@ -85,20 +94,31 @@
           <h3 class="timeline-title">Fruit Eau-de-Vie Terroirs</h3>
           <p class="timeline-desc">Regional designations for Normandy apple cider brandy (Calvados) and South American grape spirits (Pisco).</p>
         </div>
-      </div>
-    </section>
+          </div>
+        </div>
 
-    <section class="section-container">
-      <div class="section-header">
-        <p class="section-subtitle">GLOBAL TERROIR</p>
-        <h2 class="section-title">World Map of Fruit & Grape Brandy</h2>
-        <p style="font-size: 0.95rem; color: var(--text-body); max-width: 650px; margin: 0.5rem auto 0;">
-          Click any highlighted pin to explore fruit eau-de-vie traditions and filter brandies from that specific region.
-        </p>
-      </div>
+        <div class="board-column">
+          <p class="board-label">Signature Cocktail</p>
+          <article class="signature-card">
+            <h3 class="signature-name">Brandy Alexander</h3>
+            <p class="signature-method">Coupe Glass • Shaken Hard • Chilled</p>
+            <ul class="signature-recipe">
+              <li><span class="signature-measure">45 ml</span><span>Brandy</span></li>
+              <li><span class="signature-measure">30 ml</span><span>Dark crème de cacao</span></li>
+              <li><span class="signature-measure">30 ml</span><span>Double cream</span></li>
+            </ul>
+            <p class="signature-garnish">Garnish: Freshly grated nutmeg</p>
+            <p class="signature-note">A dessert in a glass, and reputedly the drink that persuaded John Lennon to stop drinking. Grate the nutmeg over the surface, never into the shaker.</p>
+          </article>
+        </div>
 
-      <div class="map-wrapper">
-        <div id="map"></div>
+        <div class="board-column">
+          <p class="board-label">Global Terroir</p>
+          <div class="map-wrapper">
+            <div id="map" role="application" aria-label="Interactive world map of brandy producing regions"></div>
+          </div>
+          <p class="map-hint">Click the map to enable zoom • Click a pin to filter</p>
+        </div>
       </div>
     </section>
 
@@ -133,14 +153,14 @@
   <footer class="site-footer">
     <div class="footer-content">
       <h3 class="footer-title">The Brandy Field Guide</h3>
-      <p class="footer-text">Part of The Grand Spirits Encyclopedia for GitHub Pages.</p>
+      <p class="footer-text">Please drink responsibly.</p>
     </div>
   </footer>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="js/catalog.js"></script>
   <script src="data/brandies.js"></script>
   <script src="js/app.js"></script>
   <script src="js/map.js"></script>
-  <script>lucide.createIcons();</script>
 </body>
 </html>

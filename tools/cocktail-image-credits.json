@@ -1,0 +1,614 @@
+{
+ "old-fashioned": {
+  "name": "Old Fashioned",
+  "author": "Steve Haddadin",
+  "licence": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Smokin%27_Steve_Old_Fashioned.png"
+ },
+ "manhattan": {
+  "name": "Manhattan",
+  "author": "Evaengler",
+  "licence": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:2_Manhattan_cocktails,_bird%27s_eye_view.jpg"
+ },
+ "boulevardier": {
+  "name": "Boulevardier",
+  "author": "Paul Lowry",
+  "licence": "CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Boulevardier_in_Baton_Rouge.jpg"
+ },
+ "penicillin": {
+  "name": "Penicillin",
+  "author": "Matthias Friedlein (www.augustine-bar.de)",
+  "licence": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Penicillin_Cocktail.png"
+ },
+ "pegu-club": {
+  "name": "Pegu Club",
+  "author": "Paxsimius",
+  "licence": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Pegu_Club_cocktail.jpg"
+ },
+ "bijou": {
+  "name": "Bijou",
+  "author": "Chris Palmer from San Diego",
+  "licence": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Bijou_Cocktail.jpg"
+ },
+ "daiquiri": {
+  "name": "Daiquiri",
+  "author": "Will Shenton",
+  "licence": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Classic_Daiquiri_in_Cocktail_Glass.jpg"
+ },
+ "jasmine": {
+  "name": "Jasmine",
+  "author": "ayustety from Tukishima, Tokyo",
+  "licence": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Awamori_and_jasmine_tea_cocktail_by_ayustety.jpg"
+ },
+ "sazerac": {
+  "name": "Sazerac",
+  "author": "Infrogmation of New Orleans",
+  "licence": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:SazeracRooseveltNOLA1July2009.JPG"
+ },
+ "whiskey-sour": {
+  "name": "Whiskey Sour",
+  "author": "Ilikefood",
+  "licence": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Whiskey_sour_in_coupe_glass_with_garnishes.jpg"
+ },
+ "mint-julep": {
+  "name": "Mint Julep",
+  "author": "Jami430",
+  "licence": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Mint_julep_at_Revel_in_New_Orleans.jpg"
+ },
+ "rob-roy": {
+  "name": "Rob Roy",
+  "author": "TheCulinaryGeek",
+  "licence": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Rob_Roy_Cocktail.jpg"
+ },
+ "dry-martini": {
+  "name": "Dry Martini",
+  "author": "Dry_Martini.jpg: Original uploader was Hayford Peirce at en.wikipedia derivative work: Sigmundausfaller (talk)",
+  "licence": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Dry_Martini-2.jpg"
+ },
+ "negroni": {
+  "name": "Negroni",
+  "author": "Matthias Friedlein (www.augustine-bar.de)",
+  "licence": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Negroni_(cocktail).png"
+ },
+ "last-word": {
+  "name": "Last Word",
+  "author": "Don LaVange",
+  "licence": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:The_Last_Word_cocktail_raised.jpg"
+ },
+ "white-lady": {
+  "name": "White Lady",
+  "author": "Momoji3",
+  "licence": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:White_Lady_(cocktail).jpg"
+ },
+ "southside": {
+  "name": "Southside",
+  "author": "davidgiesberg",
+  "licence": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:The_Southside_-_kind_of_a_gin_mojito.jpg"
+ },
+ "bramble": {
+  "name": "Bramble",
+  "author": "Erich Wagner (www.eventografie.de)",
+  "licence": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Bramble_Cocktail2.jpg"
+ },
+ "gin-fizz": {
+  "name": "Gin Fizz",
+  "author": "AGnias47",
+  "licence": "CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ramos_Gin_Fizz_at_The_Sazerac_Bar.jpg"
+ },
+ "airmail": {
+  "name": "Airmail",
+  "author": "Matthias Friedlein (www.augustine-bar.de)",
+  "licence": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Air_Mail_Cocktail.png"
+ },
+ "hurricane": {
+  "name": "Hurricane",
+  "author": "Vrlobo888 at English Wikipedia",
+  "licence": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Hurricane_cocktail.jpg"
+ },
+ "caipirinha": {
+  "name": "Caipirinha",
+  "author": "Christian",
+  "licence": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Cocktail_Caipirinha_raw.jpg"
+ },
+ "moscow-mule": {
+  "name": "Moscow Mule",
+  "author": "Gordito1869",
+  "licence": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Moscow_mule_Cocktail_im_Kupferbecher.jpg"
+ },
+ "espresso-martini": {
+  "name": "Espresso Martini",
+  "author": "Missvain",
+  "licence": "CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Espresso_martini_-_November_2024_-_Sarah_Stierch.jpg"
+ },
+ "screwdriver": {
+  "name": "Screwdriver",
+  "author": "John Phelan",
+  "licence": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Screwdriver,_Birmingham-Shuttlesworth_International_Airport,_Birmingham_AL.jpg"
+ },
+ "lemon-drop": {
+  "name": "Lemon Drop",
+  "author": "Schezar from New York City, USA",
+  "licence": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Lemon_Drop_cocktails.jpg"
+ },
+ "harvey-wallbanger": {
+  "name": "Harvey Wallbanger",
+  "author": "User JayKeaton on English Wikipedia, http://en.wikipedia.org/wiki/User:JayKeaton",
+  "licence": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Harvey_Wallbanger.jpg"
+ },
+ "margarita": {
+  "name": "Margarita",
+  "author": "Akke Monasso",
+  "licence": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:MargaritaReal.jpg"
+ },
+ "tommy-s-margarita": {
+  "name": "Tommy's Margarita",
+  "author": "Rick Audet",
+  "licence": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:TommysMargarita.jpg"
+ },
+ "tequila-sunrise": {
+  "name": "Tequila Sunrise",
+  "author": "Speaker: Peppage Authors of the article",
+  "licence": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:En-Tequila-sunrise-(cocktail)-article.ogg"
+ },
+ "between-the-sheets": {
+  "name": "Between the Sheets",
+  "author": "Zach",
+  "licence": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Between_The_Sheets_Cocktail.jpg"
+ },
+ "stinger": {
+  "name": "Stinger",
+  "author": "Will Shenton",
+  "licence": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Stinger_Cocktail.jpg"
+ },
+ "pisco-sour": {
+  "name": "Pisco Sour",
+  "author": "Bart Everson",
+  "licence": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Pisco_Sour_Cocktail.jpg"
+ },
+ "americano": {
+  "name": "Americano",
+  "author": "Conrad and Peter",
+  "licence": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Americano_cocktail_at_Nightwood_Restaurant.jpg"
+ },
+ "bellini": {
+  "name": "Bellini",
+  "author": "John Phelan",
+  "licence": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Bellini_Cipriani,_Macaroni_Grill,_Dunwoody_GA.jpg"
+ },
+ "mimosa": {
+  "name": "Mimosa",
+  "author": "GeoO",
+  "licence": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Mimosa_cocktail_ingredients.png"
+ },
+ "kir-royale": {
+  "name": "Kir Royale",
+  "author": "Ruth Hartnup from Vancouver, Canada",
+  "licence": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Christmas_aperitif_Kir_Royale_(31246794594).jpg"
+ },
+ "sangria": {
+  "name": "Sangría",
+  "author": "El Nuevo Doge",
+  "licence": "CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Sangr%C3%ADa,_Mazatl%C3%A1n,_30_de_noviembre_de_2022_04.jpg"
+ },
+ "michelada": {
+  "name": "Michelada",
+  "author": "Will Shenton",
+  "licence": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Michelada_Cocktail.jpg"
+ },
+ "grasshopper": {
+  "name": "Grasshopper",
+  "author": "TexasDex",
+  "licence": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Grasshopper_cocktail.jpg"
+ },
+ "chartreuse-swizzle": {
+  "name": "Chartreuse Swizzle",
+  "author": "BanjoZebra",
+  "licence": "CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Chartreuse_swizzle.jpg"
+ },
+ "godfather": {
+  "name": "Godfather",
+  "author": "Stuart Webster from Southampton, England",
+  "licence": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Godfather_cocktail.jpg"
+ },
+ "chrysanthemum": {
+  "name": "Chrysanthemum",
+  "author": "popvoid",
+  "licence": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Chrysanthemum_cocktail.jpg"
+ },
+ "suffering-bastard": {
+  "name": "Suffering Bastard",
+  "author": "Will Shenton",
+  "licence": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Suffering_Bastard_Cocktail.jpg"
+ },
+ "remember-the-maine": {
+  "name": "Remember the Maine",
+  "author": "Adrian Scottow",
+  "licence": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Remember_the_Maine_-_Cocktail.jpg"
+ },
+ "boothby": {
+  "name": "Boothby",
+  "author": "artist unknown, the publication was copyrighted 1891 by William T. Boothby",
+  "licence": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Boothby_Cocktail.jpg"
+ },
+ "seelbach": {
+  "name": "Seelbach",
+  "author": "Matthias Friedlein (www.augustine-bar.de)",
+  "licence": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Seelbach_(cocktail).png"
+ },
+ "yellow-bird": {
+  "name": "Yellow Bird",
+  "author": "John Phelan",
+  "licence": "CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Yellow_Bird_at_Bar_Blanc,_Atlanta_GA.jpg"
+ },
+ "widow-s-kiss": {
+  "name": "Widow's Kiss",
+  "author": "CocktailStevee",
+  "licence": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Widows_Kiss_in_Coupe.jpg"
+ },
+ "tipperary": {
+  "name": "Tipperary",
+  "author": "BanjoZebra",
+  "licence": "CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Tipperary.jpg"
+ },
+ "toronto": {
+  "name": "Toronto",
+  "author": "Farther Along",
+  "licence": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:The_Toronto_Cocktail_(13570423424).jpg"
+ },
+ "jack-rose": {
+  "name": "Jack Rose",
+  "author": "Antonio Cavallo",
+  "licence": "CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Jack_Rose_Cocktail.jpg"
+ },
+ "vieux-carre": {
+  "name": "Vieux Carré",
+  "author": "Adrian Scottow",
+  "licence": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Vieux_Carre_Cocktail.jpg"
+ },
+ "new-york-sour": {
+  "name": "New York Sour",
+  "author": "Erich Wagner (www.eventografie.de)",
+  "licence": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:New_York_Sour.jpg"
+ },
+ "brooklyn": {
+  "name": "Brooklyn",
+  "author": "Arnaud 25",
+  "licence": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Brooklyn_(cocktail).jpg"
+ },
+ "bobby-burns": {
+  "name": "Bobby Burns",
+  "author": "preater",
+  "licence": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Bobby_Burns_cocktail.jpg"
+ },
+ "bee-s-knees": {
+  "name": "Bee's Knees",
+  "author": "Will Shenton",
+  "licence": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Bee%27s_Knees.jpg"
+ },
+ "french-75": {
+  "name": "French 75",
+  "author": "https://www.flickr.com/people/garyjwood/",
+  "licence": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:French_75.jpg"
+ },
+ "clover-club": {
+  "name": "Clover Club",
+  "author": "Krista",
+  "licence": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Clover_club_southside_fizz_(3285775440).jpg"
+ },
+ "ramos-gin-fizz": {
+  "name": "Ramos Gin Fizz",
+  "author": "AGnias47",
+  "licence": "CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ramos_Gin_Fizz_at_The_Sazerac_Bar.jpg"
+ },
+ "vesper": {
+  "name": "Vesper",
+  "author": "GeoO",
+  "licence": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Vesper_cocktail_ingredients.png"
+ },
+ "singapore-sling": {
+  "name": "Singapore Sling",
+  "author": "Achim Schleuning (E-Mail: comander02_de@yahoo.de)",
+  "licence": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Singapore_Sling_Ingredients.JPG"
+ },
+ "martinez": {
+  "name": "Martinez",
+  "author": "Will Shenton",
+  "licence": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Martinez_Cocktail.jpg"
+ },
+ "gin-tonic": {
+  "name": "Gin & Tonic",
+  "author": "Achim Schleuning (E-Mail: comander02_de@yahoo.de)",
+  "licence": "CC BY-SA 3.0 de",
+  "source": "https://commons.wikimedia.org/wiki/File:Gin_Tonic_3.jpg"
+ },
+ "hemingway-daiquiri": {
+  "name": "Hemingway Daiquiri",
+  "author": "Achim Schleuning (E-Mail: comander02_de@yahoo.de)",
+  "licence": "CC BY-SA 3.0 de",
+  "source": "https://commons.wikimedia.org/wiki/File:Hemingway_Daiquiri.jpg"
+ },
+ "jungle-bird": {
+  "name": "Jungle Bird",
+  "author": "BanjoZebra",
+  "licence": "CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Jungle_bird_cocktail.jpg"
+ },
+ "cosmopolitan": {
+  "name": "Cosmopolitan",
+  "author": "GeoO",
+  "licence": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Cosmopolitan_cocktail_ingredients.png"
+ },
+ "bloody-mary": {
+  "name": "Bloody Mary",
+  "author": "Beau B",
+  "licence": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Bloody_Mary_-_Baton_Rouge_Louisiana.jpg"
+ },
+ "paloma": {
+  "name": "Paloma",
+  "author": "Andy Li",
+  "licence": "CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Paloma_Spritz_-_Purezza_2024-12-17.jpg"
+ },
+ "aperol-spritz": {
+  "name": "Aperol Spritz",
+  "author": "Missvain",
+  "licence": "CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Aperol_Spritz_-_Santa_Ynez_Kitchen_-_Sarah_Stierch.jpg"
+ },
+ "kir": {
+  "name": "Kir",
+  "author": "Stuart Webster from Southampton, England",
+  "licence": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Kir_cocktail.jpg"
+ },
+ "sherry-cobbler": {
+  "name": "Sherry Cobbler",
+  "author": "BanjoZebra",
+  "licence": "CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Sherry_cobbler.jpg"
+ },
+ "blood-and-sand": {
+  "name": "Blood and Sand",
+  "author": "Missvain",
+  "licence": "CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Blood_and_Sand_Cocktail_-_Sarah_Stierch.jpg"
+ },
+ "rusty-nail": {
+  "name": "Rusty Nail",
+  "author": "Brian Child",
+  "licence": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Rusty_Nail_a_cocktail_by_@tokenchick13_(16503594826).jpg"
+ },
+ "irish-coffee": {
+  "name": "Irish Coffee",
+  "author": "Smugleafdev",
+  "licence": "CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Alcohol_glass_irish_coffee.svg"
+ },
+ "tom-collins": {
+  "name": "Tom Collins",
+  "author": "Daniel Nguyen",
+  "licence": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Tom_Collins_cocktail.jpg"
+ },
+ "aviation": {
+  "name": "Aviation",
+  "author": "Bskinner112 at English Wikipedia",
+  "licence": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Aviation_Cocktail.jpg"
+ },
+ "hanky-panky": {
+  "name": "Hanky Panky",
+  "author": "Tim Sackton from Somerville, MA",
+  "licence": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Hanky_Panky_cocktail.jpg"
+ },
+ "mojito": {
+  "name": "Mojito",
+  "author": "OpenClipart",
+  "licence": "CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Mojito_Cocktail_Drawing_Icon.svg"
+ },
+ "zombie": {
+  "name": "Zombie",
+  "author": "GianniZottola",
+  "licence": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Zombie_cocktail_gianni_zottola.jpg"
+ },
+ "el-presidente": {
+  "name": "El Presidente",
+  "author": "책읽는달팽",
+  "licence": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:El_Presidente_(Cocktail).jpg"
+ },
+ "ti-punch": {
+  "name": "Ti' Punch",
+  "author": "DerMixologe",
+  "licence": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ti_Punch.jpg"
+ },
+ "queen-s-park-swizzle": {
+  "name": "Queen's Park Swizzle",
+  "author": "Krista",
+  "licence": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Trader_vic%27s_queens_park_swizzle.jpg"
+ },
+ "white-russian": {
+  "name": "White Russian",
+  "author": "Will Shenton",
+  "licence": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:White_Russian_Cocktail.jpg"
+ },
+ "salty-dog": {
+  "name": "Salty Dog",
+  "author": "Momoji3",
+  "licence": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Salty_Dog.jpg"
+ },
+ "naked-and-famous": {
+  "name": "Naked and Famous",
+  "author": "Rascalisimo",
+  "licence": "CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Naked_and_Famous_cocktail.jpg"
+ },
+ "death-in-the-afternoon": {
+  "name": "Death in the Afternoon",
+  "author": "Butterbean",
+  "licence": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Death_In_The_Afternoon.jpg"
+ },
+ "adonis": {
+  "name": "Adonis",
+  "author": "Cocktailmarler",
+  "licence": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Adonis_Cocktail.JPG"
+ },
+ "black-velvet": {
+  "name": "Black Velvet",
+  "author": "Bruce The Deus",
+  "licence": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Black_velvet_Cocktail.png"
+ },
+ "pimm-s-cup": {
+  "name": "Pimm's Cup",
+  "author": "Charles Clavadetscher",
+  "licence": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Pimm_s-Cup-Nr-1-Cocktail.jpg"
+ },
+ "sgroppino": {
+  "name": "Sgroppino",
+  "author": "Weetjesman",
+  "licence": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Sgroppino.jpg"
+ },
+ "golden-cadillac": {
+  "name": "Golden Cadillac",
+  "author": "אני יצרתי (Transferred by Matanya/Originally uploaded by Ofir michael)",
+  "licence": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:GoldenCadillac.jpg"
+ },
+ "tuxedo-no-2": {
+  "name": "Tuxedo No. 2",
+  "author": "BanjoZebra",
+  "licence": "CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Tuxedo_No._2_cocktail.jpg"
+ },
+ "garibaldi": {
+  "name": "Garibaldi",
+  "author": "User:BanjoZebra",
+  "licence": "CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Garibaldi_cocktail_bright.jpg"
+ },
+ "mary-pickford": {
+  "name": "Mary Pickford",
+  "author": "Will Shenton",
+  "licence": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Mary_Pickford_Cocktail.jpg"
+ },
+ "monkey-gland": {
+  "name": "Monkey Gland",
+  "author": "Adrian Scottow from London, England",
+  "licence": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Monkey_Gland_(11677703163).jpg"
+ },
+ "pink-gin": {
+  "name": "Pink Gin",
+  "author": "Sezenkerem",
+  "licence": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Pink_Gin_Tonic.jpg"
+ },
+ "pornstar-martini": {
+  "name": "Pornstar Martini",
+  "author": "Ben Sutherland",
+  "licence": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Porn_star_martini_cocktail.jpg"
+ },
+ "hugo": {
+  "name": "Hugo",
+  "author": "User:Koever",
+  "licence": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Hugo_Cocktail_2013-08-03_20-24.jpg"
+ },
+ "pina-colada": {
+  "name": "Piña Colada",
+  "author": "Martin Asche",
+  "licence": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Pina_Colada_(Cocktail).jpg"
+ },
+ "bronx": {
+  "name": "Bronx",
+  "author": "Stuart Webster",
+  "licence": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Bronx_(cocktail).jpg"
+ },
+ "breakfast-martini": {
+  "name": "Breakfast Martini",
+  "author": "popvoid",
+  "licence": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Breakfast_Martini.jpg"
+ }
+}
