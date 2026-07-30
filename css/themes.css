@@ -240,3 +240,73 @@
   --border-card: #363645;
   --border-active: #f3cf7a;
 }
+
+/* --------------------------------------------------
+   10. BEER THEME (Malt Amber, Copper Kettle, Hop Green)
+   -------------------------------------------------- */
+[data-theme="beer"] {
+  --bg-page: #17110a;
+  --bg-header: #110c07;
+  --bg-surface: #211809;
+  --bg-card: #2b1f0e;
+  --bg-card-hover: #372813;
+  --bg-pill: #3b2b14;
+
+  --text-title: #fbf1dc;
+  --text-body: #ddcba6;
+  --text-muted: #99855f;
+
+  --accent-primary: #e0aa2f;
+  --accent-secondary: #b06f1c;
+  --accent-ring: #e0aa2f;
+
+  --border-card: #4a3616;
+  --border-active: #e0aa2f;
+}
+
+/* --------------------------------------------------
+   11. ABSINTHE THEME (La Fée Verte, Wormwood, Louche)
+   -------------------------------------------------- */
+[data-theme="absinthe"] {
+  --bg-page: #0c1209;
+  --bg-header: #070d06;
+  --bg-surface: #121b0e;
+  --bg-card: #182312;
+  --bg-card-hover: #202e18;
+  --bg-pill: #24331a;
+
+  --text-title: #eef7e2;
+  --text-body: #c8d9b4;
+  --text-muted: #7f9169;
+
+  --accent-primary: #9ccb45;
+  --accent-secondary: #5f8c2a;
+  --accent-ring: #9ccb45;
+
+  --border-card: #2c3d1f;
+  --border-active: #9ccb45;
+}
+
+/* --------------------------------------------------
+   12. LIQUEUR THEME (Crimson Cassis, Gilded Crystal)
+   -------------------------------------------------- */
+[data-theme="liqueur"] {
+  --bg-page: #140a0d;
+  --bg-header: #0e0609;
+  --bg-surface: #1d0f13;
+  --bg-card: #26141a;
+  --bg-card-hover: #331b23;
+  --bg-pill: #371d25;
+
+  --text-title: #f9e9ec;
+  --text-body: #dcc0c6;
+  --text-muted: #977880;
+
+  --accent-primary: #d8a24a;
+  --accent-secondary: #9c2743;
+  --accent-ring: #d8a24a;
+
+  --border-card: #45222c;
+  --border-active: #d8a24a;
+}
+

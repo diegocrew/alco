@@ -13,43 +13,51 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalCloseBtn = document.getElementById('modalCloseBtn');
   const modalBody = document.getElementById('modalBody');
 
-  const dataset = window.SPIRIT_DATA || window.RUM_DATA || [];
-  if (!dataset || !cardsContainer) return;
+  const dataset = window.SPIRIT_DATA || [];
+  if (!cardsContainer || dataset.length === 0) return;
 
-  let currentCategoryFilter = 'all'; 
+  const category = window.SPIRIT_TYPE || 'rum';
+  const isWine = category === 'wine';
+  const isChampagne = category === 'champagne';
+  const isBeer = category === 'beer';
+
+  let currentCategoryFilter = 'all';
   let activeRegionFilter = 'all';
+  let lastFocusedElement = null;
 
-  // Automatically populate Style & Region dropdowns from dataset
+  const esc = (value) => String(value == null ? '' : value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+
   function initDynamicDropdowns() {
     if (styleSelect) {
-      const styles = Array.from(new Set(dataset.map(item => item.style).filter(Boolean)));
-      styleSelect.innerHTML = `<option value="all">All Styles</option>` + 
-        styles.map(st => `<option value="${st}">${st}</option>`).join('');
+      const styles = Array.from(new Set(dataset.map(item => item.style).filter(Boolean))).sort();
+      styleSelect.innerHTML = '<option value="all">All Styles</option>' +
+        styles.map(st => `<option value="${esc(st)}">${esc(st)}</option>`).join('');
     }
 
     if (regionSelect) {
-      const regions = Array.from(new Set(dataset.map(item => item.region).filter(Boolean)));
-      regionSelect.innerHTML = `<option value="all">All Regions</option>` + 
-        regions.map(rg => `<option value="${rg}">${rg}</option>`).join('');
+      const regions = Array.from(new Set(dataset.map(item => item.region).filter(Boolean))).sort();
+      regionSelect.innerHTML = '<option value="all">All Regions</option>' +
+        regions.map(rg => `<option value="${esc(rg)}">${esc(rg)}</option>`).join('');
     }
   }
 
   // --------------------------------------------------
-  // RENDER SPIRIT CARD (TAILORED FOR WINE, CHAMPAGNE OR GENERAL SPIRIT)
+  // RENDER CARD (WINE, CHAMPAGNE, BEER OR GENERAL SPIRIT)
   // --------------------------------------------------
   function createSpiritCardHTML(item) {
     const radius = 26;
     const circumference = 2 * Math.PI * radius;
-    // Map ABV to dashoffset
     const maxAbv = 75;
-    const minAbv = 8;
-    const abvPercent = Math.min(Math.max((item.abv - minAbv) / (maxAbv - minAbv), 0.15), 1);
+    const minAbv = 3;
+    const abvPercent = Math.min(Math.max((item.abv - minAbv) / (maxAbv - minAbv), 0.12), 1);
     const strokeDashoffset = circumference - (abvPercent * circumference);
 
-    const tagsHTML = item.flavorTags ? item.flavorTags.map(tag => `<span class="tag-pill">${tag}</span>`).join('') : '';
-
-    const isWine = (window.SPIRIT_TYPE === 'wine') || Boolean(item.color && item.serveTemp);
-    const isChampagne = (window.SPIRIT_TYPE === 'champagne') || Boolean(item.champagneType && item.leesAging);
+    const tagsHTML = (item.flavorTags || []).map(tag => `<span class="tag-pill">${esc(tag)}</span>`).join('');
 
     let badgesHTML = '';
     let sourceLabel = 'ORIGIN / SOURCE';
@@ -59,56 +67,64 @@ document.addEventListener('DOMContentLoaded', () => {
       const colorBg = item.color === 'RED' ? '#8b263e' : (item.color === 'WHITE' ? '#d4af37' : (item.color === 'ORANGE' ? '#d97736' : '#e69c37'));
       badgesHTML = `
         <div class="serve-buttons">
-          <div class="serve-btn active" style="background-color: ${colorBg}; color: #fff; border-color: ${colorBg};">${item.color || 'RED'}</div>
-          <div class="serve-btn active" style="background-color: rgba(255,255,255,0.1); color: var(--text-title);">${item.serveTemp || '16°-18°C'}</div>
-          <div class="serve-btn active" style="background-color: rgba(0,0,0,0.3); color: var(--accent-primary); border-color: var(--border-card);">${item.decant || 'DECANT 60M'}</div>
+          <div class="serve-btn active" style="background-color: ${esc(colorBg)}; color: #fff; border-color: ${esc(colorBg)};">${esc(item.color || 'RED')}</div>
+          <div class="serve-btn active" style="background-color: rgba(255,255,255,0.1); color: var(--text-title);">${esc(item.serveTemp || '16-18°C')}</div>
+          <div class="serve-btn active" style="background-color: rgba(0,0,0,0.3); color: var(--accent-primary); border-color: var(--border-card);">${esc(item.decant || 'DECANT 60M')}</div>
         </div>
       `;
     } else if (isChampagne) {
       sourceLabel = 'GRAPE BLEND';
       badgesHTML = `
         <div class="serve-buttons">
-          <div class="serve-btn active" style="background-color: #f3cf7a; color: #120e0b; font-weight: 700; border-color: #f3cf7a;">${item.champagneType || 'PRESTIGE'}</div>
-          <div class="serve-btn active" style="background-color: rgba(243, 207, 122, 0.15); color: var(--text-title); border-color: rgba(243, 207, 122, 0.4);">${item.leesAging || 'LEES AGED'}</div>
-          <div class="serve-btn active" style="background-color: rgba(0,0,0,0.3); color: var(--accent-primary); border-color: var(--border-card);">${item.dosage || item.serveTemp || 'BRUT'}</div>
+          <div class="serve-btn active" style="background-color: #f3cf7a; color: #120e0b; font-weight: 700; border-color: #f3cf7a;">${esc(item.champagneType || 'PRESTIGE')}</div>
+          <div class="serve-btn active" style="background-color: rgba(243, 207, 122, 0.15); color: var(--text-title); border-color: rgba(243, 207, 122, 0.4);">${esc(item.leesAging || 'LEES AGED')}</div>
+          <div class="serve-btn active" style="background-color: rgba(0,0,0,0.3); color: var(--accent-primary); border-color: var(--border-card);">${esc(item.dosage || 'BRUT')}</div>
+        </div>
+      `;
+    } else if (isBeer) {
+      sourceLabel = 'MALT BILL / HOPS';
+      badgesHTML = `
+        <div class="serve-buttons">
+          <div class="serve-btn active" style="background-color: #c98b1d; color: #17110a; font-weight: 700; border-color: #c98b1d;">${esc(item.beerStyle || 'LAGER')}</div>
+          <div class="serve-btn active" style="background-color: rgba(255,255,255,0.1); color: var(--text-title);">${esc(item.serveTemp || '6-8°C')}</div>
+          <div class="serve-btn active" style="background-color: rgba(0,0,0,0.3); color: var(--accent-primary); border-color: var(--border-card);">${esc(item.ibu || 'IBU 20')}</div>
         </div>
       `;
     } else {
-      const neatClass = item.serveModes && item.serveModes.neat ? 'active' : '';
-      const iceClass = item.serveModes && item.serveModes.ice ? 'active' : '';
-      const cocktailClass = item.serveModes && item.serveModes.cocktail ? 'active' : '';
+      const modes = item.serveModes || {};
       badgesHTML = `
         <div class="serve-buttons">
-          <div class="serve-btn ${neatClass}">NEAT</div>
-          <div class="serve-btn ${iceClass}">ON ICE</div>
-          <div class="serve-btn ${cocktailClass}">COCKTAIL</div>
+          <div class="serve-btn ${modes.neat ? 'active' : ''}">NEAT</div>
+          <div class="serve-btn ${modes.ice ? 'active' : ''}">ON ICE</div>
+          <div class="serve-btn ${modes.cocktail ? 'active' : ''}">COCKTAIL</div>
         </div>
       `;
     }
 
     return `
-      <article class="rum-card" data-id="${item.id}">
+      <article class="rum-card" data-id="${esc(item.id)}" tabindex="0" role="button"
+               aria-label="${esc(item.name)}, ${esc(item.abv)} percent alcohol. Open full field notes.">
         <div class="card-header-meta">
-          <span class="card-region">${item.region}</span>
-          <span class="card-index">${item.index}</span>
+          <span class="card-region">${esc(item.region)}</span>
+          <span class="card-index">${esc(item.index)}</span>
         </div>
-        
-        <h3 class="card-title">${item.name}</h3>
-        <p class="card-subtitle">${item.distillery} (${item.country})</p>
-        
+
+        <h3 class="card-title">${esc(item.name)}</h3>
+        <p class="card-subtitle">${esc(item.distillery)} (${esc(item.country)})</p>
+
         <div class="card-abv-section">
           <div class="abv-ring-wrapper">
-            <svg class="abv-ring-svg" viewBox="0 0 60 60">
+            <svg class="abv-ring-svg" viewBox="0 0 60 60" aria-hidden="true" focusable="false">
               <circle class="abv-ring-bg" cx="30" cy="30" r="${radius}"></circle>
-              <circle class="abv-ring-fill" cx="30" cy="30" r="${radius}" 
-                      stroke-dasharray="${circumference}" 
+              <circle class="abv-ring-fill" cx="30" cy="30" r="${radius}"
+                      stroke-dasharray="${circumference}"
                       stroke-dashoffset="${strokeDashoffset}"></circle>
             </svg>
-            <span class="abv-text">${item.abv}%</span>
+            <span class="abv-text">${esc(item.abv)}%</span>
           </div>
           <div class="abv-details">
-            <span class="abv-details-label">${sourceLabel}</span>
-            <span class="abv-details-val">${item.distilledFrom || 'HERITAGE STILLS'}</span>
+            <span class="abv-details-label">${esc(sourceLabel)}</span>
+            <span class="abv-details-val">${esc(item.distilledFrom || 'HERITAGE STILLS')}</span>
           </div>
         </div>
 
@@ -120,10 +136,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <div class="signature-pour">
           <span class="pour-label">SIGNATURE POUR</span>
-          <span class="pour-text">${item.signaturePour}</span>
+          <span class="pour-text">${esc(item.signaturePour)}</span>
         </div>
 
-        <p class="field-notes">"${item.description}"</p>
+        <p class="field-notes">&ldquo;${esc(item.description)}&rdquo;</p>
       </article>
     `;
   }
@@ -131,41 +147,52 @@ document.addEventListener('DOMContentLoaded', () => {
   // --------------------------------------------------
   // FILTER & RENDER LOGIC
   // --------------------------------------------------
+  function matchesCategoryFilter(item) {
+    if (currentCategoryFilter === 'all') return true;
+
+    if (isBeer) {
+      const target = currentCategoryFilter.replace(/-/g, ' ').toUpperCase();
+      return String(item.beerStyle || '').toUpperCase() === target;
+    }
+
+    if (isWine) {
+      if (currentCategoryFilter === 'decant') return /DECANT/i.test(item.decant || '');
+      return String(item.color || '').toUpperCase() === currentCategoryFilter.toUpperCase();
+    }
+
+    if (isChampagne) {
+      const type = String(item.champagneType || '').toUpperCase();
+      if (currentCategoryFilter === 'blanc-de-blancs') return type.includes('BLANC DE BLANCS');
+      if (currentCategoryFilter === 'blanc-de-noirs') return type.includes('BLANC DE NOIRS');
+      if (currentCategoryFilter === 'rose') return type.includes('ROSE') || type.includes('ROSÉ');
+      if (currentCategoryFilter === 'prestige') return type.includes('PRESTIGE');
+      if (currentCategoryFilter === 'lees') return Number(item.leesYears) >= 6;
+      return true;
+    }
+
+    const modes = item.serveModes || {};
+    return Boolean(modes[currentCategoryFilter]);
+  }
+
   function filterAndRender() {
     const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : '';
     const selectedStyle = styleSelect ? styleSelect.value : 'all';
     const selectedRegion = regionSelect ? regionSelect.value : 'all';
     const sortVal = sortSelect ? sortSelect.value : 'default';
 
-    let filtered = dataset.filter(item => {
-      // Top filter button matching for general spirits
-      if (currentCategoryFilter === 'neat' && (!item.serveModes || !item.serveModes.neat)) return false;
-      if (currentCategoryFilter === 'ice' && (!item.serveModes || !item.serveModes.ice)) return false;
-      if (currentCategoryFilter === 'cocktail' && (!item.serveModes || !item.serveModes.cocktail)) return false;
-      
-      // Wine specific top filters
-      if (currentCategoryFilter === 'red' && item.color !== 'RED') return false;
-      if (currentCategoryFilter === 'white' && item.color !== 'WHITE') return false;
-      if (currentCategoryFilter === 'decant' && (!item.decant || !item.decant.includes('DECANT'))) return false;
+    const filtered = dataset.filter(item => {
+      if (!matchesCategoryFilter(item)) return false;
 
-      // Champagne specific top filters
-      if (currentCategoryFilter === 'blanc-de-blancs' && (!item.champagneType || !item.champagneType.includes('BLANC DE BLANCS'))) return false;
-      if (currentCategoryFilter === 'prestige' && (!item.champagneType || (!item.champagneType.includes('PRESTIGE') && !item.style.includes('Vintage')))) return false;
-      if (currentCategoryFilter === 'lees' && (!item.leesAging || (!item.leesAging.includes('6 YRS') && !item.leesAging.includes('7 YRS') && !item.leesAging.includes('8 YRS') && !item.leesAging.includes('10 YRS') && !item.leesAging.includes('12 YRS')))) return false;
+      if (selectedStyle !== 'all' && String(item.style).toLowerCase() !== selectedStyle.toLowerCase()) return false;
 
-      // Style selector
-      if (selectedStyle !== 'all' && item.style.toLowerCase() !== selectedStyle.toLowerCase()) return false;
-
-      // Region selector or map filter
       const effectiveRegion = activeRegionFilter !== 'all' ? activeRegionFilter : selectedRegion;
       if (effectiveRegion !== 'all') {
-        const itemRegionLower = item.region.toLowerCase();
-        const itemCountryLower = item.country.toLowerCase();
-        const targetLower = effectiveRegion.toLowerCase();
-        if (!itemRegionLower.includes(targetLower) && !itemCountryLower.includes(targetLower)) return false;
+        const target = effectiveRegion.toLowerCase();
+        const inRegion = String(item.region).toLowerCase().includes(target);
+        const inCountry = String(item.country).toLowerCase().includes(target);
+        if (!inRegion && !inCountry) return false;
       }
 
-      // Search query match
       if (searchTerm) {
         const haystack = `${item.name} ${item.distillery} ${item.country} ${item.region} ${item.style} ${(item.flavorTags || []).join(' ')}`.toLowerCase();
         if (!haystack.includes(searchTerm)) return false;
@@ -174,47 +201,50 @@ document.addEventListener('DOMContentLoaded', () => {
       return true;
     });
 
-    // Sorting
-    if (sortVal === 'abv-high') {
-      filtered.sort((a, b) => b.abv - a.abv);
-    } else if (sortVal === 'abv-low') {
-      filtered.sort((a, b) => a.abv - b.abv);
-    } else if (sortVal === 'name') {
-      filtered.sort((a, b) => a.name.localeCompare(b.name));
-    }
+    if (sortVal === 'abv-high') filtered.sort((a, b) => b.abv - a.abv);
+    else if (sortVal === 'abv-low') filtered.sort((a, b) => a.abv - b.abv);
+    else if (sortVal === 'name') filtered.sort((a, b) => a.name.localeCompare(b.name));
 
-    // Render HTML
     if (filtered.length === 0) {
       cardsContainer.innerHTML = `
-        <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem;">
-          <p style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--text-title); margin-bottom: 0.5rem;">No items found matching your selection</p>
-          <p style="font-size: 0.9rem; color: var(--text-muted);">Try adjusting your filter selection, region, or search keywords.</p>
+        <div class="empty-state">
+          <p class="empty-state-title">No items found matching your selection</p>
+          <p class="empty-state-hint">Try adjusting your filter selection, region, or search keywords.</p>
         </div>
       `;
     } else {
-      cardsContainer.innerHTML = filtered.map(item => createSpiritCardHTML(item)).join('');
+      cardsContainer.innerHTML = filtered.map(createSpiritCardHTML).join('');
     }
 
     if (countBadge) {
       countBadge.textContent = `Showing ${filtered.length} of ${dataset.length} items`;
     }
-
-    // Attach click event for detail modal
-    document.querySelectorAll('.rum-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const itemId = card.getAttribute('data-id');
-        openDetailModal(itemId);
-      });
-    });
   }
 
   // --------------------------------------------------
   // EVENT LISTENERS
   // --------------------------------------------------
+  cardsContainer.addEventListener('click', (e) => {
+    const card = e.target.closest('.rum-card');
+    if (card) openDetailModal(card.getAttribute('data-id'), card);
+  });
+
+  cardsContainer.addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    const card = e.target.closest('.rum-card');
+    if (!card) return;
+    e.preventDefault();
+    openDetailModal(card.getAttribute('data-id'), card);
+  });
+
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
       currentCategoryFilter = btn.getAttribute('data-serve') || 'all';
       filterAndRender();
     });
@@ -228,10 +258,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   if (sortSelect) sortSelect.addEventListener('change', filterAndRender);
 
-  // Global helper for map filter synchronization
-  window.setMapRegionFilter = function(regionName) {
+  // Called by map pin clicks; only syncs the dropdown when the region exists as an option.
+  window.setMapRegionFilter = function (regionName) {
     activeRegionFilter = regionName;
-    if (regionSelect) regionSelect.value = regionName;
+    if (regionSelect) {
+      const known = Array.from(regionSelect.options).some(o => o.value === regionName);
+      regionSelect.value = known ? regionName : 'all';
+    }
     filterAndRender();
     cardsContainer.scrollIntoView({ behavior: 'smooth' });
   };
@@ -239,82 +272,116 @@ document.addEventListener('DOMContentLoaded', () => {
   // --------------------------------------------------
   // MODAL LOGIC
   // --------------------------------------------------
-  function openDetailModal(itemId) {
+  function buildModalHTML(item) {
+    let sourceLabel = 'Distilled From';
+    let detailLabel = 'Origin';
+    let detailValue = item.country;
+
+    if (isWine) {
+      sourceLabel = 'Grape Blend';
+      detailLabel = 'Serving Temp & Decant';
+      detailValue = `${item.serveTemp} • ${item.decant}`;
+    } else if (isChampagne) {
+      sourceLabel = 'Grape Blend';
+      detailLabel = 'Lees Aging & Dosage';
+      detailValue = `${item.leesAging} • ${item.dosage}`;
+    } else if (isBeer) {
+      sourceLabel = 'Malt Bill & Hops';
+      detailLabel = 'Serving Temp & Bitterness';
+      detailValue = `${item.serveTemp} • ${item.ibu}`;
+    }
+
+    return `
+      <p class="modal-eyebrow">${esc(item.region)} • ${esc(item.country)}</p>
+      <h2 class="modal-title" id="detailModalTitle">${esc(item.name)}</h2>
+      <p class="modal-producer">${esc(item.distillery)}</p>
+
+      <dl class="modal-spec-grid">
+        <div>
+          <dt>Style / Type</dt>
+          <dd>${esc(item.champagneType || item.beerStyle || item.style)}</dd>
+        </div>
+        <div>
+          <dt>ABV</dt>
+          <dd class="modal-spec-accent">${esc(item.abv)}%</dd>
+        </div>
+        <div>
+          <dt>${esc(sourceLabel)}</dt>
+          <dd>${esc(item.distilledFrom || 'Heritage Stills')}</dd>
+        </div>
+        <div>
+          <dt>${esc(detailLabel)}</dt>
+          <dd>${esc(detailValue)}</dd>
+        </div>
+      </dl>
+
+      <section class="modal-section">
+        <h3 class="modal-section-title">Flavor Profile</h3>
+        <div class="flavor-tags">
+          ${(item.flavorTags || []).map(t => `<span class="tag-pill">${esc(t)}</span>`).join('')}
+        </div>
+      </section>
+
+      <section class="modal-section">
+        <h3 class="modal-section-title">Recommended Serving &amp; Glassware</h3>
+        <p class="modal-pour">${esc(item.signaturePour)}</p>
+      </section>
+
+      <section class="modal-section">
+        <h3 class="modal-section-title">Field Notes &amp; History</h3>
+        <p class="modal-notes">&ldquo;${esc(item.description)}&rdquo;</p>
+      </section>
+    `;
+  }
+
+  function openDetailModal(itemId, trigger) {
     const item = dataset.find(r => r.id === itemId);
     if (!item || !modalBackdrop || !modalBody) return;
 
-    const isWine = (window.SPIRIT_TYPE === 'wine') || Boolean(item.color && item.serveTemp);
-    const isChampagne = (window.SPIRIT_TYPE === 'champagne') || Boolean(item.champagneType && item.leesAging);
-
-    let detailCol3 = 'Origin';
-    let detailVal3 = item.country;
-    if (isWine) {
-      detailCol3 = 'Serving Temp & Decant';
-      detailVal3 = `${item.serveTemp} • ${item.decant}`;
-    } else if (isChampagne) {
-      detailCol3 = 'Lees Aging & Dosage';
-      detailVal3 = `${item.leesAging} • ${item.dosage}`;
-    }
-
-    modalBody.innerHTML = `
-      <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-primary); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.5rem;">
-        ${item.region} • ${item.country}
-      </div>
-      <h2 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--text-title); line-height: 1.2; margin-bottom: 0.5rem;">${item.name}</h2>
-      <p style="font-size: 1rem; color: var(--text-body); margin-bottom: 1.5rem;">${item.distillery}</p>
-
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; background-color: var(--bg-surface); padding: 1.25rem; border-radius: var(--radius-sm); margin-bottom: 1.5rem; border: 1px solid var(--border-card);">
-        <div>
-          <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); display: block; text-transform: uppercase;">Style / Type</span>
-          <strong style="color: var(--text-title);">${item.champagneType || item.style}</strong>
-        </div>
-        <div>
-          <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); display: block; text-transform: uppercase;">ABV</span>
-          <strong style="color: var(--accent-primary);">${item.abv}%</strong>
-        </div>
-        <div>
-          <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); display: block; text-transform: uppercase;">${(isWine || isChampagne) ? 'Grape Blend' : 'Distilled From'}</span>
-          <strong style="color: var(--text-title);">${item.distilledFrom || 'Heritage Stills'}</strong>
-        </div>
-        <div>
-          <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); display: block; text-transform: uppercase;">${detailCol3}</span>
-          <strong style="color: var(--text-title);">${detailVal3}</strong>
-        </div>
-      </div>
-
-      <div style="margin-bottom: 1.5rem;">
-        <h4 style="font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; color: var(--accent-primary); margin-bottom: 0.5rem;">Flavor Profile</h4>
-        <div class="flavor-tags">
-          ${(item.flavorTags || []).map(t => `<span class="tag-pill">${t}</span>`).join('')}
-        </div>
-      </div>
-
-      <div style="margin-bottom: 1.5rem;">
-        <h4 style="font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; color: var(--accent-primary); margin-bottom: 0.25rem;">Recommended Serving & Glassware</h4>
-        <p style="color: var(--text-title); font-weight: 500;">${item.signaturePour}</p>
-      </div>
-
-      <div>
-        <h4 style="font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; color: var(--accent-primary); margin-bottom: 0.5rem;">Field Notes & History</h4>
-        <p style="font-family: var(--font-serif); font-style: italic; font-size: 1rem; color: var(--text-body); line-height: 1.6;">
-          "${item.description}"
-        </p>
-      </div>
-    `;
-
+    lastFocusedElement = trigger || document.activeElement;
+    modalBody.innerHTML = buildModalHTML(item);
     modalBackdrop.classList.add('open');
+    modalBackdrop.removeAttribute('aria-hidden');
+    document.body.classList.add('modal-open');
+    if (modalCloseBtn) modalCloseBtn.focus();
   }
 
-  if (modalCloseBtn) {
-    modalCloseBtn.addEventListener('click', () => modalBackdrop.classList.remove('open'));
+  function closeDetailModal() {
+    if (!modalBackdrop || !modalBackdrop.classList.contains('open')) return;
+    modalBackdrop.classList.remove('open');
+    modalBackdrop.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+    if (lastFocusedElement && document.contains(lastFocusedElement)) lastFocusedElement.focus();
   }
+
+  if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeDetailModal);
+
   if (modalBackdrop) {
     modalBackdrop.addEventListener('click', (e) => {
-      if (e.target === modalBackdrop) modalBackdrop.classList.remove('open');
+      if (e.target === modalBackdrop) closeDetailModal();
+    });
+
+    // Keep tab focus inside the dialog while it is open.
+    modalBackdrop.addEventListener('keydown', (e) => {
+      if (e.key !== 'Tab') return;
+      const focusable = modalBackdrop.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     });
   }
 
-  // Initial setup
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeDetailModal();
+  });
+
   initDynamicDropdowns();
   filterAndRender();
 });

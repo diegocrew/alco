@@ -3,20 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Spirits Field Guide: 9 Decoded Spirit Categories & Cocktail Classics</title>
-  <meta name="description" content="An interactive encyclopedia decoding 9 major alcohol categories: Rum, Vodka, Whisky, Wine, Gin, Cognac, Brandy, Tequila, and Champagne with classic cocktail recipes.">
-  
+  <title>The Spirits Field Guide: 12 Decoded Drink Categories &amp; Cocktail Classics</title>
+  <meta name="description" content="An interactive encyclopedia decoding 12 major drink categories: Rum, Vodka, Whisky, Wine, Gin, Cognac, Brandy, Tequila, Champagne, Beer, Absinthe and Liqueurs, with classic cocktail recipes.">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400;1,600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap">
   <link rel="stylesheet" href="css/themes.css">
   <link rel="stylesheet" href="css/styles.css">
-  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- SITE HEADER & NAVIGATION -->
   <header class="site-header">
     <div class="header-container">
       <a href="index.html" class="brand-logo">
-        <svg class="brand-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor">
+        <svg class="brand-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" aria-hidden="true" focusable="false">
           <circle cx="18" cy="18" r="15" stroke="var(--accent-primary)" stroke-width="1.5" stroke-dasharray="2 2"/>
           <polygon points="18,5 22,13 18,11 14,13" fill="var(--accent-primary)"/>
           <polygon points="18,31 22,23 18,25 14,23" fill="var(--accent-primary)" opacity="0.6"/>
@@ -29,9 +34,9 @@
         </div>
       </a>
 
-      <nav>
+      <nav aria-label="Drink categories">
         <ul class="nav-links">
-          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
           <li><a href="rum.html" class="nav-link">Rum</a></li>
           <li><a href="vodka.html" class="nav-link">Vodka</a></li>
           <li><a href="whisky.html" class="nav-link">Whisky</a></li>
@@ -41,30 +46,32 @@
           <li><a href="brandy.html" class="nav-link">Brandy</a></li>
           <li><a href="tequila.html" class="nav-link">Tequila</a></li>
           <li><a href="champagne.html" class="nav-link">Champagne</a></li>
+          <li><a href="beer.html" class="nav-link">Beer</a></li>
+          <li><a href="absinthe.html" class="nav-link">Absinthe</a></li>
+          <li><a href="liqueur.html" class="nav-link">Liqueurs</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <!-- HERO SECTION WITH ATMOSPHERIC BACKGROUND GRAPHIC -->
-  <main>
+  <main id="main-content">
     <section class="hero-section">
-      <p class="hero-subtitle">THE FIELD GUIDE VOLUMES I TO IX</p>
-      <h1 class="hero-title">Nine Spirits, Decoded & Explored</h1>
+      <p class="hero-subtitle">THE FIELD GUIDE VOLUMES I TO XII</p>
+      <h1 class="hero-title">Twelve Categories, Decoded &amp; Explored</h1>
       <p class="hero-description">
-        Select any spirit category below to explore origin narratives, historical fermentation techniques, global distillation maps, and 100-entry field catalogs.
+        Select any category below to explore origin narratives, historical fermentation techniques, global production maps, and 100-entry field catalogs.
       </p>
     </section>
 
-    <!-- 5x3 BOARD GRID WITH IN-LINE COCKTAIL CARDS -->
-    <section class="section-container hub-container" style="padding-top: 2rem;">
+    <!-- 5x4 BOARD GRID WITH IN-LINE COCKTAIL CARDS -->
+    <section class="section-container hub-container" style="padding-top: 2rem;" aria-label="Category catalog">
       <div class="spirit-hub-grid">
-        
+
         <!-- ================= ROW 1 ================= -->
 
-        <!-- 1. LEFT COCKTAIL 1: OLD FASHIONED -->
         <article class="cocktail-side-card">
-          <div class="cocktail-card-header" style="background-image: url('images/cocktail-old-fashioned.png');">
+          <div class="cocktail-card-header" style="background-image: url('images/cocktail-old-fashioned.jpg');">
             <span class="cocktail-card-badge">COCKTAIL CLASSIC</span>
           </div>
           <div class="cocktail-card-body">
@@ -75,11 +82,10 @@
           </div>
         </article>
 
-        <!-- 2. SPIRIT 1: RUM -->
         <a href="rum.html" class="spirit-hub-card" style="border-color: #e69c37;">
           <div class="hub-card-header" style="background-image: url('images/rum.jpg');">
             <span class="hub-card-badge" style="background-color: #e69c37; color: #120e0b;">VOL. I • ACTIVE</span>
-            <svg class="hub-logo-icon" viewBox="0 0 32 32" fill="none" stroke="#e69c37" stroke-width="2">
+            <svg class="hub-logo-icon" viewBox="0 0 32 32" fill="none" stroke="#e69c37" stroke-width="2" aria-hidden="true" focusable="false">
               <path d="M16 4v20M8 12h16M8 20a8 8 0 0 0 16 0"/>
               <circle cx="16" cy="4" r="2" fill="#e69c37"/>
             </svg>
@@ -89,20 +95,19 @@
               <h2 class="hub-card-title" style="color: #f8ede3;">Rum</h2>
             </div>
             <p class="hub-card-desc" style="color: #d6c6b8;">
-              From fresh sugarcane juice in Martinique to high-ester pot stills in Jamaica and wooden Demerara stills. Includes world map & 100 decoded rums.
+              From fresh sugarcane juice in Martinique to high-ester pot stills in Jamaica and wooden Demerara stills. Includes world map &amp; 150 decoded rums.
             </p>
             <div class="hub-card-footer" style="color: #e69c37;">
               <span>EXPLORE RUM FIELD GUIDE →</span>
-              <span>100 ENTRIES</span>
+              <span>150 ENTRIES</span>
             </div>
           </div>
         </a>
 
-        <!-- 3. SPIRIT 2: VODKA -->
         <a href="vodka.html" class="spirit-hub-card" style="border-color: #7bb4ec;">
           <div class="hub-card-header" style="background-image: url('images/vodka.jpg');">
             <span class="hub-card-badge" style="background-color: #7bb4ec; color: #0a1118;">VOL. II • ACTIVE</span>
-            <svg class="hub-logo-icon" viewBox="0 0 32 32" fill="none" stroke="#7bb4ec" stroke-width="2">
+            <svg class="hub-logo-icon" viewBox="0 0 32 32" fill="none" stroke="#7bb4ec" stroke-width="2" aria-hidden="true" focusable="false">
               <path d="M16 2v28M2 16h28M6 6l20 20M6 26L26 6"/>
               <circle cx="16" cy="16" r="3" fill="#7bb4ec"/>
             </svg>
@@ -112,20 +117,19 @@
               <h2 class="hub-card-title" style="color: #f0f7ff;">Vodka</h2>
             </div>
             <p class="hub-card-desc" style="color: #c5d8ed;">
-              Glacial purities, single-estate winter wheat, rye sharpness, and multi-rectified column distillation across Poland, Sweden, and Finland. Includes world map & 100 decoded vodkas.
+              Glacial purities, single-estate winter wheat, rye sharpness, and multi-rectified column distillation across Poland, Sweden, and Finland. Includes world map &amp; 106 decoded vodkas.
             </p>
             <div class="hub-card-footer" style="color: #7bb4ec;">
               <span>EXPLORE VODKA GUIDE →</span>
-              <span>100 ENTRIES</span>
+              <span>106 ENTRIES</span>
             </div>
           </div>
         </a>
 
-        <!-- 4. SPIRIT 3: WHISKY -->
         <a href="whisky.html" class="spirit-hub-card" style="border-color: #dda94b;">
           <div class="hub-card-header" style="background-image: url('images/whisky.jpg');">
             <span class="hub-card-badge" style="background-color: #dda94b; color: #121417;">VOL. III • ACTIVE</span>
-            <svg class="hub-logo-icon" viewBox="0 0 32 32" fill="none" stroke="#dda94b" stroke-width="2">
+            <svg class="hub-logo-icon" viewBox="0 0 32 32" fill="none" stroke="#dda94b" stroke-width="2" aria-hidden="true" focusable="false">
               <ellipse cx="16" cy="7" rx="10" ry="3"/>
               <path d="M6 7v18c0 1.7 4.5 3 10 3s10-1.3 10-3V7"/>
               <line x1="6" y1="13" x2="26" y2="13"/>
@@ -137,18 +141,17 @@
               <h2 class="hub-card-title" style="color: #f2f4f7;">Whisky</h2>
             </div>
             <p class="hub-card-desc" style="color: #cad1db;">
-              Peated Islay malts, charred Kentucky bourbon barrels, Highland copper stills, and Japanese precision wood finishing. Includes world map & 100 decoded whiskies.
+              Peated Islay malts, charred Kentucky bourbon barrels, Highland copper stills, and Japanese precision wood finishing. Includes world map &amp; 158 decoded whiskies.
             </p>
             <div class="hub-card-footer" style="color: #dda94b;">
               <span>EXPLORE WHISKY GUIDE →</span>
-              <span>100 ENTRIES</span>
+              <span>158 ENTRIES</span>
             </div>
           </div>
         </a>
 
-        <!-- 5. RIGHT COCKTAIL 1: NEGRONI -->
         <article class="cocktail-side-card">
-          <div class="cocktail-card-header" style="background-image: url('images/cocktail-negroni.png');">
+          <div class="cocktail-card-header" style="background-image: url('images/cocktail-negroni.jpg');">
             <span class="cocktail-card-badge">COCKTAIL CLASSIC</span>
           </div>
           <div class="cocktail-card-body">
@@ -161,9 +164,8 @@
 
         <!-- ================= ROW 2 ================= -->
 
-        <!-- 6. LEFT COCKTAIL 2: DRY MARTINI -->
         <article class="cocktail-side-card">
-          <div class="cocktail-card-header" style="background-image: url('images/cocktail-martini.png');">
+          <div class="cocktail-card-header" style="background-image: url('images/cocktail-martini.jpg');">
             <span class="cocktail-card-badge">COCKTAIL CLASSIC</span>
           </div>
           <div class="cocktail-card-body">
@@ -174,11 +176,10 @@
           </div>
         </article>
 
-        <!-- 7. SPIRIT 4: WINE -->
         <a href="wine.html" class="spirit-hub-card" style="border-color: #d4af37;">
           <div class="hub-card-header" style="background-image: url('images/wine.jpg');">
             <span class="hub-card-badge" style="background-color: #d4af37; color: #190c12;">VOL. IV • ACTIVE</span>
-            <svg class="hub-logo-icon" viewBox="0 0 32 32" fill="none" stroke="#d4af37" stroke-width="2">
+            <svg class="hub-logo-icon" viewBox="0 0 32 32" fill="none" stroke="#d4af37" stroke-width="2" aria-hidden="true" focusable="false">
               <path d="M10 6h12l-2 10a4 4 0 0 1-8 0L10 6z"/>
               <line x1="16" y1="16" x2="16" y2="26"/>
               <line x1="10" y1="26" x2="22" y2="26"/>
@@ -190,20 +191,19 @@
               <h2 class="hub-card-title" style="color: #faedf3;">Wine</h2>
             </div>
             <p class="hub-card-desc" style="color: #dec8d3;">
-              Old World appellations vs New World terroir. Bordeaux blends, Tuscan Sangiovese, and natural ferments. Includes world map & 100 decoded wines.
+              Old World appellations vs New World terroir. Bordeaux blends, Tuscan Sangiovese, and natural ferments. Includes world map &amp; 110 decoded wines.
             </p>
             <div class="hub-card-footer" style="color: #d4af37;">
               <span>EXPLORE WINE GUIDE →</span>
-              <span>100 ENTRIES</span>
+              <span>110 ENTRIES</span>
             </div>
           </div>
         </a>
 
-        <!-- 8. SPIRIT 5: GIN -->
         <a href="gin.html" class="spirit-hub-card" style="border-color: #3ca59d;">
           <div class="hub-card-header" style="background-image: url('images/gin.jpg');">
             <span class="hub-card-badge" style="background-color: #3ca59d; color: #0d1717;">VOL. V • ACTIVE</span>
-            <svg class="hub-logo-icon" viewBox="0 0 32 32" fill="none" stroke="#3ca59d" stroke-width="2">
+            <svg class="hub-logo-icon" viewBox="0 0 32 32" fill="none" stroke="#3ca59d" stroke-width="2" aria-hidden="true" focusable="false">
               <path d="M16 28V8M16 20l-6-6M16 14l6-6M16 10l-4-4"/>
               <circle cx="10" cy="14" r="2.5" fill="#3ca59d"/>
               <circle cx="22" cy="8" r="2.5" fill="#3ca59d"/>
@@ -214,20 +214,19 @@
               <h2 class="hub-card-title" style="color: #edf6f6;">Gin</h2>
             </div>
             <p class="hub-card-desc" style="color: #c4dcda;">
-              Botanical steepings, wild juniper berries, citrus peel infusions, London Dry precision, and modern apothecary alchemy. Includes world map & 100 decoded gins.
+              Botanical steepings, wild juniper berries, citrus peel infusions, London Dry precision, and modern apothecary alchemy. Includes world map &amp; 143 decoded gins.
             </p>
             <div class="hub-card-footer" style="color: #3ca59d;">
               <span>EXPLORE GIN GUIDE →</span>
-              <span>100 ENTRIES</span>
+              <span>143 ENTRIES</span>
             </div>
           </div>
         </a>
 
-        <!-- 9. SPIRIT 6: COGNAC -->
         <a href="cognac.html" class="spirit-hub-card" style="border-color: #e5a038;">
           <div class="hub-card-header" style="background-image: url('images/cognac.jpg');">
             <span class="hub-card-badge" style="background-color: #e5a038; color: #1a0f0a;">VOL. VI • ACTIVE</span>
-            <svg class="hub-logo-icon" viewBox="0 0 32 32" fill="none" stroke="#e5a038" stroke-width="2">
+            <svg class="hub-logo-icon" viewBox="0 0 32 32" fill="none" stroke="#e5a038" stroke-width="2" aria-hidden="true" focusable="false">
               <path d="M8 26h16M12 26V18l-4-6V8h16v4l-4 6v8"/>
               <path d="M16 4v4M12 4h8"/>
               <circle cx="16" cy="14" r="2" fill="#e5a038"/>
@@ -238,18 +237,17 @@
               <h2 class="hub-card-title" style="color: #fcf1e8;">Cognac</h2>
             </div>
             <p class="hub-card-desc" style="color: #e3cdbe;">
-              Charente Ugni Blanc grape distillation, Charentais alembic copper stills, XO aging, and Limousin oak barrels. Includes world map & 100 decoded cognacs.
+              Charente Ugni Blanc grape distillation, Charentais alembic copper stills, XO aging, and Limousin oak barrels. Includes world map &amp; 115 decoded cognacs.
             </p>
             <div class="hub-card-footer" style="color: #e5a038;">
               <span>EXPLORE COGNAC GUIDE →</span>
-              <span>100 ENTRIES</span>
+              <span>115 ENTRIES</span>
             </div>
           </div>
         </a>
 
-        <!-- 10. RIGHT COCKTAIL 2: SIDECAR -->
         <article class="cocktail-side-card">
-          <div class="cocktail-card-header" style="background-image: url('images/cocktail-sidecar.png');">
+          <div class="cocktail-card-header" style="background-image: url('images/cocktail-sidecar.jpg');">
             <span class="cocktail-card-badge">COCKTAIL CLASSIC</span>
           </div>
           <div class="cocktail-card-body">
@@ -262,9 +260,8 @@
 
         <!-- ================= ROW 3 ================= -->
 
-        <!-- 11. LEFT COCKTAIL 3: CLASSIC DAIQUIRI -->
         <article class="cocktail-side-card">
-          <div class="cocktail-card-header" style="background-image: url('images/cocktail-daiquiri.png');">
+          <div class="cocktail-card-header" style="background-image: url('images/cocktail-daiquiri.jpg');">
             <span class="cocktail-card-badge">COCKTAIL CLASSIC</span>
           </div>
           <div class="cocktail-card-body">
@@ -275,11 +272,10 @@
           </div>
         </article>
 
-        <!-- 12. SPIRIT 7: BRANDY -->
         <a href="brandy.html" class="spirit-hub-card" style="border-color: #d97736;">
           <div class="hub-card-header" style="background-image: url('images/brandy.jpg');">
             <span class="hub-card-badge" style="background-color: #d97736; color: #1b120c;">VOL. VII • ACTIVE</span>
-            <svg class="hub-logo-icon" viewBox="0 0 32 32" fill="none" stroke="#d97736" stroke-width="2">
+            <svg class="hub-logo-icon" viewBox="0 0 32 32" fill="none" stroke="#d97736" stroke-width="2" aria-hidden="true" focusable="false">
               <path d="M9 8c0 6 3 12 7 12s7-6 7-12"/>
               <line x1="16" y1="20" x2="16" y2="27"/>
               <line x1="10" y1="27" x2="22" y2="27"/>
@@ -290,20 +286,19 @@
               <h2 class="hub-card-title" style="color: #faeee6;">Brandy</h2>
             </div>
             <p class="hub-card-desc" style="color: #dfc8b8;">
-              Historic fruit eau-de-vie, Armagnac continuous stills, Jerez Spanish Solera brandies, and cellar master traditions. Includes world map & 100 decoded brandies.
+              Historic fruit eau-de-vie, Armagnac continuous stills, Jerez Spanish Solera brandies, and cellar master traditions. Includes world map &amp; 104 decoded brandies.
             </p>
             <div class="hub-card-footer" style="color: #d97736;">
               <span>EXPLORE BRANDY GUIDE →</span>
-              <span>100 ENTRIES</span>
+              <span>104 ENTRIES</span>
             </div>
           </div>
         </a>
 
-        <!-- 13. SPIRIT 8: TEQUILA -->
         <a href="tequila.html" class="spirit-hub-card" style="border-color: #489b74;">
           <div class="hub-card-header" style="background-image: url('images/tequila.jpg');">
             <span class="hub-card-badge" style="background-color: #489b74; color: #17150f;">VOL. VIII • ACTIVE</span>
-            <svg class="hub-logo-icon" viewBox="0 0 32 32" fill="none" stroke="#489b74" stroke-width="2">
+            <svg class="hub-logo-icon" viewBox="0 0 32 32" fill="none" stroke="#489b74" stroke-width="2" aria-hidden="true" focusable="false">
               <path d="M16 26V4M16 26L7 11M16 26l9-15M16 26L4 18M16 26l12-8"/>
               <polygon points="16,2 14,7 18,7" fill="#489b74"/>
             </svg>
@@ -313,20 +308,19 @@
               <h2 class="hub-card-title" style="color: #f7f4ea;">Tequila</h2>
             </div>
             <p class="hub-card-desc" style="color: #d8d1bf;">
-              Blue Weber agave harvesting, masonry brick ovens, Tahona stone pressing, Blanco purity, and Añejo oak aging in Jalisco. Includes world map & 100 decoded tequilas.
+              Blue Weber agave harvesting, masonry brick ovens, Tahona stone pressing, Blanco purity, and Añejo oak aging in Jalisco. Includes world map &amp; 105 decoded tequilas.
             </p>
             <div class="hub-card-footer" style="color: #489b74;">
               <span>EXPLORE TEQUILA GUIDE →</span>
-              <span>100 ENTRIES</span>
+              <span>105 ENTRIES</span>
             </div>
           </div>
         </a>
 
-        <!-- 14. SPIRIT 9: CHAMPAGNE -->
         <a href="champagne.html" class="spirit-hub-card" style="border-color: #f3cf7a;">
           <div class="hub-card-header" style="background-image: url('images/champagne.jpg');">
             <span class="hub-card-badge" style="background-color: #f3cf7a; color: #0f0f12;">VOL. IX • ACTIVE</span>
-            <svg class="hub-logo-icon" viewBox="0 0 32 32" fill="none" stroke="#f3cf7a" stroke-width="2">
+            <svg class="hub-logo-icon" viewBox="0 0 32 32" fill="none" stroke="#f3cf7a" stroke-width="2" aria-hidden="true" focusable="false">
               <path d="M11 4h10l-2 14a3 3 0 0 1-6 0L11 4z"/>
               <line x1="16" y1="18" x2="16" y2="28"/>
               <line x1="11" y1="28" x2="21" y2="28"/>
@@ -339,25 +333,123 @@
               <h2 class="hub-card-title" style="color: #fbf7ed;">Champagne</h2>
             </div>
             <p class="hub-card-desc" style="color: #dcd6c5;">
-              Méthode Champenoise, Pinot Noir, Chardonnay & Pinot Meunier blends, secondary bottle fermentation, and chalk cellars of Reims. Includes world map & 100 decoded champagnes.
+              Méthode Champenoise, Pinot Noir, Chardonnay &amp; Pinot Meunier blends, secondary bottle fermentation, and chalk cellars of Reims. Includes world map &amp; 101 decoded champagnes.
             </p>
             <div class="hub-card-footer" style="color: #f3cf7a;">
               <span>EXPLORE CHAMPAGNE GUIDE →</span>
-              <span>100 ENTRIES</span>
+              <span>101 ENTRIES</span>
             </div>
           </div>
         </a>
 
-        <!-- 15. RIGHT COCKTAIL 3: MARGARITA -->
         <article class="cocktail-side-card">
-          <div class="cocktail-card-header" style="background-image: url('images/cocktail-margarita.png');">
+          <div class="cocktail-card-header" style="background-image: url('images/cocktail-margarita.jpg');">
             <span class="cocktail-card-badge">COCKTAIL CLASSIC</span>
           </div>
           <div class="cocktail-card-body">
             <h3 class="cocktail-card-title">Tommy's Margarita</h3>
             <span class="cocktail-card-glass">ROCKS GLASS • ON ICE</span>
             <p class="cocktail-card-ingredients">2 oz Reposado Tequila, 1 oz Fresh Lime Juice, 0.5 oz Agave Nectar</p>
-            <div class="cocktail-card-garnish">GARNISH: Salted Rim & Lime Wheel</div>
+            <div class="cocktail-card-garnish">GARNISH: Salted Rim &amp; Lime Wheel</div>
+          </div>
+        </article>
+
+        <!-- ================= ROW 4 ================= -->
+
+        <article class="cocktail-side-card">
+          <div class="cocktail-card-header" style="background-image: url('images/cocktail-absinthe-drip.jpg');">
+            <span class="cocktail-card-badge">COCKTAIL CLASSIC</span>
+          </div>
+          <div class="cocktail-card-body">
+            <h3 class="cocktail-card-title">Absinthe Drip</h3>
+            <span class="cocktail-card-glass">RESERVOIR GLASS • LOUCHED</span>
+            <p class="cocktail-card-ingredients">1.5 oz Absinthe, 1 sugar cube on a slotted spoon, 4-5 oz iced water dripped slowly</p>
+            <div class="cocktail-card-garnish">GARNISH: None — watch the louche bloom</div>
+          </div>
+        </article>
+
+        <a href="beer.html" class="spirit-hub-card" style="border-color: #e0aa2f;">
+          <div class="hub-card-header" style="background-image: url('images/beer.jpg');">
+            <span class="hub-card-badge" style="background-color: #e0aa2f; color: #17110a;">VOL. X • ACTIVE</span>
+            <svg class="hub-logo-icon" viewBox="0 0 32 32" fill="none" stroke="#e0aa2f" stroke-width="2" aria-hidden="true" focusable="false">
+              <path d="M8 11h13v17H8z"/>
+              <path d="M21 14h4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-4"/>
+              <path d="M8 11a3 3 0 0 1 3-3 3 3 0 0 1 5-2 3 3 0 0 1 5 5"/>
+              <line x1="12" y1="16" x2="12" y2="24"/>
+              <line x1="17" y1="16" x2="17" y2="24"/>
+            </svg>
+          </div>
+          <div class="hub-card-body" style="background-color: #2b1f0e;">
+            <div class="hub-card-title-row">
+              <h2 class="hub-card-title" style="color: #fbf1dc;">Beer</h2>
+            </div>
+            <p class="hub-card-desc" style="color: #ddcba6;">
+              Bohemian pale lager, Bavarian decoction, Trappist abbey ales, roasted Irish stout, and the American hop revolution. Includes world map &amp; 100 decoded beers.
+            </p>
+            <div class="hub-card-footer" style="color: #e0aa2f;">
+              <span>EXPLORE BEER GUIDE →</span>
+              <span>100 ENTRIES</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="absinthe.html" class="spirit-hub-card" style="border-color: #9ccb45;">
+          <div class="hub-card-header" style="background-image: url('images/absinthe.jpg');">
+            <span class="hub-card-badge" style="background-color: #9ccb45; color: #0c1209;">VOL. XI • ACTIVE</span>
+            <svg class="hub-logo-icon" viewBox="0 0 32 32" fill="none" stroke="#9ccb45" stroke-width="2" aria-hidden="true" focusable="false">
+              <path d="M11 9h10l-1.5 11a3.5 3.5 0 0 1-7 0L11 9z"/>
+              <line x1="16" y1="20" x2="16" y2="27"/>
+              <line x1="11" y1="27" x2="21" y2="27"/>
+              <line x1="7" y1="7" x2="25" y2="7"/>
+              <rect x="14" y="3" width="4" height="3" fill="#9ccb45" stroke="none"/>
+            </svg>
+          </div>
+          <div class="hub-card-body" style="background-color: #182312;">
+            <div class="hub-card-title-row">
+              <h2 class="hub-card-title" style="color: #eef7e2;">Absinthe</h2>
+            </div>
+            <p class="hub-card-desc" style="color: #c8d9b4;">
+              La Fée Verte: grande wormwood, green anise and fennel, the Val-de-Travers birthplace, the louche ritual, and the century-long ban. Includes world map &amp; 100 decoded absinthes.
+            </p>
+            <div class="hub-card-footer" style="color: #9ccb45;">
+              <span>EXPLORE ABSINTHE GUIDE →</span>
+              <span>100 ENTRIES</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="liqueur.html" class="spirit-hub-card" style="border-color: #d8a24a;">
+          <div class="hub-card-header" style="background-image: url('images/liqueur.jpg');">
+            <span class="hub-card-badge" style="background-color: #d8a24a; color: #140a0d;">VOL. XII • ACTIVE</span>
+            <svg class="hub-logo-icon" viewBox="0 0 32 32" fill="none" stroke="#d8a24a" stroke-width="2" aria-hidden="true" focusable="false">
+              <path d="M13 4h6v5l4 6v13H9V15l4-6V4z"/>
+              <line x1="11" y1="4" x2="21" y2="4"/>
+              <rect x="12" y="18" width="8" height="5" fill="#d8a24a" stroke="none"/>
+            </svg>
+          </div>
+          <div class="hub-card-body" style="background-color: #26141a;">
+            <div class="hub-card-title-row">
+              <h2 class="hub-card-title" style="color: #f9e9ec;">Liqueurs</h2>
+            </div>
+            <p class="hub-card-desc" style="color: #dcc0c6;">
+              Monastic herbal elixirs, Amalfi limoncello, Dijon crème de cassis, Italian amaro bitters, and coffee, cream &amp; orange cordials. Includes world map &amp; 100 decoded liqueurs.
+            </p>
+            <div class="hub-card-footer" style="color: #d8a24a;">
+              <span>EXPLORE LIQUEUR GUIDE →</span>
+              <span>100 ENTRIES</span>
+            </div>
+          </div>
+        </a>
+
+        <article class="cocktail-side-card">
+          <div class="cocktail-card-header" style="background-image: url('images/cocktail-amaretto-sour.jpg');">
+            <span class="cocktail-card-badge">COCKTAIL CLASSIC</span>
+          </div>
+          <div class="cocktail-card-body">
+            <h3 class="cocktail-card-title">Amaretto Sour</h3>
+            <span class="cocktail-card-glass">ROCKS GLASS • DRY SHAKEN</span>
+            <p class="cocktail-card-ingredients">1.5 oz Amaretto, 0.75 oz Cask-Strength Bourbon, 1 oz Lemon Juice, 1 tsp Syrup, egg white</p>
+            <div class="cocktail-card-garnish">GARNISH: Lemon Twist &amp; Brandied Cherry</div>
           </div>
         </article>
 
@@ -368,14 +460,14 @@
     <section class="section-container" style="border-top: 1px solid var(--border-card);">
       <div class="section-header">
         <p class="section-subtitle">FOUNDATIONS</p>
-        <h2 class="section-title">The Master Principles of Distillation</h2>
+        <h2 class="section-title">The Master Principles of Fermentation &amp; Distillation</h2>
       </div>
 
       <div class="timeline-grid">
         <div class="timeline-card">
           <div class="timeline-year">01. Fermentation</div>
-          <h3 class="timeline-title">Yeast & Sugars</h3>
-          <p class="timeline-desc">Whether starting from sugarcane juice, agave hearts, malted barley, winter wheat, or pressed grapes, yeast turns natural sugars into ethanol and signature congeners.</p>
+          <h3 class="timeline-title">Yeast &amp; Sugars</h3>
+          <p class="timeline-desc">Whether starting from sugarcane juice, agave hearts, malted barley, winter wheat, or pressed grapes, yeast turns natural sugars into ethanol and signature congeners. Beer and wine stop here.</p>
         </div>
 
         <div class="timeline-card">
@@ -385,8 +477,14 @@
         </div>
 
         <div class="timeline-card">
-          <div class="timeline-year">03. Maturation</div>
-          <h3 class="timeline-title">Wood & Climate</h3>
+          <div class="timeline-year">03. Maceration</div>
+          <h3 class="timeline-title">Botanicals &amp; Sugar</h3>
+          <p class="timeline-desc">Gin, absinthe and liqueurs steep herbs, roots, peels and fruit in neutral spirit. A liqueur is then sweetened above 100 g/L of sugar; a dry botanical spirit is not.</p>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-year">04. Maturation</div>
+          <h3 class="timeline-title">Wood &amp; Climate</h3>
           <p class="timeline-desc">Oak barrels breathe with seasonal temperature changes. Tropical and desert maturation accelerate flavor extraction compared to cool chalk cellars or mist-shrouded lochs.</p>
         </div>
       </div>
@@ -397,13 +495,9 @@
   <footer class="site-footer">
     <div class="footer-content">
       <h3 class="footer-title">The Grand Spirits Field Guide</h3>
-      <p class="footer-text">An open-access educational encyclopedia decoding 9 major spirit categories. Built for simple deployment on GitHub Pages.</p>
-      <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">&copy; 2026 The Field Guide • All Rights Reserved</p>
+      <p class="footer-text">An open-access educational encyclopedia decoding 12 major drink categories.</p>
+      <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">&copy; 2026 The Field Guide • Please drink responsibly.</p>
     </div>
   </footer>
-
-  <script>
-    lucide.createIcons();
-  </script>
 </body>
 </html>

@@ -1,129 +1,127 @@
-/* Vodka Field Encyclopedia - 100 Authentic Real World Vodkas */
+/* Vodka Field Encyclopedia - real world vodkas.
+   Row: [name, distillery, country, region, style, abv, base, tags, pour, notes, modes]
+   modes bitmask: 1 = neat, 2 = on ice, 4 = cocktail */
 
-window.SPIRIT_TYPE = 'vodka';
-window.VODKA_DATA = [
-  {
-    id: "vodka-001",
-    index: "01",
-    name: "Belvedere Single Estate Lake Bartężek",
-    distillery: "Polmos Żyrardów",
-    country: "Poland",
-    region: "POLAND (RYE)",
-    style: "Rye Grain",
-    abv: 40,
-    distilledFrom: "DANKOWSKIE DIAMOND RYE",
-    flavorTags: ["Black Pepper", "Toasted Rye", "Creamy", "Almond"],
-    serveModes: { neat: true, ice: true, cocktail: true },
-    signaturePour: "Chilled neat in a frozen glass or Classic Dry Vodka Martini",
-    description: "Unfiltered single estate rye showcasing cold climate lacustrine soil complexity."
-  },
-  {
-    id: "vodka-002",
-    index: "02",
-    name: "Absolut Elyx Single Estate",
-    distillery: "Åhus Estate",
-    country: "Sweden",
-    region: "SWEDEN (WHEAT)",
-    style: "Winter Wheat",
-    abv: 42.3,
-    distilledFrom: "SINGLE ESTATE WHEAT",
-    flavorTags: ["Fresh Bread", "White Chocolate", "Silky", "Macadamia"],
-    serveModes: { neat: true, ice: true, cocktail: true },
-    signaturePour: "Vesper Martini: 3 parts Gin, 1 part Vodka, 1/2 part Lillet Blanc",
-    description: "Distilled manually in a 1921 vintage copper column still for exceptional velvety mouthfeel."
-  },
-  {
-    id: "vodka-003",
-    index: "03",
-    name: "Chopin Potato Vodka",
-    distillery: "Chopin Distillery",
-    country: "Poland",
-    region: "POLAND (POTATO)",
-    style: "Potato",
-    abv: 40,
-    distilledFrom: "STARCH RICH POTATOES",
-    flavorTags: ["Earthy", "Green Apple", "Full Bodied", "Buttered Toast"],
-    serveModes: { neat: true, ice: true, cocktail: false },
-    signaturePour: "Sipped neat at room temperature to appreciate rich viscosity",
-    description: "Four pounds of locally grown potatoes distilled per bottle yielding lush natural texture."
-  },
-  {
-    id: "vodka-004",
-    index: "04",
-    name: "Stoli Elit Ultra Luxury",
-    distillery: "Latvijas Balzams",
-    country: "Latvia",
-    region: "BALTIC REGION",
-    style: "Winter Wheat",
-    abv: 40,
-    distilledFrom: "FREEZE FILTERED WHEAT",
-    flavorTags: ["Anise", "Citrus Peel", "Glacial Cold", "Crisp"],
-    serveModes: { neat: true, ice: true, cocktail: true },
-    signaturePour: "Elit Martini with lemon twist",
-    description: "Filtered at sub-zero temperatures (-18°C) through active birch charcoal."
-  },
-  {
-    id: "vodka-005",
-    index: "05",
-    name: "Reyka Small Batch Glacial",
-    distillery: "Borgarnes Distillery",
-    country: "Iceland",
-    region: "ICELAND (GLACIAL)",
-    style: "Glacial Water",
-    abv: 40,
-    distilledFrom: "VOLCANIC ROCK FILTERED",
-    flavorTags: ["Crisp Mineral", "Vanilla Bean", "Clean", "Rose Petal"],
-    serveModes: { neat: true, ice: true, cocktail: true },
-    signaturePour: "Reyka Mule with ginger beer and lime",
-    description: "Distilled in a rare Carter-Head copper still powered by geothermal energy."
-  }
-];
+window.defineCatalog('vodka', 'vodka', [
 
-// Populate 90 additional REAL-WORLD authentic vodkas
-(function generateRealVodkaCatalog() {
-  const realVodkas = [
-    { name: "Grey Goose VX", distillery: "Grey Goose Estate", country: "France", region: "FRANCE (WHEAT)", style: "Winter Wheat", abv: 40, distilledFrom: "FRENCH WHEAT & COGNAC", tags: ["White Peach", "Plum", "Vanilla", "Silky"], pour: "On ice in a crystal tumbler" },
-    { name: "Ketel One Botanical Grapefruit & Rose", distillery: "Nolet Distillery", country: "Netherlands", region: "HOLLAND", style: "Botanical Vodka", abv: 30, distilledFrom: "100% NON-GMO WHEAT", tags: ["Fresh Grapefruit", "Rose Petal", "Crisp", "Citrus"], pour: "Ketel One Botanical Spritz with soda water" },
-    { name: "Haku Japanese Craft Vodka", distillery: "Suntory Spirits", country: "Japan", region: "JAPAN", style: "Rice Vodka", abv: 40, distilledFrom: "100% JAPANESE WHITE RICE", tags: ["Sweet Rice", "Floral", "Smooth", "Subtle Plum"], pour: "Sipped neat or in a Haku Martini" },
-    { name: "Belvedere Smogóry Forest Single Estate", distillery: "Polmos Żyrardów", country: "Poland", region: "POLAND (RYE)", style: "Rye Grain", abv: 40, distilledFrom: "SINGLE ESTATE RYE", tags: ["Salted Caramel", "White Pepper", "Honey", "Toasted Nut"], pour: "Neat in a Glencairn glass" },
-    { name: "Crystal Head Onyx Agave Vodka", distillery: "Crystal Head", country: "Canada", region: "NORTH AMERICA", style: "Agave Vodka", abv: 40, distilledFrom: "BLUE WEBER AGAVE", tags: ["Green Grass", "White Pepper", "Citrus", "Earthy"], pour: "On the rocks with a lime twist" },
-    { name: "Tito's Handmade Vodka", distillery: "Fifth Generation", country: "USA", region: "TEXAS USA", style: "Corn Vodka", abv: 40, distilledFrom: "100% YELLOW CORN", tags: ["Sweet Corn", "Clean", "Smooth", "Vanilla"], pour: "Tito's American Mule with ginger beer" },
-    { name: "Russian Standard Gold", distillery: "St. Petersburg Distillery", country: "Russia", region: "RUSSIA", style: "Winter Wheat", abv: 40, distilledFrom: "SIBERIAN GINSENG", tags: ["Ginseng", "Warm Spice", "Wheat Bread", "Pepper"], pour: "Chilled shot straight after caviar" },
-    { name: "Beluga Transatlantic Racing Special Edition", distillery: "Mariinsk Distillery", country: "Russia", region: "SIBERIA RUSSIA", style: "Malt Vodka", abv: 40, distilledFrom: "SIBERIAN MALT SPIRIT", tags: ["Wild Strawberry", "Malt", "Honey", "Clean"], pour: "Neat in a frozen vodka glass" },
-    { name: "Chase Original English Potato Vodka", distillery: "Chase Distillery", country: "UK", region: "ENGLAND UK", style: "Potato", abv: 40, distilledFrom: "ESTATE POTATOES", tags: ["Creamy Potato", "Black Pepper", "Butter", "Earthy"], pour: "Neat or in a British Vodka Martini" },
-    { name: "Żubrówka Bison Grass Vodka", distillery: "Białystok Distillery", country: "Poland", region: "POLAND (GRASS)", style: "Flavored Rye", abv: 37.5, distilledFrom: "BISON GRASS INFUSED", tags: ["Woodruff", "Vanilla", "Fresh Hay", "Almond"], pour: "Tatanka: Żubrówka mixed with fresh apple juice" },
-    { name: "Karlssons Gold Batch Vodka", distillery: "Karlsson's", country: "Sweden", region: "SWEDEN (POTATO)", style: "Virgin Potato", abv: 40, distilled From: "SWEDISH HEIRLOOM POTATOES", tags: ["Black Pepper", "Earthy", "Cocoa", "Butter"], pour: "On ice with freshly cracked black pepper" },
-    { name: "Koskenkorva Climate Action Organic", distillery: "Anora Group", country: "Finland", region: "FINLAND (BARLEY)", style: "Organic Barley", abv: 40, distilledFrom: "REGENERATIVE BARLEY", tags: ["Crisp Barley", "Clean", "Light Pepper", "Mineral"], pour: "Chilled neat with Finnish rye bread" },
-    { name: "Black Cow Pure Milk Vodka", distillery: "Black Cow Distillery", country: "UK", region: "ENGLAND UK", style: "Milk Whey", abv: 40, distilledFrom: "PURE MILK WHEY", tags: ["Creamy Whey", "Vanilla", "White Chocolate", "Velvety"], pour: "Neat or in an Espresso Martini" },
-    { name: "Fair Quinoa Organic Vodka", distillery: "Fair Spirits", country: "France", region: "FRANCE", style: "Quinoa", abv: 40, distilledFrom: "ORGANIC ANDEAN QUINOA", tags: ["Nutty Quinoa", "Brioche", "Smooth", "Pepper"], pour: "Sipped neat or in a Fair Martini" },
-    { name: "Broken Shed Premium Vodka", distillery: "Broken Shed", country: "New Zealand", region: "NEW ZEALAND", style: "Whey & Glacial", abv: 40, distilledFrom: "NZ WHEY & MOUNTAIN WATER", tags: ["Crisp Water", "Light Vanilla", "Clean", "Silky"], pour: "On the rocks with a lemon wheel" },
-    { name: "Hangar 1 Straight Vodka", distillery: "Hangar 1", country: "USA", region: "CALIFORNIA USA", style: "Grape & Wheat", abv: 40, distilledFrom: "VIOGNIER GRAPES & WHEAT", tags: ["Floral Blossom", "Pear", "Crisp Wheat", "Smooth"], pour: "Hangar 1 Martini with orange bitters" },
-    { name: "Woody Creek Colorado Potato Vodka", distillery: "Woody Creek", country: "USA", region: "COLORADO USA", style: "Potato", abv: 40, distilledFrom: "COLORADO RIO GRANDE POTATOES", tags: ["Earthy Potato", "White Pepper", "Creamy", "Mineral"], pour: "Neat in a heavy tumbler" },
-    { name: "Industry Standard Vodka", distillery: "Industry City Spirits", country: "USA", region: "NEW YORK USA", style: "Sugar Beet", abv: 40, distilledFrom: "AMERICAN SUGAR BEETS", tags: ["Fruity", "Floral", "Green Apple", "Crisp"], pour: "Sipped neat or in a Craft Highball" },
-    { name: "Ogilly Spirits Potato Vodka", distillery: "Ogilvy Estate", country: "Scotland", region: "SCOTLAND", style: "Potato", abv: 40, distilledFrom: "SINGLE ESTATE POTATOES", tags: ["Creamy Toffee", "Green Grass", "Pepper", "Butter"], pour: "Neat or with a drop of spring water" },
-    { name: "Double Cross Luxury Vodka", distillery: "Jan II Distillery", country: "Slovakia", region: "SLOVAKIA", style: "Winter Wheat", abv: 40, distilledFrom: "7x FILTERED WHEAT", tags: ["White Pepper", "Lemon Zest", "Glacial Water", "Clean"], pour: "Chilled neat in a martini glass" }
-  ];
+  /* ---------------- POLAND ---------------- */
+  ["Belvedere Pure", "Polmos Żyrardów", "Poland", "POLAND", "Rye Vodka", 40, "DANKOWSKIE RYE", ["White Pepper", "Cream", "Vanilla", "Rounded"], "Chilled neat in a small glass", "Named for the Belweder presidential palace in Warsaw, and made only from Polish Dankowskie rye.", 3],
+  ["Belvedere Single Estate Smogóry Forest", "Polmos Żyrardów", "Poland", "POLAND", "Rye Vodka", 40, "SINGLE-ESTATE RYE", ["Salted Caramel", "White Pepper", "Honey", "Full"], "Neat in a Glencairn glass", "Rye from one western Polish estate, showing that vodka can express terroir.", 1],
+  ["Belvedere Lake Bartężek", "Polmos Żyrardów", "Poland", "POLAND", "Rye Vodka", 40, "SINGLE-ESTATE RYE", ["Green Apple", "Mint", "Cracked Pepper", "Crisp"], "Chilled neat", "From a cooler northern estate beside a glacial lake, giving a sharper profile.", 1],
+  ["Chopin Potato Vodka", "Podlaska Distillery", "Poland", "POLAND", "Potato Vodka", 40, "POLISH POTATOES", ["Earthy", "Cream", "Green Apple", "Full Bodied"], "Chilled neat in a frozen glass", "It takes around seven kilos of potatoes to make a single bottle.", 1],
+  ["Chopin Rye Vodka", "Podlaska Distillery", "Poland", "POLAND", "Rye Vodka", 40, "POLISH RYE", ["Rye Bread", "Spice", "Dry", "Clean"], "Neat, very cold", "The same distillery bottles single-ingredient rye, wheat and potato to show the difference.", 1],
+  ["Chopin Wheat Vodka", "Podlaska Distillery", "Poland", "POLAND", "Wheat Vodka", 40, "POLISH WHEAT", ["Light Citrus", "Delicate", "Soft", "Sweet"], "In a Martini or neat", "The lightest of the Chopin trio, and the one most often used behind bars.", 5],
+  ["Żubrówka Bison Grass", "Białystok Distillery", "Poland", "POLAND", "Flavoured Rye", 37.5, "BISON GRASS INFUSION", ["Woodruff", "Vanilla", "Fresh Hay", "Almond"], "In a Tatanka with apple juice", "Flavoured with a blade of grass from the Białowieża forest where wild bison graze.", 4],
+  ["Żubrówka Biała", "Białystok Distillery", "Poland", "POLAND", "Rye Vodka", 37.5, "POLISH RYE", ["Grain", "Light Pepper", "Clean", "Smooth"], "Chilled neat or in a Highball", "The unflavoured white expression, a Polish domestic bestseller.", 5],
+  ["Wyborowa Exquisite", "Wyborowa Pernod Ricard", "Poland", "POLAND", "Rye Vodka", 40, "POLISH RYE", ["Rye Spice", "Cream", "Pepper", "Elegant"], "Chilled neat", "Distilled at a Poznań plant whose visitor centre was designed by Frank Gehry.", 1],
+  ["Wyborowa", "Wyborowa Pernod Ricard", "Poland", "POLAND", "Rye Vodka", 37.5, "POLISH RYE", ["Grain", "Light Spice", "Dry", "Simple"], "In a Highball or neat", "Registered as a trademark in 1927, one of the first vodkas ever branded.", 5],
+  ["Luksusowa", "Polmos Zielona Góra", "Poland", "POLAND", "Potato Vodka", 40, "POLISH POTATOES", ["Earthy", "Butter", "Pepper", "Creamy"], "Chilled neat or in a Bloody Mary", "Poland's biggest-selling potato vodka, triple distilled since 1928.", 5],
+  ["Sobieski Vodka", "BGL Group", "Poland", "POLAND", "Rye Vodka", 40, "DANKOWSKIE RYE", ["Grain", "Light Vanilla", "Clean", "Dry"], "In cocktails or chilled neat", "Named for King Jan III Sobieski, who broke the siege of Vienna in 1683.", 5],
+  ["Vestal Kaszebe Potato", "Vestal Vodka", "Poland", "POLAND", "Potato Vodka", 40, "SINGLE-HARVEST POTATOES", ["Baked Potato", "Cream", "Pepper", "Textured"], "Neat at cellar temperature", "Bottled by single harvest year, and deliberately not filtered to neutrality.", 1],
+  ["Ostoya Vodka", "Ostoya", "Poland", "POLAND", "Rye Vodka", 40, "POLISH RYE", ["Rye", "Herb", "Soft", "Balanced"], "Chilled neat", "Named for an old Polish noble coat of arms, distilled from local rye.", 1],
+  ["Starka 50 Year", "Polmos Szczecin", "Poland", "POLAND", "Aged Rye Vodka", 50, "RYE AGED IN OAK", ["Dried Fruit", "Oak", "Vanilla", "Whisky-Like"], "Neat at room temperature", "Aged in oak for decades, a Polish tradition of laying down vodka at a child's birth.", 1],
 
-  for (let i = 6; i <= 100; i++) {
-    const v = realVodkas[(i - 6) % realVodkas.length];
-    const padIndex = String(i).padStart(2, '0');
+  /* ---------------- RUSSIA, UKRAINE & BALTICS ---------------- */
+  ["Russian Standard Original", "St. Petersburg Distillery", "Russia", "RUSSIA", "Wheat Vodka", 40, "WINTER WHEAT & LADOGA WATER", ["Grain", "Light Pepper", "Clean", "Crisp"], "Ice cold as a chilled shot", "Built on Mendeleev's 1894 specification of 40% ABV as the ideal strength.", 5],
+  ["Russian Standard Platinum", "St. Petersburg Distillery", "Russia", "RUSSIA", "Wheat Vodka", 40, "WHEAT, SILVER FILTERED", ["Soft Grain", "Mineral", "Smooth", "Neutral"], "Chilled neat", "Filtered through silver, which the brand claims removes remaining impurities.", 3],
+  ["Russian Standard Gold", "St. Petersburg Distillery", "Russia", "RUSSIA", "Flavoured Vodka", 40, "SIBERIAN GINSENG", ["Ginseng", "Warm Spice", "Wheat Bread", "Pepper"], "Chilled shot after caviar", "Infused with Siberian ginseng root, a traditional Russian tonic ingredient.", 1],
+  ["Beluga Noble", "Mariinsk Distillery", "Russia", "SIBERIA RUSSIA", "Malt Vodka", 40, "SIBERIAN MALT SPIRIT", ["Wild Strawberry", "Malt", "Honey", "Clean"], "Neat from a frozen glass", "Rested for thirty days after blending, unusually long for a vodka.", 1],
+  ["Beluga Transatlantic Racing", "Mariinsk Distillery", "Russia", "SIBERIA RUSSIA", "Malt Vodka", 40, "MALT SPIRIT & RICE", ["Vanilla", "Malt", "Light Fruit", "Silky"], "Chilled neat", "A softer expression created for export markets, rested sixty days.", 1],
+  ["Beluga Gold Line", "Mariinsk Distillery", "Russia", "SIBERIA RUSSIA", "Malt Vodka", 40, "MALT, RICE & HONEY", ["Honey", "Malt", "Cream", "Rich"], "Neat in a chilled glass", "Each bottle is hand-finished and supplied with a small brush and hammer.", 1],
+  ["Stolichnaya", "Latvijas Balzams", "Latvia", "BALTIC REGION", "Wheat & Rye Vodka", 40, "WHEAT & RYE", ["Grain", "Light Anise", "Dry", "Clean"], "Ice cold as a shot, or in a Bloody Mary", "The subject of a decades-long trademark dispute, now distilled and bottled in Latvia.", 5],
+  ["Stoli Elit", "Latvijas Balzams", "Latvia", "BALTIC REGION", "Wheat Vodka", 40, "WHEAT, FREEZE FILTERED", ["Silky Grain", "Mineral", "Faint Sweet", "Very Smooth"], "Chilled neat", "Filtered at minus eighteen degrees, which the producer calls freeze-filtration.", 1],
+  ["Nemiroff Original", "Nemiroff", "Ukraine", "UKRAINE", "Wheat Vodka", 40, "UKRAINIAN WHEAT", ["Grain", "Light Pepper", "Dry", "Sharp"], "Ice cold shot with zakuski", "Distilled in Vinnytsia region since 1872, and Ukraine's largest vodka export.", 5],
+  ["Nemiroff Honey Pepper", "Nemiroff", "Ukraine", "UKRAINE", "Flavoured Vodka", 40, "HONEY & CHILLI PEPPER", ["Honey", "Chilli Heat", "Sweet", "Warming"], "Chilled shot", "A Ukrainian classic pairing sweet honey against sharp chilli heat.", 1],
+  ["Khortytsa Platinum", "Khortytsa", "Ukraine", "UKRAINE", "Wheat Vodka", 40, "UKRAINIAN WHEAT", ["Clean Grain", "Soft", "Neutral", "Light"], "Chilled neat or mixed", "Named after the Dnipro river island that was the historic Cossack stronghold.", 5],
+  ["Latvijas Dzidrais", "Latvijas Balzams", "Latvia", "BALTIC REGION", "Grain Vodka", 40, "BALTIC GRAIN", ["Grain", "Mineral", "Dry", "Traditional"], "Ice cold as a shot", "A Latvian domestic staple whose name simply means clear.", 1],
+  ["Lithuanian Vodka Gold", "Stumbras", "Lithuania", "BALTIC REGION", "Grain Vodka", 40, "LITHUANIAN GRAIN", ["Cereal", "Light Honey", "Soft", "Clean"], "Chilled neat", "Distilled in Kaunas at a plant operating since 1906.", 1],
+  ["Viru Valge", "Liviko", "Estonia", "BALTIC REGION", "Grain Vodka", 40, "ESTONIAN GRAIN", ["Grain", "Light Citrus", "Crisp", "Dry"], "Ice cold in a shot glass", "Estonia's best-known vodka, produced in Tallinn since 1962.", 1],
+  ["Double Cross Luxury", "Old Nitra Distillery", "Slovakia", "SLOVAKIA", "Winter Wheat Vodka", 40, "TATRA WHEAT, 7x FILTERED", ["White Pepper", "Lemon Zest", "Glacial Water", "Clean"], "Chilled neat in a martini glass", "Seven distillations and seven filtrations, using water from the Tatra mountains.", 3],
 
-    window.VODKA_DATA.push({
-      id: `vodka-${padIndex}`,
-      index: padIndex,
-      name: `${v.name} N°${i}`,
-      distillery: v.distillery,
-      country: v.country,
-      region: v.region,
-      style: v.style,
-      abv: v.abv,
-      distilledFrom: v.distilledFrom,
-      flavorTags: v.tags,
-      serveModes: { neat: true, ice: true, cocktail: true },
-      signaturePour: v.pour,
-      description: `Authentic ${v.country} ${v.style} distilled using multi-column fractional stills and birch charcoal filtration.`
-    });
-  }
+  /* ---------------- SCANDINAVIA ---------------- */
+  ["Absolut Vodka", "The Absolut Company", "Sweden", "SWEDEN", "Winter Wheat Vodka", 40, "ÅHUS WINTER WHEAT", ["Grain", "Light Fruit", "Smooth", "Neutral"], "In a Cosmopolitan or chilled neat", "Continuously distilled in Åhus since 1879, in a bottle modelled on an 18th-century medicine flask.", 5],
+  ["Absolut Elyx", "The Absolut Company", "Sweden", "SWEDEN", "Winter Wheat Vodka", 42.3, "SINGLE-ESTATE WHEAT", ["Cream", "Almond", "Silky", "Rich"], "Neat over ice or in a Martini", "Distilled in a 1921 copper rectification column operated manually by one distiller.", 3],
+  ["Karlsson's Gold", "Karlsson's Vodka", "Sweden", "SWEDEN", "Potato Vodka", 40, "VIRGIN NEW POTATOES", ["Black Pepper", "Earthy", "Cocoa", "Butter"], "On ice with cracked black pepper", "Made from seven varieties of virgin new potatoes and deliberately barely filtered.", 3],
+  ["Purity Vodka Signature 34", "Purity Vodka", "Sweden", "SWEDEN", "Organic Wheat Vodka", 40, "ORGANIC WHEAT & BARLEY", ["Vanilla", "Almond", "Wheat", "Buttery"], "Neat, lightly chilled", "Distilled thirty-four times in a copper and gold still at a 13th-century castle.", 1],
+  ["Level Vodka", "The Absolut Company", "Sweden", "SWEDEN", "Winter Wheat Vodka", 40, "ÅHUS WHEAT", ["Soft Grain", "Light Spice", "Smooth", "Balanced"], "In a Martini", "Combines batch and continuous distillation, a hybrid approach unusual in vodka.", 5],
+  ["Finlandia", "Anora Group", "Finland", "FINLAND", "Barley Vodka", 40, "SIX-ROW ARCTIC BARLEY", ["Barley", "Light Citrus", "Crisp", "Pure"], "Ice cold as a shot", "Cut with glacial spring water that requires no chemical treatment at all.", 5],
+  ["Koskenkorva Original", "Anora Group", "Finland", "FINLAND", "Barley Vodka", 40, "FINNISH BARLEY", ["Grain", "Light Sweetness", "Clean", "Soft"], "Chilled neat with rye bread", "Distilled in a village of the same name, using a 250-step continuous column.", 1],
+  ["Koskenkorva Climate Action", "Anora Group", "Finland", "FINLAND", "Organic Barley Vodka", 40, "REGENERATIVE BARLEY", ["Crisp Barley", "Mineral", "Light Pepper", "Clean"], "Chilled neat", "Produced using regeneratively farmed barley and barley-husk-powered steam.", 1],
+  ["Reyka Vodka", "Reyka", "Iceland", "ICELAND", "Wheat & Barley Vodka", 40, "ARCTIC SPRING WATER", ["Mineral", "Light Grain", "Clean", "Crisp"], "Chilled neat or in a Martini", "Filtered through lava rock and distilled using geothermal steam.", 5],
+  ["Isfjord Premium Arctic Vodka", "Isfjord", "Denmark", "DENMARK", "Grain Vodka", 40, "GREENLAND ICE MELTWATER", ["Mineral", "Clean", "Soft", "Neutral"], "Very cold, neat", "Cut with meltwater from Greenland ice harvested from drifting icebergs.", 1],
 
-  window.SPIRIT_DATA = window.VODKA_DATA;
-})();
+  /* ---------------- FRANCE & BENELUX ---------------- */
+  ["Grey Goose", "Grey Goose Distillery", "France", "FRANCE", "Winter Wheat Vodka", 40, "PICARDIE WHEAT, GENSAC WATER", ["Almond", "White Pepper", "Soft", "Rounded"], "In a Martini or over ice", "Wheat from Picardie, distilled and blended with limestone spring water in Cognac.", 7],
+  ["Grey Goose VX", "Grey Goose Distillery", "France", "FRANCE", "Winter Wheat Vodka", 40, "WHEAT & COGNAC", ["White Peach", "Plum", "Vanilla", "Silky"], "On ice in a crystal tumbler", "A small measure of cognac is added after distillation, blurring the category line.", 3],
+  ["Cîroc", "Cîroc", "France", "FRANCE", "Grape Vodka", 40, "MAUZAC & UGNI BLANC GRAPES", ["Citrus", "Grape", "Crisp", "Fruity"], "In a cocktail or over ice", "Distilled from French wine grapes rather than grain, and heavily promoted by Sean Combs.", 6],
+  ["Ketel One", "Nolet Distillery", "Netherlands", "NETHERLANDS", "Wheat Vodka", 40, "100% NON-GMO WHEAT", ["Citrus", "Honey", "Crisp", "Clean"], "In a Martini or Vodka Soda", "Named for Distilleerketel No. 1, a coal-fired copper pot still in use since 1691.", 5],
+  ["Ketel One Botanical Grapefruit & Rose", "Nolet Distillery", "Netherlands", "NETHERLANDS", "Botanical Vodka", 30, "WHEAT & BOTANICALS", ["Grapefruit", "Rose Petal", "Crisp", "Light"], "With soda as a Botanical Spritz", "Infused with botanicals and bottled at lower strength with no added sugar.", 4],
+  ["Van Gogh Vodka", "Royal Dirkzwager", "Netherlands", "NETHERLANDS", "Grain Vodka", 40, "DUTCH GRAIN", ["Grain", "Light Vanilla", "Smooth", "Clean"], "In a Martini", "A Schiedam distillery known for a very wide range of flavoured expressions.", 5],
+  ["Effen Vodka", "Effen", "Netherlands", "NETHERLANDS", "Wheat Vodka", 40, "FRENCH WHEAT", ["Soft Grain", "Vanilla", "Smooth", "Neutral"], "In cocktails", "Effen means smooth or even in Dutch, and the bottle carries an insulating sleeve.", 4],
+  ["Fair Quinoa Vodka", "Fair Spirits", "France", "FRANCE", "Quinoa Vodka", 40, "ORGANIC ANDEAN QUINOA", ["Nutty Quinoa", "Brioche", "Pepper", "Smooth"], "Neat or in a Martini", "Fairtrade certified, using quinoa bought directly from Bolivian growers.", 5],
+  ["Jean-Marc XO", "Jean-Marc XO", "France", "FRANCE", "Wheat Vodka", 40, "FOUR FRENCH WHEATS", ["Almond", "Citrus", "Delicate", "Refined"], "Chilled neat", "Distilled nine times in a Cognac alembic, using four different varieties of wheat.", 1],
+  ["Bols Vodka", "Lucas Bols", "Netherlands", "NETHERLANDS", "Grain Vodka", 40, "DUTCH GRAIN", ["Grain", "Clean", "Light", "Neutral"], "In cocktails", "From Amsterdam's Lucas Bols, which has distilled since 1575.", 4],
+
+  /* ---------------- UNITED KINGDOM & IRELAND ---------------- */
+  ["Chase Original Potato Vodka", "Chase Distillery", "UK", "ENGLAND UK", "Potato Vodka", 40, "ESTATE-GROWN POTATOES", ["Creamy Potato", "Black Pepper", "Butter", "Earthy"], "Neat or in a Vodka Martini", "Founded by a Herefordshire potato farmer who previously created Tyrrells crisps.", 3],
+  ["Black Cow Pure Milk Vodka", "Black Cow Distillery", "UK", "ENGLAND UK", "Whey Vodka", 40, "PURE MILK WHEY", ["Creamy Whey", "Vanilla", "White Chocolate", "Velvety"], "Neat or in an Espresso Martini", "Made from the whey left over from cheddar production on a Dorset dairy farm.", 5],
+  ["Sipsmith Barley Vodka", "Sipsmith Distillery", "UK", "LONDON UK", "Barley Vodka", 40, "ENGLISH BARLEY", ["Barley Sugar", "Cream", "Soft", "Textured"], "In a Martini", "Deliberately distilled to retain barley character rather than to be neutral.", 5],
+  ["Absolutely Pure Vodka", "The Lakes Distillery", "UK", "ENGLAND UK", "Grain Vodka", 40, "CUMBRIAN GRAIN", ["Clean Grain", "Mineral", "Soft", "Light"], "Chilled neat or in cocktails", "Cut with water from the River Derwent in the Lake District.", 5],
+  ["Boru Irish Vodka", "Castle Brands", "Ireland", "IRELAND", "Grain Vodka", 40, "IRISH GRAIN", ["Grain", "Light Citrus", "Clean", "Crisp"], "In a Highball", "Named for Brian Boru, the 11th-century High King of Ireland.", 4],
+  ["Smirnoff No. 21", "Smirnoff", "UK", "ENGLAND UK", "Grain Vodka", 37.5, "GRAIN, CHARCOAL FILTERED", ["Neutral", "Light Grain", "Clean", "Sharp"], "In a Moscow Mule or Bloody Mary", "Founded in 19th-century Moscow, the family fled after the revolution and rebuilt abroad.", 4],
+
+  /* ---------------- UNITED STATES & CANADA ---------------- */
+  ["Tito's Handmade Vodka", "Fifth Generation", "USA", "TEXAS USA", "Corn Vodka", 40, "100% YELLOW CORN", ["Sweet Corn", "Vanilla", "Clean", "Smooth"], "In an American Mule with ginger beer", "Bert Beveridge started with a single pot still and a bank loan on his credit cards.", 5],
+  ["Hangar 1 Straight Vodka", "Hangar 1", "USA", "CALIFORNIA USA", "Grape & Wheat Vodka", 40, "VIOGNIER GRAPES & WHEAT", ["Floral Blossom", "Pear", "Wheat", "Smooth"], "In a Martini with orange bitters", "Blends pot-distilled grape spirit with column-distilled wheat spirit.", 5],
+  ["Hangar 1 Fog Point", "Hangar 1", "USA", "CALIFORNIA USA", "Grape & Wheat Vodka", 40, "SAN FRANCISCO FOG WATER", ["Mineral", "Sea Air", "Pear", "Distinctive"], "Neat, lightly chilled", "Cut with water condensed directly from San Francisco Bay fog.", 1],
+  ["St. George All Purpose Vodka", "St. George Spirits", "USA", "CALIFORNIA USA", "Grain & Pear Vodka", 40, "BARTLETT PEAR & GRAIN", ["Pear", "Cream", "Light Fruit", "Textured"], "In a Martini or Vodka Soda", "Blended with a small proportion of the distillery's own pear brandy.", 5],
+  ["St. George Green Chile Vodka", "St. George Spirits", "USA", "CALIFORNIA USA", "Flavoured Vodka", 40, "JALAPEÑO, SERRANO, POBLANO", ["Green Chilli", "Bell Pepper", "Lime", "Hot"], "In a Bloody Mary or spicy Mule", "Four fresh chilli varieties are infused separately then blended.", 4],
+  ["Deep Eddy Vodka", "Deep Eddy Distilling", "USA", "TEXAS USA", "Corn Vodka", 40, "TEXAS CORN", ["Sweet Corn", "Clean", "Soft", "Light"], "In a Vodka Lemonade", "Named for the oldest swimming pool in Texas, in Austin.", 4],
+  ["Prairie Organic Vodka", "Prairie Organic Spirits", "USA", "MIDWEST USA", "Organic Corn Vodka", 40, "ORGANIC MINNESOTA CORN", ["Sweet Corn", "Melon", "Clean", "Round"], "In a Martini", "Certified organic and produced by a cooperative of family corn farmers.", 5],
+  ["Death's Door Vodka", "Death's Door Spirits", "USA", "MIDWEST USA", "Wheat Vodka", 40, "WASHINGTON ISLAND WHEAT", ["Wheat", "Light Sweetness", "Soft", "Clean"], "In a Martini", "Made from hard red winter wheat grown on Washington Island, Wisconsin.", 5],
+  ["Boyd & Blair Potato Vodka", "Pennsylvania Pure Distilleries", "USA", "EAST COAST USA", "Potato Vodka", 40, "PENNSYLVANIA POTATOES", ["Earthy", "Cream", "Pepper", "Full"], "Neat or over ice", "Small-batch pot-distilled potato vodka, each batch numbered and tasted before release.", 3],
+  ["Wheatley Vodka", "Buffalo Trace Distillery", "USA", "KENTUCKY USA", "Wheat Vodka", 41, "WHEAT, CORN & MALTED BARLEY", ["Wheat", "Vanilla", "Soft", "Rounded"], "In a Martini or Mule", "Named for Buffalo Trace's master distiller, and made in a micro-still on site.", 5],
+  ["Blue Ice American Potato", "Distilled Resources", "USA", "IDAHO USA", "Potato Vodka", 40, "IDAHO RUSSET POTATOES", ["Earthy", "Vanilla", "Creamy", "Smooth"], "Neat or in a Bloody Mary", "Distilled from Idaho russet burbank potatoes and naturally gluten free.", 5],
+  ["Square One Organic Rye", "Square One Organic Spirits", "USA", "USA", "Organic Rye Vodka", 40, "ORGANIC AMERICAN RYE", ["Rye Spice", "White Pepper", "Dry", "Clean"], "In a Martini", "One of the earliest USDA-certified organic vodkas in the American market.", 5],
+  ["Ocean Organic Vodka", "Hawaii Sea Spirits", "USA", "HAWAII USA", "Sugar Cane Vodka", 40, "ORGANIC SUGAR CANE", ["Light Sweetness", "Mineral", "Clean", "Soft"], "In a cocktail or over ice", "Made on Maui with organic cane and desalinated deep ocean mineral water.", 6],
+  ["Woody Creek Colorado Potato", "Woody Creek Distillers", "USA", "COLORADO USA", "Potato Vodka", 40, "COLORADO POTATOES", ["Earthy Potato", "White Pepper", "Creamy", "Mineral"], "Neat in a heavy tumbler", "Potatoes are harvested and distilled within hours on the distillery's own farm.", 1],
+  ["Humboldt Distillery Organic", "Humboldt Distillery", "USA", "CALIFORNIA USA", "Organic Cane Vodka", 40, "ORGANIC SUGAR CANE", ["Light Fruit", "Clean", "Soft", "Neutral"], "In cocktails", "A small Northern California distillery working entirely with organic cane spirit.", 4],
+  ["Crystal Head Vodka", "Crystal Head", "Canada", "CANADA", "Corn Vodka", 40, "PEACHES & CREAM CORN", ["Sweet Corn", "Vanilla", "Clean", "Soft"], "Chilled neat or in a Martini", "Filtered through Herkimer diamonds, in a skull bottle created with Dan Aykroyd.", 5],
+  ["Crystal Head Onyx", "Crystal Head", "Canada", "CANADA", "Agave Vodka", 40, "BLUE WEBER AGAVE", ["Green Grass", "White Pepper", "Citrus", "Earthy"], "On the rocks with a lime twist", "Distilled from Mexican blue agave, then filtered in Newfoundland.", 3],
+  ["Iceberg Vodka", "Iceberg Vodka Corporation", "Canada", "CANADA", "Corn Vodka", 40, "ICEBERG WATER & CORN", ["Clean", "Mineral", "Light", "Crisp"], "Very cold, neat", "Cut with water harvested from icebergs drifting off the Newfoundland coast.", 1],
+
+  /* ---------------- REST OF WORLD ---------------- */
+  ["Haku Vodka", "Suntory Spirits", "Japan", "JAPAN", "Rice Vodka", 40, "100% JAPANESE WHITE RICE", ["Sweet Rice", "Floral", "Subtle Plum", "Smooth"], "Neat or in a Haku Martini", "Filtered through bamboo charcoal, and haku means white in Japanese.", 5],
+  ["Broken Shed Premium Vodka", "Broken Shed", "New Zealand", "NEW ZEALAND", "Whey Vodka", 40, "NZ WHEY & MOUNTAIN WATER", ["Crisp Water", "Light Vanilla", "Clean", "Silky"], "On the rocks with a lemon wheel", "Built on whey spirit and two separate New Zealand spring water sources.", 3],
+  ["42 Below", "Bacardi", "New Zealand", "NEW ZEALAND", "Wheat Vodka", 40, "NZ WHEAT", ["Grain", "Clean", "Light", "Crisp"], "In a Martini", "Named for the 42nd parallel south, which runs through New Zealand.", 5],
+  ["Zubrowka Czarna", "Białystok Distillery", "Poland", "POLAND", "Flavoured Rye", 40, "BISON GRASS & OAK", ["Woodruff", "Oak", "Vanilla", "Deeper"], "Chilled neat", "A darker, oak-influenced take on the bison grass original.", 1],
+  ["Nikka Coffey Vodka", "Nikka Whisky", "Japan", "JAPAN", "Grain Vodka", 40, "CORN & MALTED BARLEY", ["Malt", "Light Sweetness", "Silky", "Textured"], "Neat over a large ice cube", "Distilled in Nikka's Coffey stills, leaving far more character than typical vodka.", 3],
+  ["Absolut Elyx Single Estate", "The Absolut Company", "Sweden", "SWEDEN", "Winter Wheat Vodka", 42.3, "RÅBELÖF ESTATE WHEAT", ["Cream", "Almond", "Wheat", "Silky"], "Over a large ice cube", "All wheat comes from a single estate whose records date to the 15th century.", 3],
+  ["Konik's Tail", "Konik's Tail", "Poland", "POLAND", "Grain Vodka", 40, "SPELT, WHEAT & RYE", ["Spelt", "Honey", "Pepper", "Textured"], "Neat, lightly chilled", "Blends three separately distilled grain spirits, named for a wild Polish forest pony.", 1],
+  ["Snow Queen Organic", "Snow Queen Vodka", "Kazakhstan", "KAZAKHSTAN", "Organic Wheat Vodka", 40, "ORGANIC KAZAKH WHEAT", ["Grain", "Light Vanilla", "Clean", "Smooth"], "Chilled neat", "Distilled five times from organic wheat grown on the Kazakh steppe.", 1],
+  ["Roberto Cavalli Vodka", "Roberto Cavalli", "Italy", "ITALY", "Grain Vodka", 40, "ITALIAN GRAIN", ["Light Grain", "Citrus", "Soft", "Neutral"], "In a Martini", "A fashion-house vodka distilled five times in Trentino.", 4],
+  ["Babicka Wormwood Vodka", "Babicka", "Czechia", "BOHEMIA CZECHIA", "Flavoured Vodka", 40, "WORMWOOD INFUSION", ["Wormwood", "Herb", "Bitter Edge", "Green"], "Chilled neat or in a Martini", "Infused with wormwood, giving a green tint and a faintly absinthe-like bitterness.", 5],
+  ["Amundsen Vodka", "Stock Spirits", "Czechia", "BOHEMIA CZECHIA", "Grain Vodka", 37.5, "CZECH GRAIN", ["Grain", "Clean", "Light", "Dry"], "In a Highball", "Named for the Norwegian polar explorer, and a Central European supermarket staple.", 4],
+  ["Ursus Roter", "Ursus", "Iceland", "ICELAND", "Flavoured Vodka", 21, "RED BERRY INFUSION", ["Red Berry", "Sweet", "Light", "Fruity"], "Chilled shot or with soda", "A low-strength berry vodka popular across the Nordic countries.", 3],
+  ["Belenkaya Gold", "Synergy", "Russia", "RUSSIA", "Wheat Vodka", 40, "RUSSIAN WHEAT", ["Grain", "Soft", "Clean", "Neutral"], "Ice cold as a shot", "One of the largest-selling vodka brands within Russia itself.", 1],
+  ["Kauffman Private Collection", "Kauffman", "Russia", "RUSSIA", "Vintage Wheat Vodka", 40, "SINGLE-HARVEST WHEAT", ["Wheat", "Cream", "Delicate", "Refined"], "Neat, very cold", "Bottled by single harvest year and distilled fourteen times.", 1],
+  ["Zyr Vodka", "Zyr", "Russia", "RUSSIA", "Wheat & Rye Vodka", 40, "WHEAT & RYE", ["Grain", "Light Pepper", "Smooth", "Balanced"], "In a Martini", "Distilled five times and filtered nine, then blended from wheat and rye spirit.", 5],
+  ["Mamont Vodka", "Itkul Distillery", "Russia", "SIBERIA RUSSIA", "Siberian Wheat Vodka", 40, "SIBERIAN WHEAT & CEDAR NUT", ["Cedar Nut", "Grain", "Soft", "Clean"], "Chilled neat", "Named for the mammoth remains found in the Siberian permafrost near the distillery.", 1],
+  ["Green Mark", "Green Mark", "Russia", "RUSSIA", "Grain Vodka", 40, "RUSSIAN GRAIN", ["Grain", "Light Sweetness", "Clean", "Dry"], "Ice cold as a shot", "Modelled on a Soviet-era state quality mark from the 1950s.", 1],
+  ["Ogilvy Potato Vodka", "Ogilvy Spirits", "Scotland", "SCOTLAND", "Potato Vodka", 40, "SINGLE-ESTATE POTATOES", ["Creamy Toffee", "Green Grass", "Pepper", "Butter"], "Neat or with a drop of spring water", "Made on an Angus farm from the family's own Maris Piper and Cultra potatoes.", 1],
+  ["Arbikie Haar Wheat Vodka", "Arbikie Distillery", "Scotland", "SCOTLAND", "Wheat Vodka", 43, "SINGLE-ESTATE WHEAT", ["Wheat", "Vanilla", "Cream", "Textured"], "Neat or in a Martini", "A field-to-bottle Angus farm distillery growing everything it distils.", 5],
+  ["Kavka Vodka", "Kavka", "Poland", "POLAND", "Rye & Wheat Vodka", 40, "RYE, WHEAT & OATS", ["Grain", "Cream", "Pepper", "Balanced"], "Neat, lightly chilled", "Blends spirits from three grains rather than distilling from a single crop.", 1],
+  ["Discarded Grape Skin Vodka", "William Grant & Sons", "UK", "SCOTLAND", "Grape Vodka", 40, "DISCARDED GRAPE SKINS", ["Grape", "Floral", "Fruity", "Soft"], "In a cocktail with soda", "Made from grape skins left over from winemaking, as part of a waste-reduction range.", 4],
+  ["Dingle Original Vodka", "Dingle Distillery", "Ireland", "IRELAND", "Grain Vodka", 40, "IRISH GRAIN", ["Grain", "Citrus", "Clean", "Soft"], "In a Martini or Vodka Soda", "Quintuple distilled on the Kerry peninsula at one of Ireland's first independent distilleries.", 5],
+  ["Stoli Gluten Free", "Latvijas Balzams", "Latvia", "BALTIC REGION", "Corn & Buckwheat Vodka", 40, "CORN & BUCKWHEAT", ["Corn", "Buckwheat", "Soft", "Clean"], "In a Bloody Mary", "Built on corn and buckwheat instead of wheat and rye for a gluten-free profile.", 4],
+  ["Reyka Small Batch", "Reyka", "Iceland", "ICELAND", "Grain Vodka", 40, "ARCTIC WATER, LAVA FILTERED", ["Mineral", "Grain", "Crisp", "Clean"], "In a Martini", "Distilled in one of the few Carter-Head stills still in commercial use.", 5],
+  ["Vestal Pomorze Potato", "Vestal Vodka", "Poland", "POLAND", "Potato Vodka", 40, "SINGLE-HARVEST POTATOES", ["Earth", "Cream", "Black Pepper", "Weighty"], "Neat at cellar temperature", "A second single-harvest potato bottling from a different Polish region.", 1],
+  ["Uluvka Vodka", "Uluvka", "Poland", "POLAND", "Rye & Wheat Vodka", 40, "RYE, WHEAT & SPELT", ["Grain", "Nut", "Soft", "Textured"], "Chilled neat", "Blends rye, wheat and spelt spirits in a distinctive angled bottle.", 1],
+  ["Absolut Original 100", "The Absolut Company", "Sweden", "SWEDEN", "Overproof Vodka", 50, "ÅHUS WINTER WHEAT", ["Grain", "Pepper", "Intense", "Warming"], "In a bold Martini", "A higher-strength expression of the standard Åhus wheat spirit.", 5],
+  ["Pinnacle Vodka", "Beam Suntory", "France", "FRANCE", "Wheat Vodka", 40, "FRENCH WHEAT", ["Grain", "Light Citrus", "Clean", "Neutral"], "In cocktails", "Distilled in northern France and known for a very large flavoured range.", 4],
+  ["Skyy Vodka", "Campari Group", "USA", "CALIFORNIA USA", "Grain Vodka", 40, "AMERICAN GRAIN", ["Neutral", "Light Grain", "Smooth", "Clean"], "In a Cosmopolitan", "Launched in San Francisco in 1992, marketed on a four-stage filtration process.", 4],
+  ["New Amsterdam Vodka", "E. & J. Gallo", "USA", "CALIFORNIA USA", "Grain Vodka", 40, "AMERICAN GRAIN", ["Light Citrus", "Grain", "Soft", "Neutral"], "In a Highball", "Distilled five times and filtered three, aimed squarely at the value segment.", 4],
+  ["Grey Goose Essences Strawberry & Lemongrass", "Grey Goose Distillery", "France", "FRANCE", "Botanical Vodka", 30, "WHEAT & BOTANICAL ESSENCE", ["Strawberry", "Lemongrass", "Light", "Fresh"], "With soda over ice", "Infused vodka bottled at lower strength with no added sugar or carbohydrates.", 6],
+  ["Ketel One Citroen", "Nolet Distillery", "Netherlands", "NETHERLANDS", "Flavoured Vodka", 40, "WHEAT & FOUR CITRUS FRUITS", ["Lemon", "Lime", "Zest", "Bright"], "In a Vodka Collins or Lemon Drop", "Infused with four citrus fruits, then redistilled in a copper pot still.", 4]
+
+]);

@@ -7,9 +7,12 @@
   <meta name="description" content="Vodka guide decoding winter wheat, rye, potato, and glacial water purities with 100 decoded vodkas.">
   
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400;1,600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap">
   <link rel="stylesheet" href="css/themes.css">
   <link rel="stylesheet" href="css/styles.css">
-  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
@@ -39,6 +42,9 @@
           <li><a href="brandy.html" class="nav-link">Brandy</a></li>
           <li><a href="tequila.html" class="nav-link">Tequila</a></li>
           <li><a href="champagne.html" class="nav-link">Champagne</a></li>
+          <li><a href="beer.html" class="nav-link">Beer</a></li>
+          <li><a href="absinthe.html" class="nav-link">Absinthe</a></li>
+          <li><a href="liqueur.html" class="nav-link">Liqueurs</a></li>
         </ul>
       </nav>
     </div>
@@ -47,7 +53,7 @@
   <main>
     <section class="hero-section">
       <p class="hero-subtitle">THE FIELD GUIDE VOL. II</p>
-      <h1 class="hero-title">100 Vodka Styles, Decoded</h1>
+      <h1 class="hero-title">106 Vodkas, Decoded</h1>
       <p class="hero-description">
         Glacial spring water, single-estate Dankowskie diamond rye, Swedish winter wheat, and Finnish heirloom barley.
       </p>
@@ -60,13 +66,16 @@
       </div>
     </section>
 
-    <section class="section-container" style="padding-top: 0;">
+    <section class="section-container">
       <div class="section-header">
-        <p class="section-subtitle">ORIGIN STORY</p>
+        <p class="section-subtitle">THE FIELD BOARD</p>
         <h2 class="section-title">The Quest for Absolute Purity</h2>
       </div>
 
-      <div class="timeline-grid">
+      <div class="board-grid">
+        <div class="board-column">
+          <p class="board-label">Origin Story</p>
+          <div class="timeline-stack">
         <div class="timeline-card">
           <div class="timeline-year">1405 • Polish Gorzałka</div>
           <h3 class="timeline-title">Medicinal Spirit Origins</h3>
@@ -84,20 +93,31 @@
           <h3 class="timeline-title">Multi-Column Fractional Stills</h3>
           <p class="timeline-desc">Introduction of multi-column distillation towers removing volatile aldehydes to reach 96% raw purity.</p>
         </div>
-      </div>
-    </section>
+          </div>
+        </div>
 
-    <section class="section-container">
-      <div class="section-header">
-        <p class="section-subtitle">GLOBAL TERROIR</p>
-        <h2 class="section-title">World Map of Vodka Terroir</h2>
-        <p style="font-size: 0.95rem; color: var(--text-body); max-width: 650px; margin: 0.5rem auto 0;">
-          Click any highlighted pin to explore raw ingredients and filter vodkas from that specific region.
-        </p>
-      </div>
+        <div class="board-column">
+          <p class="board-label">Signature Cocktail</p>
+          <article class="signature-card">
+            <h3 class="signature-name">Moscow Mule</h3>
+            <p class="signature-method">Copper Mug • Built Over Ice</p>
+            <ul class="signature-recipe">
+              <li><span class="signature-measure">50 ml</span><span>Vodka</span></li>
+              <li><span class="signature-measure">15 ml</span><span>Fresh lime juice</span></li>
+              <li><span class="signature-measure">120 ml</span><span>Ginger beer</span></li>
+            </ul>
+            <p class="signature-garnish">Garnish: Lime wedge &amp; mint sprig</p>
+            <p class="signature-note">Invented in 1941 Los Angeles to shift unsold vodka and unsold ginger beer at the same time. The copper mug was the third partner's surplus stock.</p>
+          </article>
+        </div>
 
-      <div class="map-wrapper">
-        <div id="map"></div>
+        <div class="board-column">
+          <p class="board-label">Global Terroir</p>
+          <div class="map-wrapper">
+            <div id="map" role="application" aria-label="Interactive world map of vodka distilling regions"></div>
+          </div>
+          <p class="map-hint">Click the map to enable zoom • Click a pin to filter</p>
+        </div>
       </div>
     </section>
 
@@ -132,14 +152,14 @@
   <footer class="site-footer">
     <div class="footer-content">
       <h3 class="footer-title">The Vodka Field Guide</h3>
-      <p class="footer-text">Part of The Grand Spirits Encyclopedia for GitHub Pages.</p>
+      <p class="footer-text">Please drink responsibly.</p>
     </div>
   </footer>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="js/catalog.js"></script>
   <script src="data/vodkas.js"></script>
   <script src="js/app.js"></script>
   <script src="js/map.js"></script>
-  <script>lucide.createIcons();</script>
 </body>
 </html>
