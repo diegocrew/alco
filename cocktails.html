@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cocktail">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Back Bar: 190+ Cocktails, Decoded</title>
+  <meta name="description" content="A hidden compendium of the most popular and most respected cocktails, with full recipes, method, glassware and short histories.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400;1,600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Deliberately unlisted: no category nav, reachable only by URL or the shaker on the hub. -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo">
+        <svg class="brand-icon" viewBox="0 0 32 32" fill="none" stroke="#d8b45c" stroke-width="2" aria-hidden="true" focusable="false">
+          <path d="M11 3h10l-1 5H12z"/>
+          <path d="M12 8h8l2 8v11a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2V16z"/>
+          <line x1="10" y1="18" x2="22" y2="18"/>
+        </svg>
+        <div>
+          <span class="brand-title">The Back Bar</span>
+          <span class="brand-subtitle">UNLISTED VOLUME</span>
+        </div>
+      </a>
+
+      <nav aria-label="Return">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">← Back to the Field Guide</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero-section">
+      <p class="hero-subtitle">VOLUME 0 &bull; NOT ON THE CONTENTS PAGE</p>
+      <h1 class="hero-title">The Back Bar</h1>
+      <p class="hero-description">
+        Every drink the twelve field guides keep pointing at, collected in one place: the recipe, the method, the glass it belongs in, and how it came to exist. You found this the hard way.
+      </p>
+
+      <div class="filter-bar-container" role="group" aria-label="Filter by base spirit">
+        <button type="button" class="filter-btn active" data-base="all" aria-pressed="true">ALL</button>
+        <button type="button" class="filter-btn" data-base="gin" aria-pressed="false">GIN</button>
+        <button type="button" class="filter-btn" data-base="whisky" aria-pressed="false">WHISKY</button>
+        <button type="button" class="filter-btn" data-base="rum" aria-pressed="false">RUM</button>
+        <button type="button" class="filter-btn" data-base="tequila" aria-pressed="false">AGAVE</button>
+        <button type="button" class="filter-btn" data-base="vodka" aria-pressed="false">VODKA</button>
+        <button type="button" class="filter-btn" data-base="brandy" aria-pressed="false">BRANDY</button>
+        <button type="button" class="filter-btn" data-base="aperitivo" aria-pressed="false">APERITIVO</button>
+        <button type="button" class="filter-btn" data-base="liqueur" aria-pressed="false">LIQUEUR</button>
+        <button type="button" class="filter-btn" data-base="wine" aria-pressed="false">WINE</button>
+        <button type="button" class="filter-btn" data-base="champagne" aria-pressed="false">CHAMPAGNE</button>
+        <button type="button" class="filter-btn" data-base="beer" aria-pressed="false">BEER</button>
+      </div>
+    </section>
+
+    <section class="section-container">
+      <div class="section-header">
+        <p class="section-subtitle">HOUSE RULES</p>
+        <h2 class="section-title">Four Things That Fix Most Drinks</h2>
+      </div>
+
+      <div class="timeline-grid">
+        <div class="timeline-card">
+          <div class="timeline-year">01. Citrus</div>
+          <h3 class="timeline-title">Squeeze It Today</h3>
+          <p class="timeline-desc">Lemon and lime juice start losing their edge within a few hours and taste flat by the next day. Nothing else in a sour matters as much.</p>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-year">02. Ice</div>
+          <h3 class="timeline-title">More, Not Less</h3>
+          <p class="timeline-desc">A glass packed with ice dilutes more slowly than a half-empty one, because the drink stays colder. Small wet cubes are the enemy.</p>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-year">03. Dilution</div>
+          <h3 class="timeline-title">Water Is an Ingredient</h3>
+          <p class="timeline-desc">Shaking or stirring adds roughly 20 to 25 percent water. A drink that tastes harsh is usually under-shaken rather than badly balanced.</p>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-year">04. Vermouth</div>
+          <h3 class="timeline-title">It Is Wine</h3>
+          <p class="timeline-desc">Once opened, vermouth belongs in the fridge and should be replaced within a month. A dusty bottle has ruined more Martinis than bad gin ever has.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="toolbar-section">
+      <div>
+        <label for="searchInput" class="visually-hidden">Search cocktails</label>
+        <input type="search" id="searchInput" class="input-control" placeholder="🔍 Search by name, spirit or ingredient...">
+      </div>
+      <div>
+        <label for="eraSelect" class="visually-hidden">Filter by era</label>
+        <select id="eraSelect" class="select-control">
+          <option value="all">All Eras</option>
+          <option value="Unforgettable">The Unforgettables</option>
+          <option value="Contemporary Classic">Contemporary Classics</option>
+          <option value="New Era">New Era</option>
+        </select>
+      </div>
+      <div>
+        <label for="glassSelect" class="visually-hidden">Filter by glassware</label>
+        <select id="glassSelect" class="select-control"><option value="all">All Glassware</option></select>
+      </div>
+      <div>
+        <label for="sortSelect" class="visually-hidden">Sort results</label>
+        <select id="sortSelect" class="select-control">
+          <option value="default">Sort by Index</option>
+          <option value="name">Name (A-Z)</option>
+          <option value="simple">Fewest Ingredients</option>
+          <option value="complex">Most Ingredients</option>
+        </select>
+      </div>
+    </section>
+
+    <p id="countBadge" class="count-badge" role="status" aria-live="polite"></p>
+
+    <div id="cardsContainer" class="cards-grid"></div>
+  </main>
+
+  <div class="modal-backdrop" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailModalTitle" aria-hidden="true">
+    <div class="modal-content">
+      <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Close recipe">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <h3 class="footer-title">The Back Bar</h3>
+      <p class="footer-text">Measures are given in millilitres. Please drink responsibly.</p>
+    </div>
+  </footer>
+
+  <script src="data/cocktails.js"></script>
+  <script src="data/cocktail-images.js"></script>
+  <script src="js/cocktails.js"></script>
+</body>
+</html>

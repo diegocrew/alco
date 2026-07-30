@@ -310,3 +310,26 @@
   --border-active: #d8a24a;
 }
 
+/* --------------------------------------------------
+   HIDDEN: COCKTAIL COMPENDIUM (Brass, Midnight Bar)
+   -------------------------------------------------- */
+[data-theme="cocktail"] {
+  --bg-page: #0e0f14;
+  --bg-header: #090a0e;
+  --bg-surface: #15171e;
+  --bg-card: #1c1f28;
+  --bg-card-hover: #262a35;
+  --bg-pill: #2a2f3b;
+
+  --text-title: #f4f1e8;
+  --text-body: #c9c6bb;
+  --text-muted: #82806f;
+
+  --accent-primary: #d8b45c;
+  --accent-secondary: #9a7430;
+  --accent-ring: #d8b45c;
+
+  --border-card: #2f3440;
+  --border-active: #d8b45c;
+}
+
