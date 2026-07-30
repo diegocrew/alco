@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `<li><span class="pour-measure">${esc(measure)}</span><span>${esc(item)}</span></li>`).join('');
 
     const photo = c.photo
-      ? `<div class="entry-photo" style="background-image: url('images/cocktails/${esc(c.photo.f)}');"></div>`
+      ? `<img class="entry-photo" src="images/cocktails/${esc(c.photo.f)}" alt="" loading="lazy" decoding="async">`
       : '';
 
     return `
@@ -197,9 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const visual = c.photo
       ? `<div class="modal-cocktail-photo" style="color: ${esc(c.colour)}; background-image: url('images/cocktails/${esc(c.photo.f)}');">
            ${glassSVG(c.glass, c.colour)}
-         </div>
-         <p class="photo-credit">Photo: ${esc(c.photo.a)} &bull; ${esc(c.photo.l)} &bull;
-           <a href="${esc(c.photo.s)}" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></p>`
+         </div>`
       : `<div class="modal-cocktail-visual" style="color: ${esc(c.colour)};">${glassSVG(c.glass, c.colour)}</div>`;
 
     modalBody.innerHTML = `

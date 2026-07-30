@@ -710,8 +710,9 @@ body {
   position: absolute;
   inset: 0;
   z-index: -2;
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   opacity: 0.3;
   transition: opacity var(--transition-normal);
 }
@@ -850,19 +851,6 @@ body {
   height: 100px;
   margin-bottom: 0.75rem;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.7));
-}
-
-.photo-credit {
-  font-family: var(--font-mono);
-  font-size: 0.64rem;
-  letter-spacing: 0.06em;
-  color: var(--text-muted);
-  margin-top: -1rem;
-  margin-bottom: 1.5rem;
-}
-
-.photo-credit a {
-  color: inherit;
 }
 
 .modal-cocktail-visual .glass-svg {

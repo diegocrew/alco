@@ -101,4 +101,20 @@ Cards are keyboard focusable and open on Enter or Space. The detail dialog uses 
 
 Map tiles: CARTO dark basemap. Mapping library: Leaflet 1.9.4, pinned with SRI hashes. Fonts: Google Fonts.
 
+Cocktail photography in `images/cocktails/` comes from Wikimedia Commons and is used under
+free licences only (CC BY, CC BY-SA, CC0 and public domain). Photographer, licence and a link
+back to the source file are shown inside each recipe, which satisfies the attribution terms.
+Credits are stored in [tools/cocktail-image-credits.json](tools/cocktail-image-credits.json).
+
+To refresh or extend the set:
+
+```bash
+python3 tools/fetch-cocktail-images.py     # searches Commons, free licences only, resumable
+python3 tools/process-cocktail-images.py   # crops, resizes, writes data/cocktail-images.js
+```
+
+Drinks without a photo fall back to a generated SVG of their glassware, so the grid stays
+consistent. To remove a photo you dislike, delete the file and its entry in
+`data/cocktail-images.js`; that drink reverts to the illustration automatically.
+
 Educational reference only. Please drink responsibly.
