@@ -17,6 +17,7 @@ Any other static file server works too (`python3 -m http.server 8080`).
 ```bash
 npm run check        # lints datasets and pages, fails on any inconsistency
 npm run normalize    # regenerates the shared page shell (head, nav, a11y, defer)
+npm run counts       # rewrites advertised item counts to match the datasets
 npm run popularity   # recomputes the global-reach index in data/*.js
 npm run fonts        # re-downloads the self-hosted web fonts
 npm test             # Playwright smoke tests against a local server
@@ -120,19 +121,20 @@ can be linked or bookmarked, for example
 
 ## Data integrity
 
-Every entry is a real, commercially released product. No category pads its count by
-recycling a shorter list, and no two entries within a category share a name and producer.
+Every entry is a real, commercially released product, and each category spans the full
+range from global volume leaders to cult and allocated bottlings. No two entries within
+a category share a name and producer.
 
 | Category  | Entries | Category  | Entries |
 |-----------|---------|-----------|---------|
-| Rum       | 182     | Champagne | 101     |
-| Whisky    | 158     | Absinthe  | 100     |
-| Gin       | 143     | Liqueur   | 100     |
-| Beer      | 127     | Brandy    | 109     |
-| Wine      | 127     | Tequila   | 105     |
-| Cognac    | 115     | Vodka     | 106     |
+| Whisky    | 196     | Wine      | 148     |
+| Rum       | 182     | Brandy    | 122     |
+| Beer      | 180     | Tequila   | 120     |
+| Gin       | 152     | Vodka     | 119     |
+| Cognac    | 118     | Liqueur   | 107     |
+| Champagne | 117     | Absinthe  | 102     |
 
-**1,473 distinct products across 12 categories, plus 192 cocktails in the hidden back bar.**
+**1,663 distinct products across 12 categories, plus 192 cocktails in the hidden back bar.**
 
 
 Verify at any time with:

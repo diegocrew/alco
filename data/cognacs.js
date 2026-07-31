@@ -127,6 +127,11 @@ window.defineCatalog('cognac', 'cognac', [
   ["Bache-Gabrielsen American Oak", "Bache-Gabrielsen", "France", "COGNAC FRANCE", "Cognac", 40, "AMERICAN OAK MATURED", ["Coconut", "Vanilla", "Sweet Spice", "Bold"], "Neat or in an Old Fashioned", "Matured in American rather than French oak, unusual and once contested in Cognac.", 5, { pop: 24 }],
   ["Rémy Martin 1738 Cask Finish", "Rémy Martin", "France", "FINE CHAMPAGNE", "Cognac", 40, "GRANDE & PETITE CHAMPAGNE", ["Brioche", "Butterscotch", "Oak", "Warm"], "In a Cognac Old Fashioned", "A heavily toasted-cask expression built for stirred cocktail work.", 5, { pop: 86 }],
   ["Hardy Legend 1863", "Hardy Cognac", "France", "FINE CHAMPAGNE", "Cognac", 40, "GRANDE & PETITE CHAMPAGNE", ["Dried Apricot", "Spice", "Oak", "Rounded"], "Neat or over ice", "Named for the year Anthony Hardy founded the house in Cognac.", 3, { pop: 10 }],
-  ["Courvoisier Master Cask Sherry", "Courvoisier", "France", "COGNAC FRANCE", "Cognac", 40, "SHERRY CASK FINISH", ["Raisin", "Walnut", "Dried Fig", "Sweet Oak"], "Neat in a tulip", "Finished in Spanish sherry casks, a technique borrowed directly from Scotch whisky.", 1, { pop: 20 }]
+  ["Courvoisier Master Cask Sherry", "Courvoisier", "France", "COGNAC FRANCE", "Cognac", 40, "SHERRY CASK FINISH", ["Raisin", "Walnut", "Dried Fig", "Sweet Oak"], "Neat in a tulip", "Finished in Spanish sherry casks, a technique borrowed directly from Scotch whisky.", 1, { pop: 20 }],
+
+  /* ---------------- THE WIDER SHELF ---------------- */
+  ["Salignac V.S", "Maison Salignac", "France", "COGNAC FRANCE", "Cognac", 40, "UGNI BLANC, DOUBLE DISTILLED", ["Grape", "Vanilla", "Light Oak", "Simple"], "With ginger ale or in a Sidecar", "Founded in 1809 and long the house cognac of American bars because of its price.", 6, { pop: 42 }],
+  ["Monnet V.S.O.P", "Monnet", "France", "COGNAC FRANCE", "Cognac", 40, "FINE CHAMPAGNE EAUX-DE-VIE", ["Apricot", "Vanilla", "Oak", "Rounded"], "Neat or over ice", "A Cognac house from 1838, whose family later produced Jean Monnet, an architect of the European Union.", 3, { pop: 32 }],
+  ["Martell Blue Swift", "Martell", "France", "COGNAC FRANCE", "Cognac Spirit Drink", 40, "V.S.O.P FINISHED IN BOURBON CASKS", ["Vanilla", "Toasted Oak", "Plum", "Sweet"], "In a Highball or over ice", "Finished in Kentucky bourbon casks, which strips it of the right to be called cognac.", 6, { pop: 80 }]
 
 ]);

@@ -6,6 +6,7 @@
   "scripts": {
     "check": "node tools/check-site.js",
     "normalize": "node tools/normalize-pages.js",
+    "counts": "node tools/sync-counts.js",
     "fonts": "node tools/fetch-fonts.js",
     "popularity": "node tools/assign-popularity.js",
     "test": "playwright test",

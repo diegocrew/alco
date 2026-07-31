@@ -118,6 +118,10 @@ window.defineCatalog('absinthe', 'absinthe', [
   ["Bohemia Absinth", "Bohemia Spirits", "Czechia", "BOHEMIA CZECHIA", "Bohemian Absinth", 70, "WORMWOOD & HERBS", ["Wormwood", "Grassy", "Bitter", "Dry"], "The Bohemian fire ritual", "One of the Czech brands that carried the absinthe revival through the 1990s.", 3, { pop: 10 }],
   ["Absenta Segarra", "Destilerías Segarra", "Spain", "CATALONIA SPAIN", "Absenta", 45, "WORMWOOD, ANISE, HERBS", ["Anise", "Sweet Herb", "Soft", "Mild"], "Over ice with water", "A Catalan absenta produced continuously through the decades of European prohibition.", 3, { pop: 6 }],
   ["La Fée XS Absinthe Suisse", "La Fée Absinthe", "Switzerland", "VAL-DE-TRAVERS", "Blanche", 53, "WORMWOOD, ANISE, HYSSOP", ["Anise", "Hyssop", "Clean", "Crisp"], "Three parts iced water", "The house's premium Swiss-made blanche, distilled in the Val-de-Travers.", 1, { pop: 32 }],
-  ["La Fée XS Absinthe Française", "La Fée Absinthe", "France", "PONTARLIER FRANCE", "Verte", 68, "WORMWOOD, ANISE, FENNEL", ["Anise", "Wormwood", "Herbal", "Traditional"], "Dripped over sugar", "Distilled in Pontarlier in antique Egrot stills to a pre-ban specification.", 1, { pop: 32 }]
+  ["La Fée XS Absinthe Française", "La Fée Absinthe", "France", "PONTARLIER FRANCE", "Verte", 68, "WORMWOOD, ANISE, FENNEL", ["Anise", "Wormwood", "Herbal", "Traditional"], "Dripped over sugar", "Distilled in Pontarlier in antique Egrot stills to a pre-ban specification.", 1, { pop: 32 }],
+
+  /* ---------------- WIDER SHELF ---------------- */
+  ["Père Kermann's Absinthe", "Père Kermann", "France", "FRANCE", "Blanche", 60, "WORMWOOD, ANISE, MINT", ["Mint", "Anise", "Sweet Herb", "Soft"], "Diluted over ice with sugar", "A sweetened modern French absinthe sold widely across European duty-free counters.", 1, { pop: 18 }],
+  ["Absinthe Robette", "Distillerie Robette", "Belgium", "BELGIUM", "Verte", 55, "WORMWOOD, ANISE, HYSSOP", ["Anise", "Fennel", "Herbal", "Rounded"], "Louched with iced water", "Named for Privat Livemont's 1896 poster, one of the most reproduced images in absinthe history.", 1, { pop: 12 }]
 
 ]);

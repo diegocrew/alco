@@ -53,7 +53,20 @@ const PRODUCERS = {
     'Browar PINTA': 16, 'AleBrowar': 14, 'Browar w Grodzisku Wielkopolskim': 12,
     'Heineken Slovensko': 40, 'Pivovar Šariš': 40, 'Pivovar Topvar': 32,
     'Pivovar Steiger': 26, 'Banskobystrický pivovar': 20, 'Pivovar ERB': 12,
-    'Pivovar Kaltenecker': 10
+    'Pivovar Kaltenecker': 10,
+    'Anheuser-Busch': 92, 'Molson Coors': 82, 'China Resources Snow Breweries': 86,
+    'Harbin Brewery': 62, 'Yanjing Brewery': 60, 'Kirin Brewery': 74, 'Suntory': 66,
+    'Heineken España': 62, 'Mahou San Miguel': 66, 'Super Bock Group': 58,
+    'Sociedade Central de Cervejas': 54, 'Anadolu Efes': 62, 'Baltika Breweries': 60,
+    'United Breweries': 62, 'ThaiBev': 58, 'Boon Rawd Brewery': 60,
+    'Asia Pacific Breweries': 60, 'Multi Bintang': 46, 'South African Breweries': 58,
+    'East African Breweries': 44, 'Cervecería y Maltería Quilmes': 54,
+    'Backus y Johnston': 48, 'Empresas Polar': 50, 'Ambev': 74, 'Asahi Europe': 58,
+    'Carlton & United Breweries': 56, 'Lion': 46, 'Labatt Brewing': 56,
+    'Krombacher Brauerei': 66, 'Brauerei Beck': 70, 'Warsteiner Brauerei': 58,
+    'Radeberger Exportbierbrauerei': 48, 'Brauerei C. & A. Veltins': 50,
+    'Pivovary Staropramen': 62, 'Královský pivovar Krušovice': 44, 'Heineken UK': 48,
+    'Boddingtons': 36, 'Greene King': 44, 'Abbaye de Leffe': 62, 'Brouwerij Huyghe': 40
   },
   cognac: {
     'Hennessy': 96, 'Rémy Martin': 86, 'Martell': 80, 'Courvoisier': 76, 'Camus': 52,
@@ -62,7 +75,8 @@ const PRODUCERS = {
     'Bache-Gabrielsen': 24, 'Tesseron': 22, 'Cognac Park': 20, 'ABK6': 20,
     'Cognac Prunier': 18, 'Godet': 18, 'Braastad': 18, 'Hardy Cognac': 20,
     'Lhéraud': 14, 'Château de Montifaud': 14, 'Kelt Cognac': 12, 'Merlet': 14,
-    'Birkedal Hartmann': 14, 'Cognac Deau': 12, 'Maxime Trijol': 12
+    'Birkedal Hartmann': 14, 'Cognac Deau': 12, 'Maxime Trijol': 12,
+    'Maison Salignac': 34, 'Monnet': 20
   },
   whisky: {
     'John Walker & Sons': 97, 'Jack Daniel Distillery': 95, 'Jim Beam Distillery': 90,
@@ -94,7 +108,13 @@ const PRODUCERS = {
     'Waterford Distillery': 12, 'Suntory Yamazaki': 50, 'Suntory Hakushu': 38,
     'Suntory': 48, 'Nikka Yoichi': 34, 'Nikka Miyagikyo': 30, 'Nikka Whisky': 40,
     'Chichibu Distillery': 16, 'Kavalan Distillery': 28, 'Amrut Distilleries': 24,
-    'John Distilleries': 20, 'Radico Khaitan': 18, 'Penderyn Distillery': 18
+    'John Distilleries': 20, 'Radico Khaitan': 18, 'Penderyn Distillery': 18,
+    'Justerini & Brooks': 74, 'Diageo': 70, 'Beam Suntory': 60, 'Bacardi': 56,
+    'La Martiniquaise': 58, 'Cardhu Distillery': 46, 'Bulleit Distilling': 62,
+    'Crown Royal Distillery': 78, 'Hiram Walker & Sons': 54, 'Alberta Distillers': 24,
+    'Bushmills Distillery': 46, 'Slane Distillery': 26, 'Roe & Co Distillery': 22,
+    'Allied Blenders and Distillers': 62, 'Pernod Ricard India': 62,
+    'United Spirits': 58
   },
   gin: {
     "Gordon's": 94, 'Tanqueray Gordon & Co.': 90, 'Laverstoke Mill': 88,
@@ -129,7 +149,9 @@ const PRODUCERS = {
     'Asahikawa Distillery': 10, 'Archie Rose Distilling Co.': 16,
     'Never Never Distilling Co.': 12, 'Scapegrace Distilling': 16,
     'Broken Heart Spirits': 8, 'Procera Gin': 8, 'Inverroche Distillery': 16,
-    'Musgrave Spirits': 10, 'Radico Khaitan': 14
+    'Musgrave Spirits': 10, 'Radico Khaitan': 14,
+    'Beam Suntory': 62, 'E. & J. Gallo': 70, "Gilbey's": 34, 'Brockmans Gin': 34,
+    'Tequila Avión': 34
   },
   vodka: {
     'Smirnoff': 98, 'The Absolut Company': 94, 'Grey Goose Distillery': 86,
@@ -153,7 +175,10 @@ const PRODUCERS = {
     'Nikka Whisky': 18, "Konik's Tail": 8, 'Snow Queen Vodka': 8, 'Roberto Cavalli': 12,
     'Babicka': 10, 'Synergy': 14, 'Kauffman': 16, 'Zyr': 12, 'Itkul Distillery': 10,
     'Ogilvy Spirits': 8, 'Arbikie Distillery': 12, 'Kavka': 8,
-    'William Grant & Sons': 22, 'Dingle Distillery': 12, 'Uluvka': 10
+    'William Grant & Sons': 22, 'Dingle Distillery': 12, 'Uluvka': 10,
+    'Svedka': 66, 'Alcohol Siberian Group': 44, 'Bayadera Group': 46, 'Soplica': 40,
+    'Krupnik': 34, 'Heaven Hill Distillery': 48, "Seagram's": 50, 'Danzka': 26,
+    'Three Olives': 34, "Gilbey's": 30, 'La Martiniquaise': 48
   },
   rum: {
     'Bacardí': 97, 'Captain Morgan': 93, 'Havana Club': 80, 'The Kraken Rum': 60,
@@ -214,7 +239,10 @@ const PRODUCERS = {
     'Los Amantes': 12, 'Wahaka Mezcal': 12, 'Yola Mezcal': 12, 'Mezcal Koch': 10,
     'Nuestra Soledad': 10, 'Real Minero': 10, 'Pierde Almas': 10, 'Casa Amarás': 8,
     'Derrumbes': 10, 'Xicaru Mezcal': 10, 'Sotol Por Siempre': 8, 'Flor del Desierto': 8,
-    'Sotol Ono': 6, 'La Venenosa': 8, 'Cielo Rojo': 8
+    'Sotol Ono': 6, 'La Venenosa': 8, 'Cielo Rojo': 8,
+    'Casamigos': 72, 'Destilería Teremana': 62, 'Destilería Camarena': 46,
+    'Tequila Avión': 38, 'Cincoro Tequila': 26, 'Ojo de Tigre': 28,
+    'Casa Armando Guillermo Prieto': 26
   },
   champagne: {
     'Moët & Chandon': 84, 'Veuve Clicquot': 88, 'Nicolas Feuillatte': 72, 'G.H. Mumm': 74,
@@ -233,7 +261,11 @@ const PRODUCERS = {
     "Ca' del Bosco": 34, 'Bellavista': 28, 'Guido Berlucchi': 34, 'Bisol': 28,
     'Nino Franco': 24, 'Ruggeri': 20, 'Gramona': 22, 'Recaredo': 16,
     'Raventós i Blanc': 20, 'Codorníu': 58, 'Juvé & Camps': 32, 'Nyetimber': 28,
-    'Gusbourne': 18, 'Schramsberg': 24, 'Roederer Estate': 24, 'Argyle Winery': 16
+    'Gusbourne': 18, 'Schramsberg': 24, 'Roederer Estate': 24, 'Argyle Winery': 16,
+    'Freixenet': 84, 'Segura Viudas': 52, 'Mionetto': 58, 'La Marca': 62, 'Zonin': 50,
+    'Martini & Rossi': 72, 'Cinzano': 56, 'Riunite': 54, 'Henkell': 60,
+    'Rotkäppchen-Mumm': 58, 'Bodegas Chandon': 50, 'Mumm Napa': 40,
+    'Armand de Brignac': 34
   },
   wine: {
     'Cloudy Bay': 62, "Château d'Esclans": 58, 'Concha y Toro': 50, 'Penfolds': 50,
@@ -272,7 +304,13 @@ const PRODUCERS = {
     'Szepsy': 12, 'St. Andrea': 10, 'Movia': 12, 'Grgić Vina': 14, 'Prince Ştirbey': 8,
     'Château Belá': 10, 'Karpatská Perla': 8, 'Château Topoľčianky': 16, 'Elesko': 8,
     'Mrva & Stanko': 8, 'J. & J. Ostrožovič': 8, 'Sonberk': 10, 'Znovín Znojmo': 14,
-    'Stapleton & Springer': 6, 'Milan Nestarec': 10, 'Château Mělník': 8
+    'Stapleton & Springer': 6, 'Milan Nestarec': 10, 'Château Mělník': 8,
+    'Casella Family Brands': 76, 'Barefoot Cellars': 80, 'Viña San Pedro': 58,
+    "Jacob's Creek": 66, "Lindeman's": 58, 'Hardys': 56, 'Sutter Home': 60,
+    'Beringer Vineyards': 58, 'Kendall-Jackson': 60, 'Josh Cellars': 56,
+    'Sogrape': 54, 'Blue Nun': 44, 'Marqués de Riscal': 48, 'Familia Torres': 52,
+    'Villa Maria': 52, 'Oyster Bay Wines': 54, 'Viña Santa Rita': 48, 'Trapiche': 50,
+    'E. & J. Gallo': 72
   },
   brandy: {
     'Metaxa': 62, 'Casa Pedro Domecq': 58, 'Fundador': 52, 'Asbach': 44,
@@ -305,7 +343,10 @@ const PRODUCERS = {
     'Dartigalongue': 12, 'Domaine de Laballe': 10, 'Marie Duffau': 12,
     'Château Garreau': 10, 'Bas-Armagnac Baron Gaston Legrand': 12,
     'Château de Ravignan': 10, 'Armagnac Sempé': 14, 'Ryst-Dupeyron': 12,
-    'Maison Gélas': 12, 'Château Arton': 10
+    'Maison Gélas': 12, 'Château Arton': 10,
+    'E. & J. Gallo': 64, 'Christian Brothers': 46, 'Paul Masson': 48, 'Korbel': 36,
+    'Three Barrels': 40, 'St-Rémy': 52, 'Stock Spirits': 38, 'Klipdrift': 44,
+    'Richelieu': 36, 'Viceroy': 28, 'KEO': 18, 'Zetea': 12
   },
   liqueur: {
     'Diageo': 88, 'Campari Group': 84, 'Mast-Jägermeister': 88, 'Pernod Ricard': 80,
@@ -328,7 +369,7 @@ const PRODUCERS = {
     'Sobieski': 14, 'Gilka': 12, 'Fernet-Vallet': 12, 'Casa D\u2019Aristi': 12,
     "Casa D'Aristi": 12, 'Destillerie Purkhart': 12, 'Varnelli': 14,
     'Distillerie Labounoux': 12, 'Agave Loco': 8, 'Nocino della Cristina': 8,
-    'Arcus': 20
+    'Arcus': 20, 'Diego Zamora': 48, 'Rémy Cointreau': 82
   },
   absinthe: {
     'Pernod Ricard': 52, 'La Fée Absinthe': 32, 'Hill\u2019s Liquere': 34,
@@ -350,7 +391,7 @@ const PRODUCERS = {
     'Distillerie Vinet Ege': 6, 'Ridge Distillery': 5, 'Letherbee Distillers': 6,
     'Germain-Robin': 6, 'Okanagan Spirits': 5, 'Fischer Distillery': 5,
     'Bohemia Spirits': 10, 'Destilerías Segarra': 6, 'Distillerie Martin': 8,
-    'Wolf': 8, 'Distillerie Bovet ': 8
+    'Wolf': 8, 'Distillerie Bovet ': 8, 'Père Kermann': 18, 'Distillerie Robette': 12
   }
 };
 
@@ -366,7 +407,9 @@ const ITEMS = {
     'Zlatý Bažant 12°': 54, 'Kelt 12°': 32, 'Corgoň 12°': 36, 'Smädný Mních Pšeničné': 28,
     'Šariš Tmavý 11°': 28, 'Steiger Tmavý 12%': 22, 'Punk IPA': 62,
     'Weihenstephaner Hefeweissbier': 62, 'Paulaner Hefe-Weißbier Naturtrüb': 74,
-    'Erdinger Weissbier': 74, 'Franziskaner Hefe-Weissbier': 66, 'Hoegaarden Witbier': 70
+    'Erdinger Weissbier': 74, 'Franziskaner Hefe-Weissbier': 66, 'Hoegaarden Witbier': 70,
+    'Amstel Lager': 66, 'Bud Light': 90, 'Budweiser': 88, 'Michelob Ultra': 74,
+    'Coors Light': 78, 'Miller Lite': 76
   },
   cognac: {
     'Rémy Martin Louis XIII': 58, 'Hennessy Paradis': 44, 'Hennessy Richard': 34,
@@ -408,7 +451,8 @@ const ITEMS = {
     "Blanton's Original Single Barrel": 46, 'Pappy Van Winkle 15 Year Old': 30,
     'Chivas Regal 18': 54, "Jack Daniel's Single Barrel Select": 42,
     "Ballantine's 17 Year Old": 30, 'Glenfiddich 15 Solera Reserve': 46,
-    'Glenfiddich 12 Year Old': 76
+    'Glenfiddich 12 Year Old': 76, "Jack Daniel's Tennessee Honey": 72,
+    'Gentleman Jack': 58, 'Basil Hayden': 40, 'Old Grand-Dad 114': 30
   },
   gin: {
     'Gordon\u2019s London Dry': 94, "Gordon's London Dry": 94,
@@ -420,7 +464,9 @@ const ITEMS = {
     'Sipsmith London Dry': 46, 'Bulldog Gin': 30,
     "Seagram's Extra Dry": 66, 'Gin Bombay Dry': 62, 'Star of Bombay': 44,
     'Rangpur Lime Gin': 48, 'Empress 1908 Indigo': 26,
-    "Beefeater Burrough's Reserve": 20, "Hendrick's Orbium": 30
+    "Beefeater Burrough's Reserve": 20, "Hendrick's Orbium": 30,
+    "Gordon's Pink": 78, 'Tanqueray Flor de Sevilla': 50, 'Beefeater Pink Strawberry': 48,
+    'Bombay Bramble': 36, 'Larios 12 Botanicals': 46
   },
   vodka: {
     'Smirnoff No. 21 Red Label': 98, 'Absolut Blue': 94, 'Absolut Elyx': 34,
@@ -459,7 +505,9 @@ const ITEMS = {
     'Milagro Silver': 44, 'Del Maguey Vida': 40, 'Casamigos Blanco': 74,
     'Casamigos Reposado': 66, 'Gran Centenario Leyenda': 26,
     'Maestro Dobel Diamante': 46, 'Gran Patrón Piedra': 24, '1800 Añejo': 58,
-    'Don Julio Real': 30, 'Don Julio Reposado': 74, 'Yola 1971': 12
+    'Don Julio Real': 30, 'Don Julio Reposado': 74, 'Yola 1971': 12,
+    '1800 Silver': 58, 'Patrón Reposado': 66, 'Don Julio 70 Cristalino': 44,
+    'Cincoro Blanco': 26
   },
   champagne: {
     'Moët Impérial Brut': 92, 'Veuve Clicquot Yellow Label': 88,
@@ -470,7 +518,8 @@ const ITEMS = {
     'Laurent-Perrier Cuvée Rosé': 64, 'Bollinger Special Cuvée': 54,
     'Ferrari Brut Trentodoc': 46, 'Codorníu Reserva Raventós': 58,
     'Belle Epoque': 50, 'Grand Siècle': 38, 'La Grande Dame': 44,
-    'Veuve Clicquot Rosé': 62, 'Ruinart Blanc de Blancs': 44
+    'Veuve Clicquot Rosé': 62, 'Ruinart Blanc de Blancs': 44,
+    'Veuve Clicquot Rich': 32, 'Moët Ice Impérial': 48
   },
   liqueur: {
     'Aperol': 92, 'Campari': 86, 'Baileys Irish Cream': 92, 'Jägermeister': 90,
@@ -480,7 +529,9 @@ const ITEMS = {
     'Fernet-Branca': 70, 'Chartreuse Verte': 52, 'St-Germain': 58,
     'Limoncello di Capri': 24, 'Becherovka': 48, 'Unicum': 42, 'Cynar': 38,
     'Sambuca Molinari Extra': 36, 'Ouzo 12': 42, 'Amaretto Disaronno': 78,
-    'China Martini': 16, 'RumChata': 34, 'Nocino': 10
+    'China Martini': 16, 'RumChata': 34, 'Nocino': 10,
+    'Archers Peach Schnapps': 44, "Sheridan's Coffee Layered Liqueur": 28,
+    'Bols Blue Curacao': 40, 'DeKuyper Peachtree Schnapps': 46
   },
   brandy: {
     'Metaxa 12 Stars': 62, 'Metaxa Private Reserve': 26, 'Presidente Brandy': 62,
@@ -593,7 +644,8 @@ function rewriteCatalog(file) {
     const pop = scores[i++];
     if (/\bpop: \d+/.test(line)) return line.replace(/\bpop: \d+/, `pop: ${pop}`);
     if (/\{[^{}]*\}\],?\s*$/.test(line)) {
-      return line.replace(/\{\s*([^{}]*?)\s*\}(\],?\s*)$/, (m, inner, tail) => `{ pop: ${pop}, ${inner} }${tail}`);
+      return line.replace(/\{\s*([^{}]*?)\s*\}(\],?\s*)$/, (m, inner, tail) =>
+        (inner ? `{ pop: ${pop}, ${inner} }` : `{ pop: ${pop} }`) + tail);
     }
     return line.replace(/,\s*(\d+)(\],?\s*)$/, (m, modes, tail) => `, ${modes}, { pop: ${pop} }${tail}`);
   });
