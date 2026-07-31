@@ -125,14 +125,14 @@ recycling a shorter list, and no two entries within a category share a name and 
 
 | Category  | Entries | Category  | Entries |
 |-----------|---------|-----------|---------|
-| Whisky    | 158     | Champagne | 101     |
-| Rum       | 150     | Absinthe  | 100     |
+| Rum       | 182     | Champagne | 101     |
+| Whisky    | 158     | Absinthe  | 100     |
 | Gin       | 143     | Liqueur   | 100     |
 | Beer      | 127     | Brandy    | 109     |
 | Wine      | 127     | Tequila   | 105     |
 | Cognac    | 115     | Vodka     | 106     |
 
-**1,441 distinct products across 12 categories, plus 192 cocktails in the hidden back bar.**
+**1,473 distinct products across 12 categories, plus 192 cocktails in the hidden back bar.**
 
 
 Verify at any time with:

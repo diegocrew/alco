@@ -86,6 +86,7 @@ test('filter state survives a reload through the URL', async ({ page }) => {
 
 test('the map loads lazily and its pins filter the catalogue', async ({ page }) => {
   test.slow();
+  const total = datasetSize('rums.js');
 
   // Leaflet must not be part of the delivered document; js/map.js injects it later.
   const markup = await (await page.request.get('/rum.html')).text();
@@ -98,7 +99,7 @@ test('the map loads lazily and its pins filter the catalogue', async ({ page }) 
 
   await page.locator('#map .leaflet-marker-icon').first().click();
   await page.locator('.map-popup-btn').click();
-  await expect(page.locator('#countBadge')).toHaveText(/^Showing (?!150\b)\d+ of 150 items$/);
+  await expect(page.locator('#countBadge')).toHaveText(new RegExp(`^Showing (?!${total}\\b)\\d+ of ${total} items$`));
 });
 
 test('the hidden back bar stays out of the navigation', async ({ page }) => {

@@ -185,7 +185,17 @@ const PRODUCERS = {
     'Long Pond Distillery': 12, 'Distillerie Bologne': 10, 'La Maison du Whisky': 10,
     'Velier': 14, 'Nine Leaves Distillery': 8, 'Kikusui Distillery': 6, 'Boukman': 8,
     'Two James Spirits': 8, 'Clarendon Distillers': 10, 'Hampden & Wedderburn': 10,
-    'St Nicholas Abbey': 12, 'West Indies Rum Distillery': 12, 'Ten To One': 14
+    'St Nicholas Abbey': 12, 'West Indies Rum Distillery': 12, 'Ten To One': 14,
+    'Legendario': 40, 'Eminente': 20, 'Ron Cubay': 18, 'Licorerías Unidas': 48,
+    'Centenario Internacional': 28, 'Vizcaya Rum': 20,
+    'Industria Licorera de Caldas': 30, 'SelvaRey Rum': 18,
+    'Tanduay Distillers': 62, 'Thai Beverage': 48, 'Bangyikhan Distillery': 34,
+    'United Spirits': 58, 'E&A Scheer': 14, 'Chalong Bay Distillery': 14,
+    'Bundaberg Distilling Company': 44, 'Companhia Müller de Bebidas': 54,
+    'Engarrafamento Pitú': 42, 'Velho Barreiro': 38, 'Antigua Distillery': 22,
+    'Blackwell Rum': 20, 'Coruba': 24, 'River Antoine Estate': 12,
+    'St. Vincent Distillers': 14, 'William Grant & Sons': 24, 'George Morton': 26,
+    "Lamb's": 34, 'Stroh Austria': 32, 'Destilerías Artemi': 26, 'Rhums Réunion': 24
   },
   tequila: {
     'Tequila Cuervo La Rojeña': 94, 'Hacienda Patrón': 88, 'Destilería Don Julio': 80,
@@ -436,7 +446,10 @@ const ITEMS = {
     'Wray & Nephew White Overproof': 54, 'Kraken Black Spiced': 60,
     'Sailor Jerry Spiced': 58, 'Goslings Black Seal': 50, 'Angostura 1919': 38,
     'Bacardí Reserva Ocho': 58, 'Captain Morgan Original Spiced': 93,
-    'Havana Club Selección de Maestros': 38, 'Havana Club Añejo Especial': 66
+    'Havana Club Selección de Maestros': 38, 'Havana Club Añejo Especial': 66,
+    'Legendario Elíxir de Cuba': 44, 'Legendario Añejo': 24,
+    'Cacique 500 Extra Añejo': 40, 'Admiral Rodney HMS Princessa': 20,
+    'The Real McCoy 12 Year': 26
   },
   tequila: {
     'Jose Cuervo Especial Reposado': 94, 'Jose Cuervo Tradicional Plata': 68,
