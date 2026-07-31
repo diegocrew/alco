@@ -316,6 +316,34 @@ body {
   font-weight: 500;
 }
 
+.card-reach {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: auto;
+  margin-right: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  color: var(--text-muted, #958173);
+}
+
+.card-reach-bar {
+  display: block;
+  width: 34px;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+.card-reach-bar > span {
+  display: block;
+  height: 100%;
+  background: var(--accent-primary, #e69c37);
+}
+
 .card-title {
   font-family: var(--font-serif);
   font-size: 1.6rem;

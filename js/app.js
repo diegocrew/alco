@@ -32,6 +32,17 @@ document.addEventListener('DOMContentLoaded', () => {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
 
+  // Editorial 1-99 index blending global sales volume with brand recognition.
+  const reachOf = (item) => Number(item.pop) || 0;
+
+  function reachLabel(score) {
+    if (score >= 80) return 'Global icon';
+    if (score >= 60) return 'Worldwide staple';
+    if (score >= 40) return 'Widely stocked';
+    if (score >= 22) return 'Specialist favourite';
+    return 'Cult / rare';
+  }
+
   function initDynamicDropdowns() {
     if (styleSelect) {
       const styles = Array.from(new Set(dataset.map(item => item.style).filter(Boolean))).sort();
@@ -106,6 +117,9 @@ document.addEventListener('DOMContentLoaded', () => {
                aria-label="${esc(item.name)}, ${esc(item.abv)} percent alcohol. Open full field notes.">
         <div class="card-header-meta">
           <span class="card-region">${esc(item.region)}</span>
+          <span class="card-reach" title="Global reach ${esc(reachOf(item))} of 99 &mdash; ${esc(reachLabel(reachOf(item)))}">
+            <span class="card-reach-bar"><span style="width:${esc(reachOf(item))}%"></span></span>REACH ${esc(reachOf(item))}
+          </span>
           <span class="card-index">${esc(item.index)}</span>
         </div>
 
@@ -204,6 +218,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (sortVal === 'abv-high') filtered.sort((a, b) => b.abv - a.abv);
     else if (sortVal === 'abv-low') filtered.sort((a, b) => a.abv - b.abv);
     else if (sortVal === 'name') filtered.sort((a, b) => a.name.localeCompare(b.name));
+    else if (sortVal === 'popular') filtered.sort((a, b) => reachOf(b) - reachOf(a) || a.name.localeCompare(b.name));
+    else if (sortVal === 'niche') filtered.sort((a, b) => reachOf(a) - reachOf(b) || a.name.localeCompare(b.name));
 
     if (filtered.length === 0) {
       cardsContainer.innerHTML = `
@@ -312,6 +328,10 @@ document.addEventListener('DOMContentLoaded', () => {
         <div>
           <dt>${esc(detailLabel)}</dt>
           <dd>${esc(detailValue)}</dd>
+        </div>
+        <div>
+          <dt>Global Reach</dt>
+          <dd>${esc(reachOf(item))}/99 &bull; ${esc(reachLabel(reachOf(item)))}</dd>
         </div>
       </dl>
 

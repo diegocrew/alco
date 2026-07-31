@@ -27,11 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const slugify = (s) => s.normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
     .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
 
-  const data = rows.map(([name, base, era, glass, method, ingredients, garnish, history, colour, tip], i) => ({
+  const data = rows.map(([name, base, era, glass, method, ingredients, garnish, history, colour, tip, popularity], i) => ({
     id: 'cocktail-' + String(i + 1).padStart(3, '0'),
     index: String(i + 1).padStart(3, '0'),
     name, base, era, glass, method, ingredients, garnish, history, colour,
     tip: tip || '',
+    popularity: popularity || 0,
     photo: IMAGES[slugify(name)] || null
   }));
 
@@ -147,6 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <ul class="cocktail-pours">${pours}</ul>
         <div class="cocktail-entry-foot">
           <span>${esc(c.glass)}</span>
+          <span title="Bar-call popularity index">Reach ${esc(c.popularity)}</span>
           <span>${esc(c.era)}</span>
         </div>
       </article>`;
@@ -172,6 +174,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (sort === 'name') list = list.slice().sort((a, b) => a.name.localeCompare(b.name));
     else if (sort === 'simple') list = list.slice().sort((a, b) => a.ingredients.length - b.ingredients.length);
     else if (sort === 'complex') list = list.slice().sort((a, b) => b.ingredients.length - a.ingredients.length);
+    else if (sort === 'popular') list = list.slice().sort((a, b) => b.popularity - a.popularity || a.name.localeCompare(b.name));
+    else if (sort === 'niche') list = list.slice().sort((a, b) => a.popularity - b.popularity || a.name.localeCompare(b.name));
 
     cardsContainer.innerHTML = list.length
       ? list.map(cardHTML).join('')

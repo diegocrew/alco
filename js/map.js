@@ -55,6 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: "Portugal", region: "DOURO PORTUGAL", coords: [41.1621, -7.7891], description: "Terraced Douro schist for port and increasingly serious dry reds." },
         { name: "Germany", region: "MOSEL GERMANY", coords: [49.9787, 7.1180], description: "Steep blue slate Mosel Riesling and Rheingau estates on the river bends." },
         { name: "Austria", region: "WACHAU AUSTRIA", coords: [48.3667, 15.4167], description: "Wachau terraces of Grüner Veltliner and Riesling above the Danube." },
+        { name: "Slovakia", region: "LITTLE CARPATHIANS SLOVAKIA", coords: [48.3300, 17.3100], description: "Little Carpathian whites, the native Devín grape, and the Slovak side of Tokaj." },
+        { name: "Czechia", region: "MORAVIA CZECHIA", coords: [48.8100, 16.6400], description: "South Moravian limestone: Pálava, Veltlínské zelené and Znojmo VOC appellations." },
         { name: "USA", region: "NAPA VALLEY USA", coords: [38.2975, -122.2868], description: "Napa Cabernet, Sonoma Chardonnay benchlands and Willamette Pinot Noir." },
         { name: "Argentina", region: "MENDOZA ARGENTINA", coords: [-33.0, -68.85], description: "High-altitude Uco Valley Malbec on alluvial Andean soils." },
         { name: "Chile", region: "CHILE", coords: [-34.5, -71.0], description: "Maipo Cabernet and rediscovered pre-phylloxera Carménère." },
@@ -87,7 +89,9 @@ document.addEventListener('DOMContentLoaded', () => {
       locations: [
         { name: "France", region: "GASCONY FRANCE", coords: [43.9, 0.2], description: "Bas-Armagnac single continuous stills and Normandy Calvados." },
         { name: "Spain", region: "JEREZ SPAIN", coords: [36.685, -6.136], description: "Brandy de Jerez aged in ancient Oloroso sherry solera systems." },
-        { name: "Peru", region: "ICA VALLEY PERU", coords: [-14.067, -75.728], description: "Single distilled unaged grape must Pisco." }
+        { name: "Peru", region: "ICA VALLEY PERU", coords: [-14.067, -75.728], description: "Single distilled unaged grape must Pisco." },
+        { name: "Czechia", region: "MORAVIA CZECHIA", coords: [49.2200, 17.8500], description: "Vizovice plum orchards, heartland of Moravian slivovice." },
+        { name: "Slovakia", region: "TRENČÍN SLOVAKIA", coords: [48.8900, 18.0400], description: "White Carpathian slivovica and oak-aged Little Carpathian grape brandy." }
       ]
     },
     tequila: {
@@ -116,6 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: "Germany", region: "BAVARIA GERMANY", coords: [48.7904, 11.4979], description: "Reinheitsgebot purity law, decoction mashing, and Munich lager cellars." },
         { name: "Belgium", region: "BELGIUM", coords: [50.5039, 4.4699], description: "Trappist abbey ales, wild-fermented lambic, and Flemish red sours." },
         { name: "Czechia", region: "BOHEMIA CZECHIA", coords: [49.7475, 13.3776], description: "Plzeň: birthplace of pale lager, Saaz hops and soft Bohemian water." },
+        { name: "Poland", region: "POLAND", coords: [52.2297, 21.0122], description: "Baltic porter, oak-smoked Grodziskie wheat ale, and Lubelski aroma hops." },
+        { name: "Slovakia", region: "SLOVAKIA", coords: [48.7164, 19.1462], description: "Carpathian decoction lagers from Vyhne, Veľký Šariš and the Danubian lowland." },
         { name: "UK", region: "ENGLAND UK", coords: [52.4862, -1.8904], description: "Cask-conditioned bitter, Burton gypsum water, and Yorkshire square ales." },
         { name: "Ireland", region: "IRELAND", coords: [53.3498, -6.2603], description: "Roasted barley dry stout poured on nitrogen at St. James's Gate." },
         { name: "USA", region: "WEST COAST USA", coords: [45.5152, -122.6784], description: "American craft hop revolution: Cascade, Citra, and hazy IPA." }
