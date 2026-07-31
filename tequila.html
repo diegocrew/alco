@@ -3,18 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tequila Field Guide: Blue Weber Agave & 100 Decoded Tequilas</title>
-  <meta name="description" content="Tequila and Mezcal guide decoding Blanco, Reposado, Añejo, Extra Añejo, and Tahona stone pressing with 100 decoded tequilas.">
+  <title>Tequila Field Guide: Blue Weber Agave &amp; 105 Decoded Agave Spirits</title>
+  <meta name="description" content="Tequila and Mezcal guide decoding Blanco, Reposado, Añejo, Extra Añejo, and Tahona stone pressing with 105 decoded agave spirits.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; font-src 'self'; img-src 'self' data: https://*.basemaps.cartocdn.com https://unpkg.com; connect-src 'self'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="color-scheme" content="dark">
+  <link rel="canonical" href="https://barman.mikusik.art/tequila.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tequila Field Guide: Blue Weber Agave &amp; 105 Decoded Agave Spirits">
+  <meta property="og:description" content="Tequila and Mezcal guide decoding Blanco, Reposado, Añejo, Extra Añejo, and Tahona stone pressing with 105 decoded agave spirits.">
+  <meta property="og:url" content="https://barman.mikusik.art/tequila.html">
+  <meta name="twitter:card" content="summary">
   
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400;1,600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/themes.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <header class="site-header">
     <div class="header-container">
@@ -30,7 +38,7 @@
         </div>
       </a>
 
-      <nav>
+      <nav aria-label="Drink categories">
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="rum.html" class="nav-link">Rum</a></li>
@@ -40,7 +48,7 @@
           <li><a href="gin.html" class="nav-link">Gin</a></li>
           <li><a href="cognac.html" class="nav-link">Cognac</a></li>
           <li><a href="brandy.html" class="nav-link">Brandy</a></li>
-          <li><a href="tequila.html" class="nav-link active">Tequila</a></li>
+          <li><a href="tequila.html" class="nav-link active" aria-current="page">Tequila</a></li>
           <li><a href="champagne.html" class="nav-link">Champagne</a></li>
           <li><a href="beer.html" class="nav-link">Beer</a></li>
           <li><a href="absinthe.html" class="nav-link">Absinthe</a></li>
@@ -50,7 +58,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="hero-section">
       <p class="hero-subtitle">THE FIELD GUIDE VOL. VIII</p>
       <h1 class="hero-title">105 Agave Spirits, Decoded</h1>
@@ -58,11 +66,11 @@
         Masonry brick ovens, Tahona stone crushing, copper alembics, and barrel aging in Jalisco Highlands and Lowlands.
       </p>
 
-      <div class="filter-bar-container">
-        <button class="filter-btn active" data-serve="all">ALL AGAVE STYLES</button>
-        <button class="filter-btn" data-serve="neat">BEST NEAT</button>
-        <button class="filter-btn" data-serve="ice">BEST ON ICE</button>
-        <button class="filter-btn" data-serve="cocktail">BEST IN COCKTAILS</button>
+      <div class="filter-bar-container" role="group" aria-label="Filter results">
+        <button type="button" class="filter-btn active" data-serve="all" aria-pressed="true">ALL AGAVE STYLES</button>
+        <button type="button" class="filter-btn" data-serve="neat" aria-pressed="false">BEST NEAT</button>
+        <button type="button" class="filter-btn" data-serve="ice" aria-pressed="false">BEST ON ICE</button>
+        <button type="button" class="filter-btn" data-serve="cocktail" aria-pressed="false">BEST IN COCKTAILS</button>
       </div>
     </section>
 
@@ -122,10 +130,10 @@
     </section>
 
     <section class="toolbar-section">
-      <input type="text" id="searchInput" class="input-control" placeholder="🔍 Search by name, NOM distillery, notes or flavor tags...">
-      <select id="styleSelect" class="select-control"><option value="all">All Styles</option></select>
-      <select id="regionSelect" class="select-control"><option value="all">All Regions</option></select>
-      <select id="sortSelect" class="select-control">
+      <input type="text" id="searchInput" class="input-control" placeholder="🔍 Search by name, NOM distillery, notes or flavor tags..." aria-label="Search the catalogue">
+      <select id="styleSelect" class="select-control" aria-label="Filter by style"><option value="all">All Styles</option></select>
+      <select id="regionSelect" class="select-control" aria-label="Filter by region"><option value="all">All Regions</option></select>
+      <select id="sortSelect" class="select-control" aria-label="Sort results">
         <option value="default">Sort by Index</option>
         <option value="popular">Most Popular (Global Reach)</option>
         <option value="niche">Most Niche</option>
@@ -135,18 +143,14 @@
       </select>
     </section>
 
-    <div style="text-align: center; margin-bottom: 2rem;">
-      <span id="countBadge" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-primary); letter-spacing: 0.1em; text-transform: uppercase;">
-        Loading catalog...
-      </span>
-    </div>
+    <p id="countBadge" class="count-badge" role="status" aria-live="polite"></p>
 
     <section id="cardsContainer" class="cards-grid"></section>
   </main>
 
-  <div id="detailModal" class="modal-backdrop">
+  <div class="modal-backdrop" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailModalTitle" aria-hidden="true">
     <div class="modal-content">
-      <button id="modalCloseBtn" class="modal-close-btn">&times;</button>
+      <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Close details">&times;</button>
       <div id="modalBody"></div>
     </div>
   </div>
@@ -158,10 +162,9 @@
     </div>
   </footer>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script src="js/catalog.js"></script>
-  <script src="data/tequilas.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/map.js"></script>
+  <script defer src="js/catalog.js"></script>
+  <script defer src="data/tequilas.js"></script>
+  <script defer src="js/app.js"></script>
+  <script defer src="js/map.js"></script>
 </body>
 </html>

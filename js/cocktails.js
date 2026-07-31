@@ -24,6 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const IMAGES = window.COCKTAIL_IMAGES || {};
 
+  // Colours land in style attributes, so only accept literal hex values.
+  const safeColour = (value) => (/^#[0-9a-f]{3,8}$/i.test(String(value)) ? String(value) : '#c9a227');
+
+  const safeFile = (value) => (/^[\w.-]+$/.test(String(value)) ? String(value) : '');
+
   const slugify = (s) => s.normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
     .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
 
@@ -35,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
     popularity: popularity || 0,
     photo: IMAGES[slugify(name)] || null
   }));
-
   let activeBase = 'all';
   let lastFocused = null;
 
@@ -68,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const shape = SHAPES[GLASS_SHAPE[String(glassName).toLowerCase()] || 'rocks'];
     return `
       <svg class="glass-svg" viewBox="0 0 100 104" aria-hidden="true" focusable="false">
-        <path d="${shape.liquid}" fill="${esc(colour)}" opacity="0.9"></path>
+        <path d="${shape.liquid}" fill="${safeColour(colour)}" opacity="0.9"></path>
         <path d="${shape.outline}" fill="none" stroke="currentColor" stroke-width="2.4"
               stroke-linecap="round" stroke-linejoin="round" opacity="0.75"></path>
       </svg>`;
@@ -130,14 +134,14 @@ document.addEventListener('DOMContentLoaded', () => {
       `<li><span class="pour-measure">${esc(measure)}</span><span>${esc(item)}</span></li>`).join('');
 
     const photo = c.photo
-      ? `<img class="entry-photo" src="images/cocktails/${esc(c.photo.f)}" alt="" loading="lazy" decoding="async">`
+      ? `<img class="entry-photo" src="images/cocktails/${safeFile(c.photo.f)}" alt="" width="520" height="520" loading="lazy" decoding="async">`
       : '';
 
     return `
       <article class="cocktail-entry" data-id="${esc(c.id)}" tabindex="0" role="button"
                aria-label="${esc(c.name)}. Open full recipe and history.">
         ${photo}
-        <div class="cocktail-entry-head" style="color: ${esc(c.colour)};">
+        <div class="cocktail-entry-head" style="color: ${safeColour(c.colour)};">
           ${glassSVG(c.glass, c.colour)}
           <div>
             <span class="cocktail-entry-index">No. ${esc(c.index)}</span>
@@ -185,6 +189,51 @@ document.addEventListener('DOMContentLoaded', () => {
          </div>`;
 
     if (countBadge) countBadge.textContent = `Showing ${list.length} of ${data.length} cocktails`;
+
+    syncUrlState();
+  }
+
+  function applyUrlState() {
+    const params = new URLSearchParams(window.location.search);
+    const setSelect = (select, value) => {
+      if (!select || !value) return;
+      if (Array.from(select.options).some(o => o.value === value)) select.value = value;
+    };
+
+    const base = params.get('base');
+    if (base) {
+      const btn = Array.from(filterBtns).find(b => (b.getAttribute('data-base') || '') === base);
+      if (btn) {
+        filterBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+        activeBase = base;
+      }
+    }
+
+    setSelect(eraSelect, params.get('era'));
+    setSelect(glassSelect, params.get('glass'));
+    setSelect(sortSelect, params.get('sort'));
+    if (searchInput && params.get('q')) searchInput.value = params.get('q');
+  }
+
+  function syncUrlState() {
+    const params = new URLSearchParams();
+    if (activeBase !== 'all') params.set('base', activeBase);
+    if (eraSelect && eraSelect.value !== 'all') params.set('era', eraSelect.value);
+    if (glassSelect && glassSelect.value !== 'all') params.set('glass', glassSelect.value);
+    if (sortSelect && sortSelect.value !== 'default') params.set('sort', sortSelect.value);
+    if (searchInput && searchInput.value.trim()) params.set('q', searchInput.value.trim());
+
+    const query = params.toString();
+    const url = window.location.pathname + (query ? `?${query}` : '') + window.location.hash;
+    // Opening the page straight from disk makes history writes throw in some browsers.
+    try {
+      window.history.replaceState(null, '', url);
+    } catch (err) { /* ignore */ }
   }
 
   // --------------------------------------------------
@@ -199,10 +248,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const steps = buildSteps(c).map(s => `<li>${esc(s)}</li>`).join('');
 
     const visual = c.photo
-      ? `<div class="modal-cocktail-photo" style="color: ${esc(c.colour)}; background-image: url('images/cocktails/${esc(c.photo.f)}');">
+      ? `<div class="modal-cocktail-photo" style="color: ${safeColour(c.colour)}; background-image: url('images/cocktails/${safeFile(c.photo.f)}');">
            ${glassSVG(c.glass, c.colour)}
          </div>`
-      : `<div class="modal-cocktail-visual" style="color: ${esc(c.colour)};">${glassSVG(c.glass, c.colour)}</div>`;
+      : `<div class="modal-cocktail-visual" style="color: ${safeColour(c.colour)};">${glassSVG(c.glass, c.colour)}</div>`;
 
     modalBody.innerHTML = `
       <p class="modal-eyebrow">${esc(c.base)} &bull; ${esc(c.era)}</p>
@@ -290,5 +339,6 @@ document.addEventListener('DOMContentLoaded', () => {
       glasses.map(g => `<option value="${esc(g)}">${esc(g)}</option>`).join('');
   }
 
+  applyUrlState();
   render();
 });

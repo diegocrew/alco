@@ -344,6 +344,13 @@ body {
   background: var(--accent-primary, #e69c37);
 }
 
+/* Long catalogues render 100-200 cards; skip layout work for off-screen ones. */
+.rum-card,
+.cocktail-entry {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 420px;
+}
+
 .card-title {
   font-family: var(--font-serif);
   font-size: 1.6rem;

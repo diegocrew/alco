@@ -1,8 +1,44 @@
-/* Interactive World Map of Distillation - Tailored per Spirit Category */
+/* Interactive World Map of Distillation - Tailored per Spirit Category.
+   Leaflet weighs more than the rest of the page combined, so both the library and
+   the map are loaded only once the map panel approaches the viewport. */
+
+const LEAFLET_CSS = {
+  href: 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
+  integrity: 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY='
+};
+const LEAFLET_JS = {
+  src: 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js',
+  integrity: 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo='
+};
+
+function loadLeaflet() {
+  if (window.__leafletPromise) return window.__leafletPromise;
+
+  window.__leafletPromise = new Promise((resolve, reject) => {
+    if (typeof L !== 'undefined') return resolve();
+
+    const css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = LEAFLET_CSS.href;
+    css.integrity = LEAFLET_CSS.integrity;
+    css.crossOrigin = 'anonymous';
+    document.head.appendChild(css);
+
+    const script = document.createElement('script');
+    script.src = LEAFLET_JS.src;
+    script.integrity = LEAFLET_JS.integrity;
+    script.crossOrigin = 'anonymous';
+    script.onload = resolve;
+    script.onerror = () => reject(new Error('Leaflet failed to load'));
+    document.head.appendChild(script);
+  });
+
+  return window.__leafletPromise;
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   const mapElement = document.getElementById('map');
-  if (!mapElement || typeof L === 'undefined') return;
+  if (!mapElement) return;
 
   const spiritType = window.SPIRIT_TYPE || 'rum';
 
@@ -152,88 +188,113 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const config = spiritMapConfigs[spiritType] || spiritMapConfigs.rum;
 
-  const map = L.map('map', {
-    center: config.center,
-    zoom: config.zoom,
-    minZoom: 2,
-    maxZoom: 9,
-    zoomControl: true,
-    attributionControl: false,
-    // Page scrolling must not be hijacked; the wheel only zooms after a deliberate click.
-    scrollWheelZoom: false
-  });
+  function buildMap() {
+    const map = L.map('map', {
+      center: config.center,
+      zoom: config.zoom,
+      minZoom: 2,
+      maxZoom: 9,
+      zoomControl: true,
+      attributionControl: false,
+      // Page scrolling must not be hijacked; the wheel only zooms after a deliberate click.
+      scrollWheelZoom: false
+    });
 
-  map.on('click', () => map.scrollWheelZoom.enable());
-  mapElement.addEventListener('mouseleave', () => map.scrollWheelZoom.disable());
+    map.on('click', () => map.scrollWheelZoom.enable());
+    mapElement.addEventListener('mouseleave', () => map.scrollWheelZoom.disable());
 
-  // The map sits in a grid column, so its box can settle after Leaflet has measured it.
-  window.addEventListener('load', () => map.invalidateSize());
-  if (window.ResizeObserver) {
-    new ResizeObserver(() => map.invalidateSize()).observe(mapElement);
+    // The map sits in a grid column, so its box can settle after Leaflet has measured it.
+    window.addEventListener('load', () => map.invalidateSize());
+    if (window.ResizeObserver) {
+      new ResizeObserver(() => map.invalidateSize()).observe(mapElement);
+    }
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
+
+    const createCustomIcon = () => {
+      return L.divIcon({
+        className: 'custom-map-pin',
+        html: `
+          <div style="
+            background-color: var(--accent-primary, #e69c37);
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 2px solid #140d0a;
+            box-shadow: 0 0 10px var(--accent-primary, #e69c37);
+            cursor: pointer;
+          "></div>
+        `,
+        iconSize: [14, 14],
+        iconAnchor: [7, 7]
+      });
+    };
+
+    const esc = (value) => String(value == null ? '' : value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+
+    config.locations.forEach(loc => {
+      const marker = L.marker(loc.coords, {
+        icon: createCustomIcon(),
+        title: loc.name,
+        alt: `${loc.name} — ${loc.region}`,
+        keyboard: true
+      }).addTo(map);
+
+      const popupContent = `
+        <div class="map-popup">
+          <span class="map-popup-region">${esc(loc.region)}</span>
+          <h4 class="map-popup-title">${esc(loc.name)}</h4>
+          <p class="map-popup-desc">${esc(loc.description)}</p>
+          <button type="button" class="map-popup-btn" data-region="${esc(loc.name)}">
+            Filter ${esc(spiritType.toUpperCase())} from ${esc(loc.name)}
+          </button>
+        </div>
+      `;
+
+      marker.bindPopup(popupContent);
+    });
+
+    // Delegated so popup markup never needs an inline event handler.
+    map.on('popupopen', (e) => {
+      const btn = e.popup.getElement().querySelector('.map-popup-btn');
+      if (btn) {
+        btn.addEventListener('click', () => {
+          if (typeof window.setMapRegionFilter === 'function') {
+            window.setMapRegionFilter(btn.dataset.region);
+          }
+        }, { once: true });
+      }
+    });
   }
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    subdomains: 'abcd',
-    maxZoom: 19
-  }).addTo(map);
-
-  const createCustomIcon = () => {
-    return L.divIcon({
-      className: 'custom-map-pin',
-      html: `
-        <div style="
-          background-color: var(--accent-primary, #e69c37);
-          width: 14px;
-          height: 14px;
-          border-radius: 50%;
-          border: 2px solid #140d0a;
-          box-shadow: 0 0 10px var(--accent-primary, #e69c37);
-          cursor: pointer;
-        "></div>
-      `,
-      iconSize: [14, 14],
-      iconAnchor: [7, 7]
+  let started = false;
+  const start = () => {
+    if (started) return;
+    started = true;
+    loadLeaflet().then(buildMap).catch(() => {
+      mapElement.innerHTML = '<p class="map-hint">The interactive map could not be loaded.</p>';
     });
   };
 
-  const esc = (value) => String(value == null ? '' : value)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      if (!entries.some(entry => entry.isIntersecting)) return;
+      observer.disconnect();
+      start();
+    }, { rootMargin: '400px' });
+    observer.observe(mapElement);
+  }
 
-  config.locations.forEach(loc => {
-    const marker = L.marker(loc.coords, {
-      icon: createCustomIcon(),
-      title: loc.name,
-      alt: `${loc.name} — ${loc.region}`,
-      keyboard: true
-    }).addTo(map);
-
-    const popupContent = `
-      <div class="map-popup">
-        <span class="map-popup-region">${esc(loc.region)}</span>
-        <h4 class="map-popup-title">${esc(loc.name)}</h4>
-        <p class="map-popup-desc">${esc(loc.description)}</p>
-        <button type="button" class="map-popup-btn" data-region="${esc(loc.name)}">
-          Filter ${esc(spiritType.toUpperCase())} from ${esc(loc.name)}
-        </button>
-      </div>
-    `;
-
-    marker.bindPopup(popupContent);
-  });
-
-  // Delegated so popup markup never needs an inline event handler.
-  map.on('popupopen', (e) => {
-    const btn = e.popup.getElement().querySelector('.map-popup-btn');
-    if (btn) {
-      btn.addEventListener('click', () => {
-        if (typeof window.setMapRegionFilter === 'function') {
-          window.setMapRegionFilter(btn.dataset.region);
-        }
-      }, { once: true });
-    }
-  });
+  // Safety net: background tabs and some embedded views throttle IntersectionObserver,
+  // so the map still loads once the page itself is idle.
+  const idle = window.requestIdleCallback || ((fn) => setTimeout(fn, 2000));
+  window.addEventListener('load', () => idle(start, { timeout: 3000 }), { once: true });
 });

@@ -2,16 +2,29 @@
 
 A dependency-free static encyclopedia decoding **12 drink categories**: Rum, Vodka, Whisky, Wine, Gin, Cognac, Brandy, Tequila, Champagne, Beer, Absinthe and Liqueurs. Each category page carries an origin timeline, an interactive production map, and a filterable field catalog.
 
-No build step, no framework, no package manager. Copy the folder to any static host and it runs.
+The site itself ships as plain HTML, CSS and JavaScript with no build step. Node is used only for the maintenance scripts in `tools/` and the smoke tests.
 
 ## Running locally
 
-Any static file server works:
+```bash
+node tools/serve.js          # http://localhost:4173
+```
+
+Any other static file server works too (`python3 -m http.server 8080`).
+
+## Maintenance scripts
 
 ```bash
-python3 -m http.server 8080
-# then open http://localhost:8080
+npm run check        # lints datasets and pages, fails on any inconsistency
+npm run normalize    # regenerates the shared page shell (head, nav, a11y, defer)
+npm run popularity   # recomputes the global-reach index in data/*.js
+npm run fonts        # re-downloads the self-hosted web fonts
+npm test             # Playwright smoke tests against a local server
 ```
+
+`npm run check` is the guardrail: it verifies row shapes, ABV ranges, duplicate
+entries, the popularity index, advertised item counts, navigation consistency,
+accessibility attributes, deferred scripts and broken local references.
 
 ## Structure
 
@@ -20,63 +33,107 @@ index.html            12-category hub, 5x4 board grid with 8 cocktail cards
 <category>.html       13 pages, one per category
 css/themes.css        12 colour palettes, selected via <html data-theme="...">
 css/styles.css        shared layout and components
+css/fonts.css         generated @font-face rules for the self-hosted fonts
+fonts/                woff2 subsets (latin, latin-ext)
 js/catalog.js         defineCatalog() - expands compact dataset rows
-js/app.js             filtering, sorting, search, card render, detail modal
-js/map.js             Leaflet map, per-category pin configuration
+js/app.js             filtering, sorting, search, URL state, card render, modal
+js/map.js             lazy-loaded Leaflet map, per-category pin configuration
 data/*.js             one catalog per category
+tools/                maintenance scripts, all runnable with plain node
+tests/                Playwright smoke tests
 ```
 
 ## Data format
 
-Datasets ship as positional rows to keep 100-entry files readable:
+Datasets ship as positional rows to keep the entry files readable:
 
 ```js
 window.defineCatalog('beer', 'beer', [
   // [name, producer, country, region, style, abv, source, tags, pour, notes, modes, extras]
   ["Pilsner Urquell", "Plzeňský Prazdroj", "Czechia", "BOHEMIA CZECHIA",
    "Czech Pale Lager", 4.4, "PILSNER MALT & SAAZ",
-   ["Bready Malt", "Herbal Saaz"], "Tankové, thick wet foam",
+   ["Bready Malt", "Herbal Saaz", "Firm Bitterness", "Soft Water"],
+   "Tankové, thick wet foam",
    "The 1842 original golden lager.", 0,
-   { beerStyle: "LAGER", serveTemp: "6-8°C", ibu: "IBU 40" }]
+   { pop: 82, beerStyle: "LAGER", serveTemp: "6-8°C", ibu: "IBU 40" }]
 ]);
 ```
 
-`modes` is a bitmask: `1` neat, `2` on ice, `4` cocktail. Combine by adding (`7` = all three).
+`tags` must hold exactly four descriptors. `modes` is a bitmask: `1` neat, `2` on ice,
+`4` cocktail; combine by adding (`7` = all three).
 
-`extras` carries category-specific fields:
+`extras` carries `pop` plus category-specific fields:
 
-| Category  | Extra fields                           | Filter buttons                    |
-|-----------|----------------------------------------|-----------------------------------|
-| Beer      | `beerStyle`, `serveTemp`, `ibu`        | Lager / Pale Ale / Stout / Wheat   |
-| Wine      | `color`, `serveTemp`, `decant`         | Red / White / Decant              |
-| Champagne | `champagneType`, `leesAging`, `dosage` | Blanc de Blancs / Rosé / Prestige  |
-| All other | none, uses `modes`                     | Neat / On Ice / Cocktail          |
+| Category  | Extra fields                                  | Filter buttons                    |
+|-----------|-----------------------------------------------|-----------------------------------|
+| Beer      | `pop`, `beerStyle`, `serveTemp`, `ibu`        | Lager / Pale Ale / Stout / Wheat   |
+| Wine      | `pop`, `color`, `serveTemp`, `decant`         | Red / White / Decant              |
+| Champagne | `pop`, `champagneType`, `leesAging`, `dosage` | Blanc de Blancs / Rosé / Prestige  |
+| All other | `pop`, uses `modes`                           | Neat / On Ice / Cocktail          |
 
 Beer deliberately has no neat/ice/cocktail axis; it is filtered by fermentation family instead.
+
+Cocktail rows use their own shape, documented at the top of `data/cocktails.js`, with
+popularity as the eleventh field.
+
+## The popularity index
+
+Every entry carries `pop`, an editorial **global reach** score from 1 to 99 that blends
+real-world sales volume with brand recognition. It powers the *Most Popular* and
+*Most Niche* sort options, the reach bar on each card and the reach line in the detail modal.
+
+| Score  | Label                 | Meaning                                              |
+|--------|-----------------------|------------------------------------------------------|
+| 80-99  | Global icon           | Mass-market brands stocked in most countries          |
+| 60-79  | Worldwide staple      | Widely exported, familiar to most drinkers            |
+| 40-59  | Widely stocked        | Reliable presence in good bars and shops              |
+| 22-39  | Specialist favourite  | Known to enthusiasts, limited distribution            |
+| 1-21   | Cult / rare           | Allocated, single-cask, farm-gate or local-only       |
+
+Scores are generated by `tools/assign-popularity.js` from producer baselines, per-SKU
+overrides and name rules (entry-level expressions rank above vintage, XO and single-cask
+releases of the same brand). The script is idempotent, so re-running it after editing the
+tables refreshes every dataset. Cocktail scores follow bar-call frequency instead of sales.
+
+## Shareable views
+
+Filters, search, region, style and sort are mirrored into the query string, so any view
+can be linked or bookmarked, for example
+`beer.html?filter=lager&region=SLOVAKIA&sort=popular`.
+
+## Front-end hardening
+
+- A `Content-Security-Policy` meta tag on every page; no inline scripts or event handlers.
+- Fonts are self-hosted, so no third-party request is made at runtime.
+- Leaflet is fetched with Subresource Integrity only when the map approaches the viewport.
+- All catalogue text is HTML-escaped; colours and file names that reach style attributes
+  or URLs are validated against strict patterns.
 
 ## Adding a category
 
 1. Add a `[data-theme="x"]` block to `css/themes.css`.
 2. Add a pin config to `spiritMapConfigs` in `js/map.js`.
 3. Create `data/xs.js` calling `defineCatalog('x', 'x', [...])`.
-4. Copy an existing category page, update the head, nav, hero and script tags.
-5. Add a hub card to `index.html` and a nav entry to every page.
+4. Copy an existing category page and update the head, hero and data script tag.
+5. Add the page to `NAV` in `tools/normalize-pages.js` and `tools/check-site.js`,
+   add a hub card to `index.html`, then run `npm run normalize && npm run check`.
 
 ## Data integrity
 
 Every entry is a real, commercially released product. No category pads its count by
-recycling a shorter list, and no two entries within a category share a name.
+recycling a shorter list, and no two entries within a category share a name and producer.
 
 | Category  | Entries | Category  | Entries |
 |-----------|---------|-----------|---------|
-| Whisky    | 158     | Tequila   | 105     |
-| Rum       | 150     | Brandy    | 104     |
-| Gin       | 143     | Champagne | 101     |
-| Cognac    | 115     | Beer      | 100     |
-| Wine      | 110     | Absinthe  | 100     |
-| Vodka     | 106     | Liqueur   | 100     |
+| Whisky    | 158     | Champagne | 101     |
+| Rum       | 150     | Absinthe  | 100     |
+| Gin       | 143     | Liqueur   | 100     |
+| Beer      | 127     | Brandy    | 109     |
+| Wine      | 127     | Tequila   | 105     |
+| Cognac    | 115     | Vodka     | 106     |
 
-**1,392 distinct products across 12 categories.**
+**1,441 distinct products across 12 categories, plus 192 cocktails in the hidden back bar.**
+
 
 Verify at any time with:
 

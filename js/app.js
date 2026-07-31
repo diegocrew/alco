@@ -33,7 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
     .replace(/'/g, '&#39;');
 
   // Editorial 1-99 index blending global sales volume with brand recognition.
-  const reachOf = (item) => Number(item.pop) || 0;
+  const reachOf = (item) => {
+    const value = Math.round(Number(item.pop));
+    return Number.isFinite(value) ? Math.min(99, Math.max(0, value)) : 0;
+  };
 
   function reachLabel(score) {
     if (score >= 80) return 'Global icon';
@@ -54,8 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const regions = Array.from(new Set(dataset.map(item => item.region).filter(Boolean))).sort();
       regionSelect.innerHTML = '<option value="all">All Regions</option>' +
         regions.map(rg => `<option value="${esc(rg)}">${esc(rg)}</option>`).join('');
-    }
-  }
+    }  }
 
   // --------------------------------------------------
   // RENDER CARD (WINE, CHAMPAGNE, BEER OR GENERAL SPIRIT)
@@ -235,6 +237,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (countBadge) {
       countBadge.textContent = `Showing ${filtered.length} of ${dataset.length} items`;
     }
+
+    syncUrlState();
   }
 
   // --------------------------------------------------
@@ -402,6 +406,64 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape') closeDetailModal();
   });
 
+  // --------------------------------------------------
+  // URL STATE (shareable views, working back button)
+  // --------------------------------------------------
+  function applyUrlState() {
+    const params = new URLSearchParams(window.location.search);
+    const setSelect = (select, value) => {
+      if (!select || !value) return '';
+      const known = Array.from(select.options).some(o => o.value === value);
+      if (known) select.value = value;
+      return known ? value : '';
+    };
+    const filter = params.get('filter');
+    if (filter) {
+      const btn = Array.from(filterBtns).find(b => b.getAttribute('data-serve') === filter);
+      if (btn) {
+        filterBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+        currentCategoryFilter = filter;
+      }
+    }
+
+    setSelect(styleSelect, params.get('style'));
+    setSelect(sortSelect, params.get('sort'));
+
+    // Regions may arrive as a full option value or as a bare country, like a map pin does.
+    const region = params.get('region');
+    if (region) {
+      setSelect(regionSelect, region);
+      activeRegionFilter = region;
+    }
+
+    if (searchInput && params.get('q')) searchInput.value = params.get('q');
+  }
+
+  function syncUrlState() {
+    const params = new URLSearchParams();
+    if (currentCategoryFilter !== 'all') params.set('filter', currentCategoryFilter);
+    if (styleSelect && styleSelect.value !== 'all') params.set('style', styleSelect.value);
+
+    const region = activeRegionFilter !== 'all' ? activeRegionFilter : (regionSelect ? regionSelect.value : 'all');
+    if (region && region !== 'all') params.set('region', region);
+
+    if (sortSelect && sortSelect.value !== 'default') params.set('sort', sortSelect.value);
+    if (searchInput && searchInput.value.trim()) params.set('q', searchInput.value.trim());
+
+    const query = params.toString();
+    const url = window.location.pathname + (query ? `?${query}` : '') + window.location.hash;
+    // Opening the page straight from disk makes history writes throw in some browsers.
+    try {
+      window.history.replaceState(null, '', url);
+    } catch (err) { /* ignore */ }
+  }
+
   initDynamicDropdowns();
+  applyUrlState();
   filterAndRender();
 });

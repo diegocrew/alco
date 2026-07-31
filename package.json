@@ -1,0 +1,17 @@
+{
+  "name": "field-guide",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static drink field guides: 12 spirit catalogues, an interactive map and a hidden cocktail compendium.",
+  "scripts": {
+    "check": "node tools/check-site.js",
+    "normalize": "node tools/normalize-pages.js",
+    "fonts": "node tools/fetch-fonts.js",
+    "popularity": "node tools/assign-popularity.js",
+    "test": "playwright test",
+    "serve": "node tools/serve.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0"
+  }
+}
